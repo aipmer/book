@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md)
+
 # Ch.05 制定 CAP 协议：构建项目专属的 AGENTS.md 规则层
 
 在实际做产品的过程中，最怕遇到的一种开发情况是：修好了一个 Bug，却顺手带出了三个新 Bug；或者新写了一个功能，结果把团队约定的代码风格破坏得一塌糊涂。
@@ -93,4 +95,6 @@ Do you want to override this rule? (y/N)
 
 ---
 
-📖 **下一章**：[Ch.06 思维纠偏：如何像技术总监一样透视 CoT 推理链](file:///Users/hunkwu/Desktop/ai/book/chapters/ch06_reasoning_steer.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md)

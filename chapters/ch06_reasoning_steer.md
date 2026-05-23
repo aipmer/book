@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md)
+
 # Ch.06 思维纠偏：如何像技术总监一样透视 CoT 推理链
 
 在传统开发中，你招聘一个初级程序员，最怕的事情不是他写不出代码，而是他默默憋了大招，最后交给你一堆完全偏离业务方向的代码，或者把整个系统搞崩溃。
@@ -91,4 +93,6 @@ git checkout -- src/lib/redis.ts
 
 ---
 
-📖 **下一章**：[Ch.07 视觉闭环：Desktop Computer Use 自动巡检与设计还原](file:///Users/hunkwu/Desktop/ai/book/chapters/ch07_desktop_computer_use.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md)

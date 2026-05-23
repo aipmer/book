@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md)
+
 # Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包
 
 做完网页版 SaaS 后，很多独立开发者希望能将触角延伸到移动端。但在传统的移动端开发（React Native / Flutter）中，最耗费时间的往往是复杂的本地开发环境配置：iOS 证书管理、Android Gradle 报错、Cocoapods 冲突，这些环境地狱常常让人望而却步。
@@ -108,4 +110,6 @@ eas build --platform ios --profile production --non-interactive | codex watch-ea
 
 ---
 
-📖 **下一章**：[Ch.12 终局思考：独立开发者如何打造自动化商业飞轮](file:///Users/hunkwu/Desktop/ai/book/chapters/ch12_commercialization.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md)

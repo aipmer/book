@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md)
+
 # Ch.03 破局云端孤岛：沙盒调试与本地环境深度穿透
 
 在“实战产品说”微信公众号后台，我经常收到读者的提问：
@@ -91,4 +93,6 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 
 ---
 
-📖 **下一章**：[Ch.04 目标驱动：用“边界与断言”驯服推理型智能体](file:///Users/hunkwu/Desktop/ai/book/chapters/ch04_goal_driven.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md)

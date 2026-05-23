@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md)
+
 # Ch.07 视觉闭环：Desktop Computer Use 自动巡检与设计还原
 
 在传统的 UI 还原度走查中，最耗费产品经理和前端时间的是“像素眼”校对：
@@ -107,4 +109,6 @@ $ codex run-task compare-ui.task
 
 ---
 
-📖 **下一章**：[Ch.08 移动看护工作流：全天候离线编排实战](file:///Users/hunkwu/Desktop/ai/book/chapters/ch08_mobile_workflow.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md)

@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md)
+
 # Ch.04 目标驱动：用“边界与断言”驯服推理型智能体
 
 在以 OpenAI o3 / GPT-5.5 等推理模型为核心的 Codex 时代，传统的 Prompt 工程正在变得累赘。推理模型具有庞大的内生规划（Internal Planning）空间，过细的执行步骤反而会限制其能力的发挥。
@@ -87,4 +89,6 @@ graph TD
 
 ---
 
-📖 **下一章**：[Ch.05 制定 CAP 协议：构建项目专属的 AGENTS.md 规则层](file:///Users/hunkwu/Desktop/ai/book/chapters/ch05_agents_protocol.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md)

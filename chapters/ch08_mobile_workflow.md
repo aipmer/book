@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md)
+
 # Ch.08 移动看护工作流：全天候离线编排实战
 
 作为独立创始人和产品经理，你的核心追求除了“高效率”外，还有“自由度”。你肯定不希望整天被拴在电脑前，盯着终端控制台看 AI 滚屏编译。
@@ -137,4 +139,6 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-📖 **下一章**：[Ch.09 架构复苏：混乱遗留系统的全景解析与渐进式解耦](file:///Users/hunkwu/Desktop/ai/book/chapters/ch09_legacy_code.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md)

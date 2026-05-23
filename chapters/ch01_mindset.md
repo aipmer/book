@@ -1,3 +1,5 @@
+[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md)
+
 # Ch.01 告别手写代码：Vibe Coding 时代的产品心智
 
 > 🚀 **“人类不应该再手写一行无意义的模板代码。你的手应该用来握紧方向盘，而不是推手推车。”**
@@ -63,4 +65,6 @@
 
 ---
 
-📖 **下一章**：[Ch.02 跨端掌控：Codex 多端生产力矩阵搭建](file:///Users/hunkwu/Desktop/ai/book/chapters/ch02_setup.md)
+---
+
+[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md)
