@@ -4,7 +4,7 @@
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
-> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是‘人被 AI 牵着走’。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的Codex客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是‘实战产品说’一贯的硬核实战风格。” —— 主理人
+> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是‘人被 AI 牵着走’。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的Codex客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是‘实战产品说’一贯的硬核实战风格。” —— 主理人 [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
@@ -40,6 +40,12 @@
 *   [Ch.10 商业实战：2小时跑通 Next.js + Stripe 商业级 MVP](./chapters/ch10_saas_mvp.md) - Next.js 15 + Supabase + Stripe 实战
 *   [Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包](./chapters/ch11_expo_mobile.md) - 从本地模拟器联调到云端一键打包
 *   [Ch.12 终局思考：独立开发者如何打造自动化商业飞轮](./chapters/ch12_commercialization.md) - 一人公司（One-Person SaaS）的流量与变现路径
+
+---
+
+## 🔌 关联开源项目
+
+*   **[Codex 飞书插件](https://github.com/hunkwu/plugins-codex-feishu)**：将 Codex 强大的智能体自动化开发与重构能力无缝接入飞书多维表格与机器人工作流，实现日常办公任务的自动化编排与高效数据流转。
 
 ---
 

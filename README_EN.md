@@ -4,7 +4,7 @@
 
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >
-> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author 
+> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
@@ -19,7 +19,7 @@ This book is released across multiple platforms:
 
 ---
 
-## 🧭 Directory and Navigation 
+## 🧭 Directory and Navigation
 
 ### Part 1: Product Survival in the AI-Native Era
 *   [Ch.01 Saying Goodbye to Handwritten Code: Product Mindset in the Era of Vibe Coding](./en/ch01_mindset.md)
@@ -40,6 +40,12 @@ This book is released across multiple platforms:
 *   [Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours](./en/ch10_saas_mvp.md)
 *   [Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging](./en/ch11_expo_mobile.md)
 *   [Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS](./en/ch12_commercialization.md)
+
+---
+
+## 🔌 Related Projects
+
+*   **[Codex Feishu Plugin](https://github.com/hunkwu/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows, enabling automated daily office task orchestration and high-efficiency data flows.
 
 ---
 
