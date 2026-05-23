@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)
 
 # Ch.03 破局云端孤岛：沙盒调试与本地环境深度穿透
 
@@ -93,4 +93,4 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)

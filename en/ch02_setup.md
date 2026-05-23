@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)
 
 # Ch.02 Cross-Device Control: Building Your Codex Multi-Surface Productivity Matrix
 
@@ -88,4 +88,4 @@ When you are enjoying a cup of coffee at a café, and the local Codex runs up to
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)

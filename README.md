@@ -1,5 +1,7 @@
 # 📘 OpenAI Codex 蓝皮书：从入门到架构大师
 
+[ 🌐 English Version ](./README_EN.md) | [ 📥 下载中文 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf)
+
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
 > “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是‘人被 AI 牵着走’。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的Codex客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是‘实战产品说’一贯的硬核实战风格。” —— 主理人

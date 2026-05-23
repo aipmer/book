@@ -1,4 +1,6 @@
-# 📘 Codex Blue Book: From Beginner to Architect
+# 📘 Codex Book: From Beginner to Architect
+
+[ 🌐 中文版 ](./README.md) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 📥 下载中文 PDF ](./codex_blue_book_zh.pdf)
 
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >

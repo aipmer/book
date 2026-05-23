@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.11) ](./ch11_expo_mobile.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch12_commercialization.md)
 
 # Ch.12 终局思考：独立开发者如何打造自动化商业飞轮
 
@@ -125,4 +125,4 @@ sendReport();
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.11) ](./ch11_expo_mobile.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch12_commercialization.md)

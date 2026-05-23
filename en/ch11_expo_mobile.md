@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
 
 # Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging
 
@@ -111,4 +111,4 @@ Ultimately, it will output a QR code. You only need to scan it with your phone t
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)

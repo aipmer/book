@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)
 
 # Ch.02 跨端掌控：Codex 多端生产力矩阵搭建
 
@@ -89,4 +89,4 @@ export CODEX_MAX_RPM=50
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)

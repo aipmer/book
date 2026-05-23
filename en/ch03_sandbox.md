@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)
 
 # Ch.03 Breaking the Cloud Island: Sandbox Debugging and Deep Local Environment Tunneling
 
@@ -93,4 +93,4 @@ By applying these settings, the cloud sandbox is no longer an isolated island. I
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)

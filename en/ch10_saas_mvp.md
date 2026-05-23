@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)
 
 # Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours
 
@@ -164,4 +164,4 @@ By following this loop (Spec Definition -> AI Coding -> Sandbox Validation -> Re
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)

@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md)
+[ 🏠 Index ](../README_EN.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)
 
 # Ch.01 Saying Goodbye to Handwritten Code: Product Mindset in the Era of Vibe Coding
 
@@ -62,4 +62,4 @@ As shared on pmer.cn: **Your value lies in defining business boundaries and empa
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md)
+[ 🏠 Index ](../README_EN.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)

@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)
 
 # Ch.09 Codebase Revitalization: Reverse Engineering and Progressive Decoupling of Legacy Systems
 
@@ -87,4 +87,4 @@ Using this minimally invasive refactoring cycle (Extract Logic -> Run Tests -> R
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)

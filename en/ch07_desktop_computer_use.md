@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)
 
 # Ch.07 Closing the Visual Loop: Automated Auditing and Design Verification with Desktop Computer Use
 
@@ -109,4 +109,4 @@ Through this closed-loop process, solo developers no longer need to resize brows
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)

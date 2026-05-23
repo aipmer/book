@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)
 
 # Ch.04 Goal-Driven Engineering: Taming Reasoning Agents with Boundaries and Assertions
 
@@ -89,4 +89,4 @@ You will notice that Codex automatically handles edge cases, such as Redis conne
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)

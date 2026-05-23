@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)
 
 # Ch.07 视觉闭环：Desktop Computer Use 自动巡检与设计还原
 
@@ -109,4 +109,4 @@ $ codex run-task compare-ui.task
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)

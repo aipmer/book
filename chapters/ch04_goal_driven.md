@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)
 
 # Ch.04 目标驱动：用“边界与断言”驾驭推理型智能体
 
@@ -89,4 +89,4 @@ graph TD
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)

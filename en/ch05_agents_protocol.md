@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ Next (Ch.06) ](./ch06_reasoning_steer.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ Next (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 中文版 ](../chapters/ch05_agents_protocol.md)
 
 # Ch.05 Defining the CAP Protocol: Building Your Project's AGENTS.md Rule Compliance Layer
 
@@ -95,4 +95,4 @@ With this layer of protection, you can confidently delegate large blocks of busi
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ Next (Ch.06) ](./ch06_reasoning_steer.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ Next (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 中文版 ](../chapters/ch05_agents_protocol.md)

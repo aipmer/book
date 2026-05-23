@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md)
+[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md) | [ 🌐 English ](../en/ch01_mindset.md)
 
 # Ch.01 告别手写代码：Vibe Coding 时代的产品心智
 
@@ -65,4 +65,4 @@
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md)
+[ 🏠 主目录 ](../README.md) | [ ➡️ 下一章 (Ch.02) ](./ch02_setup.md) | [ 🌐 English ](../en/ch01_mindset.md)

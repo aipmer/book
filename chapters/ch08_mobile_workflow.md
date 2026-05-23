@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)
 
 # Ch.08 移动看护工作流：全天候离线编排实战
 
@@ -139,4 +139,4 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)

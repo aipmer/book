@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
 
 # Ch.06 Correcting Course: Supervising the CoT Reasoning Chain Like a Tech Lead
 
@@ -93,4 +93,4 @@ Then append this to [AGENTS.md](../AGENTS.md):
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)

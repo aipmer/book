@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
 
 # Ch.08 Mobile Sentinel Workflows: 24/7 Remote Development and Orchestration
 
@@ -140,4 +140,4 @@ By delegating validation assertions to GitHub Actions, forwarding exceptions via
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md)
+[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)

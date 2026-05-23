@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 English ](../en/ch06_reasoning_steer.md)
 
 # Ch.06 思维纠偏：如何像技术总监一样透视 CoT 推理链
 
@@ -93,4 +93,4 @@ git checkout -- src/lib/redis.ts
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 English ](../en/ch06_reasoning_steer.md)

@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)
 
 # Ch.05 制定 CAP 协议：构建项目专属的 AGENTS.md 规则层
 
@@ -95,4 +95,4 @@ Do you want to override this rule? (y/N)
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)

@@ -1,4 +1,4 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
 
 # Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包
 
@@ -111,4 +111,4 @@ eas build --platform ios --profile production --non-interactive | codex watch-ea
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md)
+[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
