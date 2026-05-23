@@ -1,6 +1,6 @@
 # 📘 OpenAI Codex 蓝皮书：从入门到架构大师
 
-[ 🌐 English Version ](./README_EN.md) | [ 📥 下载中文 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf)
+[ 📥 下载 PDF 电子书 (Download PDF) ](./codex_blue_book.pdf) | [ 🌐 English Version ](#english-version)
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
@@ -15,7 +15,7 @@
 *   **开源源码库**：[GitHub Repository](https://github.com/hunkwu/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
 *   **个人站点**：[pmer.cn](https://pmer.cn) - 精美极客风在线文档站，支持暗黑模式、移动端优化与代码一键复制。
 *   **微信公众号**：**实战产品说** - 深度硬核干货剖析、开发避坑踩坑实录、一人公司商业变现逻辑。
-*   **高密 PDF**：简化脱水版 PDF，适合朋友圈与开发者社群一键转发。
+*   **高密 PDF**：简化双语合并版 PDF，适合朋友圈与开发者社群一键转发。
 
 ---
 
@@ -76,3 +76,85 @@
 
 本书中提及的部分命令（如 `codex --verbose --show-cot`、`codex refine`）、环境变量（如 `CODEX_MAX_BUDGET_PER_TASK`）以及模型代号（如 `GPT-5.5`）为针对自主代理（Autonomous Agent）协作流程设计的**示意/概念性演示**，旨在展示 AI 编排中的“目标驱动”、“思维纠偏”等设计模式与心智模型，并非特定的商业工具或硬性标准。
 
+---
+---
+
+## 🌐 English Version
+
+[ 📥 Download PDF ](./codex_blue_book.pdf) | [ 🌐 中文版 ](#)
+
+# 📘 Codex Book: From Beginner to Architect
+
+> 💡 **AI-Native Product Development & Multi-Surface Orchestration**
+>
+> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
+
+---
+
+## 🗺️ Multi-Surface Publishing Matrix
+
+This book is released across multiple platforms:
+
+*   **Open Source Repository**: [GitHub Repository](https://github.com/hunkwu/book) (This Repo) - Code templates and markdown chapters.
+*   **Website**: [pmer.cn](https://pmer.cn) - Fully responsive documentation site with dark mode.
+*   **WeChat Official Account**: **实战产品说** - Real-world PM postmortems, SaaS strategies, and debugging stories.
+*   **Simplified PDF**: Concise, high-density printout for quick community sharing.
+
+---
+
+## 🧭 Directory and Navigation
+
+### Part 1: Product Survival in the AI-Native Era
+*   [Ch.01 Saying Goodbye to Handwritten Code: Product Mindset in the Era of Vibe Coding](./chapters/ch01_mindset.md)
+*   [Ch.02 Cross-Device Control: Building Your Codex Multi-Surface Productivity Matrix](./chapters/ch02_setup.md)
+*   [Ch.03 Breaking the Cloud Island: Sandbox Debugging and Deep Local Environment Tunneling](./chapters/ch03_sandbox.md)
+
+### Part 2: Architecture & Constraints
+*   [Ch.04 Goal-Driven Engineering: Taming Reasoning Agents with Boundaries and Assertions](./chapters/ch04_goal_driven.md)
+*   [Ch.05 Defining the CAP Protocol: Building Your Project's AGENTS.md Rule Compliance Layer](./chapters/ch05_agents_protocol.md)
+*   [Ch.06 Correcting Course: Supervising the CoT Reasoning Chain Like a Tech Lead](./chapters/ch06_reasoning_steer.md)
+
+### Part 3: Advanced Multi-Surface Telemetry
+*   [Ch.07 Closing the Visual Loop: Automated Auditing and Design Verification with Desktop Computer Use](./chapters/ch07_desktop_computer_use.md)
+*   [Ch.08 Mobile Sentinel Workflows: 24/7 Remote Development and Orchestration](./chapters/ch08_mobile_workflow.md)
+*   [Ch.09 Codebase Revitalization: Reverse Engineering and Progressive Decoupling of Legacy Systems](./chapters/ch09_legacy_code.md)
+
+### Part 4: One-Person SaaS Commercialization
+*   [Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours](./chapters/ch10_saas_mvp.md)
+*   [Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging](./chapters/ch11_expo_mobile.md)
+*   [Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS](./chapters/ch12_commercialization.md)
+
+---
+
+## 🔌 Related Projects
+
+*   **[Codex Feishu Plugin](https://github.com/hunkwu/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows, enabling automated daily office task orchestration and high-efficiency data flows.
+
+---
+
+## 🤖 Codex Collaboration Protocol
+
+Before you begin, place **`AGENTS.md`** in your project root:
+
+```markdown
+# 🤖 Codex Collaboration Protocol (CAP)
+
+## 📌 Project Signature
+- Tech Stack: Node.js, React, TypeScript
+- Directory Rule: Keep components in `src/components`, logic in `src/hooks`
+
+## 🛑 Hard Constraints
+- Never update package.json dependencies without manual approval.
+- Do not remove any inline TypeScript documentation or comments.
+- Always run `npm run test` before declaring a task complete.
+```
+
+---
+
+*This project is under active development. Join the conversation at [pmer.cn](https://pmer.cn) or follow **Real-World Product Talk (实战产品说)** on WeChat!*
+
+---
+
+## ⚠️ Disclaimer
+
+Some commands (e.g., `codex --verbose --show-cot`, `codex refine`), environment variables (e.g., `CODEX_MAX_BUDGET_PER_TASK`), and model references (e.g., `GPT-5.5`) mentioned in this book are **illustrative/conceptual demonstrations** designed to explain autonomous agent orchestration, goal-driven patterns, and thinking chain supervision. They do not represent specific commercial software or mandatory production standards.

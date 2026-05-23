@@ -1,5 +1,7 @@
 # 🤝 《Codex 蓝皮书》开源贡献指南 (Contributing Guide)
 
+[ 🌐 English Version ](#english-version)
+
 感谢你关注《Codex 蓝皮书》项目！我们非常欢迎社区开发者、产品经理和 AI Native 探索者共同完善这本小册，让更多人掌握自主智能体（Autonomous Agents）的编排心智。
 
 在提交任何修改（Pull Request）前，请花几分钟阅读本指南。
@@ -11,7 +13,7 @@
 你可以通过以下几种方式参与共建：
 
 1.  **实战案例投稿 (Case Studies)**：分享你使用 Codex/智能体开发产品并实现商业变现、解决屎山遗留系统、或者打通多端协同的实战故事。
-2.  **`AGENTS.md` 规则贡献**：为你日常使用的特定技术栈（如 Ruby on Rails, Go/Gin, Rust/Axum）提供经过实操验证的智能体约束模板。
+2.  **`AGENTS.md` 规则规则**：为你日常使用的特定技术栈（如 Ruby on Rails, Go/Gin, Rust/Axum）提供经过实操验证的智能体约束模板。
 3.  **内容纠错与润色**：修正排版问题、勘误错别字、或者优化英文翻译的地道程度。
 4.  **工程化脚本优化**：优化 `/scripts` 目录下的自动化脚本，提升反向穿透与看护体验。
 
@@ -47,5 +49,54 @@
 5.  **提交 Pull Request**：在 GitHub 上向本仓库的 `main` 分支提交 PR。我们会在 2 个工作日内完成 Code Review 并合并。
 
 ---
+---
 
-*如果您在阅读或使用中遇到任何问题，欢迎在个人站点 [pmer.cn](https://pmer.cn) 或微信公众号 **“实战产品说”** 中与我们交流！*
+## 🌐 English Version
+
+# 🤝 Contributing Guide
+
+[ 🌐 中文版 ](#)
+
+Thank you for your interest in contributing to the Codex Blue Book project! We highly welcome community developers, product managers, and AI-Native explorers to collaborate on improving this guide, helping more creators master the orchestration mindset of autonomous agents.
+
+Please take a few minutes to read this guide before submitting any Pull Requests.
+
+---
+
+## 🧭 Contribution Areas
+
+You can participate in co-building through the following ways:
+
+1.  **Case Studies**: Share your real-world stories of launching SaaS MVPs, refactoring legacy code bases, or setting up multi-device watchtowers using Codex/agents.
+2.  **`AGENTS.md` Rules**: Submit pre-configured and tested agent boundary rules for your preferred tech stack (e.g., Ruby on Rails, Go/Gin, Rust/Axum).
+3.  **Refinement**: Fix typos, formatting glitches, or refine English translations.
+4.  **Tooling Improvements**: Enhance the scripts in `/scripts` to improve the local tunneling or telemetry experience.
+
+---
+
+## 🛑 Hard Constraints
+
+To preserve the high-density and practical tone of this book, all contributions must respect these rules:
+
+- **No placeholders**: All code snippets, configurations, and specs must be real and runnable. Do not use generic statements like `// your code here`.
+- **Consistent Tone**: Keep your writing concise, professional, and practical. Avoid pure academic terminology.
+- **Code Block Tags**: Every code block must specify its language (e.g. ` ```bash `, ` ```typescript `).
+- **Relative Pathing**: Use relative pathing for file links inside chapter folders. Never submit absolute file paths (like `file:///Users/...`).
+
+---
+
+## 🚀 Pull Request Workflow
+
+Please follow the standard GitHub workflow:
+
+1.  **Fork the repo** to your own account.
+2.  **Create a feature branch**:
+    ```bash
+    git checkout -b feat/add-agents-rails-template
+    ```
+3.  **Commit your modifications**:
+    ```bash
+    git add -A
+    git commit -m "doc: add AGENTS.md template for Ruby on Rails"
+    ```
+4.  **Push and open a PR** to our `main` branch. We review and merge PRs within 2 business days.

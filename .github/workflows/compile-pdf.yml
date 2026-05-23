@@ -8,7 +8,6 @@ on:
       - 'chapters/**'
       - 'en/**'
       - 'README.md'
-      - 'README_EN.md'
       - 'scripts/**'
       - '.github/workflows/compile-pdf.yml'
   workflow_dispatch:
