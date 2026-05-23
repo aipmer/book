@@ -15,7 +15,7 @@
 
 如下图所示，默认状态下，沙盒与本地宿主机（Your Mac）是网络阻断的：
 
-```
+```text
 +───────────────────────────+                  +───────────────────────────+
 |     云端沙盒 (Sandbox)     |                  |    宿主机 (Local Mac)     |
 | - App Code                |    (隔离屏障)    | - Docker container        |
@@ -60,7 +60,7 @@ ngrok tcp 5432
 终端会输出如下穿透地址：
 `Forwarding tcp://0.tcp.ngrok.io:12345 -> localhost:5432`
 
-将该动态地址配置到你的 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md) 或是临时环境变量中：
+将该动态地址配置到你的 [AGENTS.md](../AGENTS.md) 或是临时环境变量中：
 
 ```bash
 export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
@@ -73,7 +73,7 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 除了网络，文件和密钥也需要顺畅流转。
 
 ### 1. 密钥文件的安全同步规则
-千万不要让 Codex 自动把 `.env` 文件同步到公共云端。我们必须在本地的 `.gitignore` 中加入 `.env`，并在项目的 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md) 中添加硬约束：
+千万不要让 Codex 自动把 `.env` 文件同步到公共云端。我们必须在本地的 `.gitignore` 中加入 `.env`，并在项目的 [AGENTS.md](../AGENTS.md) 中添加硬约束：
 
 ```markdown
 ## 🛑 Hard Constraints
@@ -82,7 +82,7 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 ```
 
 ### 2. 沙盒临时缓存清理
-为了避免沙盒缓存导致的“灵异 Bug”（比如旧的依赖包未清除），我们可以让 Codex 在每次启动测试前自动运行清理命令。在 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md) 的开发指令中写入：
+为了避免沙盒缓存导致的“灵异 Bug”（比如旧的依赖包未清除），我们可以让 Codex 在每次启动测试前自动运行清理命令。在 [AGENTS.md](../AGENTS.md) 的开发指令中写入：
 
 ```markdown
 ## 💻 Developer Commands
@@ -90,8 +90,6 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 ```
 
 通过这一系列的配置，云端沙盒不再是与世隔绝的孤岛。它就像是你本地电脑的外延，能够流畅、安全地读取各种本地数据与服务，让 Vibe Coding 的丝滑度再上一个台阶。
-
----
 
 ---
 

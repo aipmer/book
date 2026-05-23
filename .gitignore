@@ -1,0 +1,35 @@
+# Dependency directories
+node_modules/
+
+# Local env files (sensitive data)
+.env
+.env.*
+!.env.example
+
+# OS metadata files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Compiled markdown files
+codex_blue_book_zh.md
+codex_blue_book_en.md
+

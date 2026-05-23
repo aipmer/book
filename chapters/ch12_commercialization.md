@@ -125,6 +125,4 @@ sendReport();
 
 ---
 
----
-
 [ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.11) ](./ch11_expo_mobile.md)

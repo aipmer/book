@@ -14,7 +14,7 @@
 
 强推理模型与普通大模型（如 GPT-4o）的最大区别在于：它在输出最终代码前，会先在内部“打草稿”进行推理和自我模拟。这个打草稿的过程就是 CoT。
 
-```
+```text
 [用户需求] ──> 1. 解析目标与限制 ──> 2. 规划步骤 ──> 3. 运行测试 ──> 4. 自我修正 ──> [最终输出]
                  └───(在终端显示为 CoT Logs，即你的“监考视窗”)───┘
 ```
@@ -86,12 +86,10 @@ codex refine "你刚才试图安装 axios-retry，本项目禁止安装任何第
 git checkout -- src/lib/redis.ts
 ```
 
-然后在 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md) 中追加：
+然后在 [AGENTS.md](../AGENTS.md) 中追加：
 ```markdown
 - 禁止为任何简单的网络超时问题引入外部重试依赖库。
 ```
-
----
 
 ---
 

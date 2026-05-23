@@ -14,7 +14,7 @@ This chapter will help you shift your mindset from a "code typist" to an "AI orc
 
 ## 1.1 The Evolution of AI Coding: Where Are We?
 
-```
+```text
 +-------------------------------------------------------------+
 | Stage 1: Assisted Completion (Copilot)                      |
 | - Experience: Input suggestions. You type, it guesses.       |

@@ -11,7 +11,7 @@
 This book is released across multiple platforms:
 
 *   **Open Source Repository**: [GitHub Repository](https://github.com/hunkwu/book) (This Repo) - Code templates and markdown chapters.
-*   **Website**: [pmer.cn](http://pmer.cn) - Fully responsive documentation site with dark mode.
+*   **Website**: [pmer.cn](https://pmer.cn) - Fully responsive documentation site with dark mode.
 *   **WeChat Official Account**: **实战产品说** - Real-world PM postmortems, SaaS strategies, and debugging stories.
 *   **Simplified PDF**: Concise, high-density printout for quick community sharing.
 
@@ -57,3 +57,14 @@ Before you begin, place **`AGENTS.md`** in your project root:
 - Do not remove any inline TypeScript documentation or comments.
 - Always run `npm run test` before declaring a task complete.
 ```
+
+---
+
+*This project is under active development. Join the conversation at [pmer.cn](https://pmer.cn) or follow **Real-World Product Talk (实战产品说)** on WeChat!*
+
+---
+
+## ⚠️ Disclaimer
+
+Some commands (e.g., `codex --verbose --show-cot`, `codex refine`), environment variables (e.g., `CODEX_MAX_BUDGET_PER_TASK`), and model references (e.g., `GPT-5.5`) mentioned in this book are **illustrative/conceptual demonstrations** designed to explain autonomous agent orchestration, goal-driven patterns, and thinking chain supervision. They do not represent specific commercial software or mandatory production standards.
+

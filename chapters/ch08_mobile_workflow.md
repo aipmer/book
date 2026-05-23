@@ -15,7 +15,7 @@
 
 我们通过以下管道将本地/云端的 Codex Agent 接入你的手机：
 
-```
+```text
 [云端 Codex Agent] ──(Webhook)──> [通知网关 (如 Pusher/Slack API)] ──> [手机端微信/Slack]
        ▲                                                                   │
        └───────────────(手机打字回复 "Approve / Stop") ────────────────────┘
@@ -136,8 +136,6 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 **移动看护工作流的本质，是把人从“即时等待”中抽离出来。**
 
 通过将测试断言（Validation Specs）托付给 GitHub Actions，将异常通知托付给移动 Webhook，将最终签字权（Deploy Approval）掌握在手机端。你才能真正做到**“人在喝咖啡，产品在自动进化”**。
-
----
 
 ---
 

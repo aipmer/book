@@ -71,8 +71,9 @@ codex refine "使用 npx expo install 重新安装该依赖，它会自动适配
 ### 1. 配置 `eas.json` (EAS 云端打包配置文件)
 让 Codex 生成生产与测试的云端打包环境配置：
 
+`eas.json` 配置文件：
+
 ```json
-// File: eas.json
 {
   "cli": {
     "version": ">= 9.0.0"
@@ -107,8 +108,6 @@ eas build --platform ios --profile production --non-interactive | codex watch-ea
 最终，它会返回一个二维码，你只需用手机扫码即可直接安装测试版 App。
 
 **原生开发不再需要笨重的 IDE。用 Expo + EAS 让打包上云，让 Codex 成为你移动开发的安全保障。**
-
----
 
 ---
 

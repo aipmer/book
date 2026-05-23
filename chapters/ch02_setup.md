@@ -53,7 +53,7 @@ export CODEX_MAX_RPM=50
 *   **屏幕录制 (Screen Recording)**：允许 Codex 截取屏幕图像输入给 Vision 模型进行识别。
 *   **终端控制 (Full Disk Access / Automation)**：允许 Codex 向你本地的 IDE 和终端发送操作流。
 
-```
+```text
 [macOS 系统设置] -> [隐私与安全性]
   ├─ 辅助功能 (Accessibility)  ──> 勾选 [Codex Desktop] (启用模拟鼠标/键盘)
   ├─ 屏幕录制 (Screen Recording) ──> 勾选 [Codex Desktop] (允许 Vision 分析)
@@ -67,7 +67,7 @@ export CODEX_MAX_RPM=50
 人在户外时，我们可以利用 Pusher 或第三方免费的 Webhook 转发服务（如 Keepa/Make），将 Codex 的执行状态推送到你的手机。
 
 ### 1. 配置本地配置文件 (`.codex/config.json`)
-在你的家目录或项目根目录下创建 `.codex/config.json`，配置你的移动端端推送网关：
+在你的家目录或项目根目录下创建 `.codex/config.json`，配置你的移动端推送网关：
 
 ```json
 {
@@ -86,8 +86,6 @@ export CODEX_MAX_RPM=50
 ### 2. 手机端一键授权
 当你在咖啡馆喝咖啡时，本地的 Codex 运行到了部署步骤，你的手机 ChatGPT App 或自定义 Webhook 就会收到卡片推送。你只需要在微信或 Slack 群中回复 `1`，中转网关便会向本地 Codex 进程写入信号（如 Ch.08 所述），继续执行发布。
 
-
----
 
 ---
 
