@@ -1,0 +1,47 @@
+name: Compile PDF
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'chapters/**'
+      - 'en/**'
+      - 'README.md'
+      - 'README_EN.md'
+      - 'scripts/**'
+      - '.github/workflows/compile-pdf.yml'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate Combined Markdowns
+        run: python3 scripts/compile_collection.py
+
+      - name: Install PDF compiler dependency
+        run: npm install md-to-pdf
+
+      - name: Compile PDF Documents
+        run: node scripts/compile_pdf.js
+
+      - name: Commit and Push Updated PDFs
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "build: auto-compile updated PDFs [skip ci]"
+          file_pattern: "*.pdf"

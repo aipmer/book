@@ -1,0 +1,23 @@
+{
+  "name": "codex-watchdog",
+  "version": "1.0.0",
+  "description": "CLI utility for OpenAI Codex local tunnel setup and mobile watchdog gateway.",
+  "main": "bin/cli.js",
+  "bin": {
+    "codex-watchdog": "./bin/cli.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "scripts": {
+    "start": "node bin/cli.js"
+  },
+  "keywords": [
+    "codex",
+    "watchdog",
+    "tunnel",
+    "agent"
+  ],
+  "author": "Hunk Wu",
+  "license": "Apache-2.0"
+}
