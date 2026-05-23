@@ -1,8 +1,8 @@
-# 📘 OpenAI Codex Blue Book: From Beginner to Architect (The Codex Blue Book)
+# 📘 Codex Blue Book: From Beginner to Architect
 
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >
-> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author Hunk Wu
+> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author 
 
 ---
 
@@ -11,14 +11,13 @@
 This book is released across multiple platforms:
 
 *   **Open Source Repository**: [GitHub Repository](https://github.com/hunkwu/book) (This Repo) - Code templates and markdown chapters.
-*   **Official Website**: [pmer.cn](http://pmer.cn) - Fully responsive documentation site with dark mode.
+*   **Website**: [pmer.cn](http://pmer.cn) - Fully responsive documentation site with dark mode.
 *   **WeChat Official Account**: **实战产品说** - Real-world PM postmortems, SaaS strategies, and debugging stories.
-*   **Social Feed**: **Xiaohongshu (RED)** - Visually appealing cheatsheets and AI business cheat sheets.
 *   **Simplified PDF**: Concise, high-density printout for quick community sharing.
 
 ---
 
-## 🧭 Directory and Navigation (Table of Contents)
+## 🧭 Directory and Navigation 
 
 ### Part 1: Product Survival in the AI-Native Era
 *   [Ch.01 Saying Goodbye to Handwritten Code: Product Mindset in the Era of Vibe Coding](./en/ch01_mindset.md)
@@ -42,7 +41,7 @@ This book is released across multiple platforms:
 
 ---
 
-## 🤖 Codex Collaboration Protocol (CAP)
+## 🤖 Codex Collaboration Protocol
 
 Before you begin, place **`AGENTS.md`** in your project root:
 
