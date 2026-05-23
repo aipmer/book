@@ -17,7 +17,7 @@
 
 ---
 
-## 🧭 全书目录与导航 (Table of Contents)
+## 🧭 全书目录与导航
 
 ### 第一部分：AI-Native 时代的产品生存法则
 *   [Ch.01 告别手写代码：Vibe Coding 时代的产品心智](./chapters/ch01_mindset.md) - 重新思考人机协作边界
@@ -41,7 +41,7 @@
 
 ---
 
-## 🤖 Codex 协作协议规范 (CAP)
+## 🤖 Codex 协作协议规范
 
 开始实践前，建议在项目根目录下配置 **`AGENTS.md`**：
 
