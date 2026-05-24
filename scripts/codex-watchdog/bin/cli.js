@@ -51,7 +51,7 @@ if (command === 'gateway') {
   
   // Require the gateway module
   console.log(`[CLI] Launching Watchdog Gateway...`);
-  require('../../../scripts/start-gateway.js');
+  require('../lib/gateway.js');
 
 } else if (command === 'tunnel') {
   const type = params.type || 'ngrok';

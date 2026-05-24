@@ -32,3 +32,42 @@
   - 当智能体安装任何第三方包导致 `CocoaPods` 或 `Android Gradle` 原生构建报错时，必须立即回滚代码，并强制通过 `npx expo install` 指令重新覆盖安装，以保证与当前 Expo SDK 版本号完全对齐。
 - **密钥安全**：
   - 严禁将 Expo 发布凭证、iOS 开发证书私钥或安卓签名密钥文件（`.keystore`）提交到代码仓库。
+
+---
+
+## 🌐 English Version
+
+# 🤖 React Native (Expo) Agent Collaboration Protocol (AGENTS.md)
+
+## 📌 Project Signature
+- **Tech Stack**: React Native, Expo SDK 51+, Expo Router, TypeScript.
+- **Styling**: NativeWind (Tailwind CSS for React Native).
+- **Build Tooling**: EAS CLI (Expo Application Services).
+
+## 💻 Developer Commands
+- **Install JS Dependencies**: `npm install`
+- **Install Native SDK dependencies**: `npx expo install <package-name>` (Never use npm install to add packages with native CocoaPods / Android Gradle dependencies directly)
+- **Start Metro Bundler**: `npx expo start`
+- **Start iOS Simulator**: `npx expo start --ios`
+- **Start Android Emulator**: `npx expo start --android`
+- **Lint Code**: `npm run lint`
+- **EAS Local Build**: `eas build --local`
+- **EAS Cloud Build**: `eas build --platform all --non-interactive`
+
+## 🎨 Styles & Architecture Patterns
+- **Directory Structure Conventions**:
+  - **File-based Routing**: Centralized under Expo Router rules. Views and routes must reside in the `app/` folder.
+  - **Component Extraction**: Stateless UI or helper components go under `components/`.
+  - **State Management**: Zustand is recommended for global states. Confidential client-side storage must leverage secure hardware encryption (such as `expo-secure-store`).
+- **Cross-Platform Compatibility**:
+  - Before utilizing native hardware APIs (e.g. camera, location, notifications), the agent **must check permissions first** (via `requestPermissionAsync`) and handle gracefully when permissions are rejected.
+  - Target UI discrepancies by asserting `Platform.OS === 'ios'` or isolate complex discrepancies by writing decoupled `.ios.tsx` and `.android.tsx` files.
+
+## 🛑 Agent Boundary & Hard Rules
+- **Read-Only / Protected Files**:
+  - Do not modify App configuration options like Bundle Identifiers, Package Names, or Build Versions inside `app.json` or `app.config.js`.
+  - Do not change build profiles in `eas.json` without explicit approval.
+- **Native Dependency Constraints**:
+  - If any third-party installation triggers CocoaPods or Android Gradle build issues, immediately roll back. Always install using `npx expo install` to guarantee packages match the target Expo SDK version.
+- **Secret & Key Safety**:
+  - Never upload Expo deployment credentials, iOS certificates/provisioning profiles, or Android signing key files (`.keystore`) to the code repository.

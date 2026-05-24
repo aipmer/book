@@ -31,3 +31,41 @@
 - **构建前安全检查**：
   - 严禁提交或同步任何含有明文 API Key/Token 的 `.env` 文件。
   - 在宣布任务完成前，必须先在沙盒中运行 `npm run lint` 和 `npm run test`，如有报错，必须立即回滚代码并报告错误堆栈。
+
+---
+
+## 🌐 English Version
+
+# 🤖 Next.js App Router Agent Collaboration Protocol (AGENTS.md)
+
+## 📌 Project Signature
+- **Tech Stack**: Next.js 15 (App Router), TypeScript, TailwindCSS.
+- **ORM & DB**: Prisma ORM, PostgreSQL (Supabase / Local Docker).
+- **Authentication**: Auth.js (Next-Auth v5).
+
+## 💻 Developer Commands
+- **Install Dependencies**: `npm install` (run only when package.json changes)
+- **Dev Server**: `npm run dev` (listening port: localhost:3000)
+- **Lint Code**: `npm run lint`
+- **Run Tests**: `npm run test` (Vitest supported)
+- **DB Migration**: `npx prisma migrate dev` (strictly prohibited on production branch)
+- **Prisma Validate**: `npx prisma validate`
+
+## 🎨 Styles & Architecture Patterns
+- **Directory Structure Conventions**:
+  - **Pages & API Routes**: Must be placed under `src/app/`. All API Route Handlers must reside at `src/app/api/.../route.ts`.
+  - **UI Components**: Follow Shadcn conventions, stored entirely inside `src/components/ui/`.
+  - **Custom Hooks**: Stored inside `src/hooks/`.
+  - **Database Models**: Prisma schema must be located at `prisma/schema.prisma`.
+- **Security & Coding Standards**:
+  - All API routes must utilize the **Zod** library to perform body schema validation on `request.json()`.
+  - Failed validation must return HTTP 400, while unhandled server errors must return HTTP 500.
+  - Component Size Limit: If a UI component exceeds 200 lines, the agent must split it into smaller sub-components or extract logic into hooks.
+
+## 🛑 Agent Boundary & Hard Rules
+- **Read-Only / Protected Files**:
+  - Do not modify `src/app/api/auth/[...nextauth]/route.ts` or its imported config files. This is the core OAuth authentication layer.
+  - Do not modify `prisma/schema.prisma` without explicit permission. The agent must halt CoT and request validation from the user.
+- **Pre-flight & Security Check**:
+  - Do not commit `.env` files containing raw API keys or tokens.
+  - Before declaring a task complete, run `npm run lint` and `npm run test` in the sandbox. If errors occur, rollback edits and report the stack trace.
