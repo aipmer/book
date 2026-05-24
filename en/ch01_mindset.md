@@ -6,7 +6,7 @@
 
 When chatting with readers of "实战产品说" (Real-World Product Talk), I often notice a common pitfall: developers pushing themselves to memorize AI coding commands and shortcuts as if they were cramming for an API manual.
 
-Wake up! In the era of the modern OpenAI Codex platform, the barrier to code generation has dropped to zero. This is called **"Vibe Coding"**—where you focus on product core logic, commercial viability, and user experience, while leaving the heavy lifting to autonomous agents.
+Wake up! In the era of modern AI agents (such as OpenAI Codex), the barrier to code generation has dropped to zero. This is called **"Vibe Coding"**—where you focus on product core logic, commercial viability, and user experience, while leaving the heavy lifting to autonomous agents.
 
 This chapter will help you shift your mindset from a "code typist" to an "AI orchestrator."
 
