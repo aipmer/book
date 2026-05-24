@@ -9,6 +9,7 @@ on:
       - 'en/**'
       - 'README.md'
       - 'scripts/**'
+      - '.github/workflows/compile-pdf.yml'
   workflow_dispatch:
 
 permissions:
