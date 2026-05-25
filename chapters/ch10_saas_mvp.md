@@ -2,9 +2,9 @@
 
 # Ch.10 商业实战：2小时跑通 Next.js + Stripe 商业级 MVP
 
-作为独立开发者（Indie Hacker）或微型创业团队，你最核心的里程碑不是“完美架构”，而是**“收到第一笔付款”**。很多人把时间浪费在了反复配置脚手架上，迟迟无法上线。
+作为独立开发者（Indie Hacker）或微型团队，最核心的里程碑是跑通商业闭环、收到第一笔付款，而非追求完美架构。过多时间被耗费在脚手架的重复配置上，往往导致产品延迟上线。
 
-本章我们以极客速战速决的风格，教你如何指挥 Codex，在 2 小时内利用 `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe` 搓出一个具有完整支付与会员权限闭环的 SaaS MVP。
+本章将介绍如何指挥 Codex，在 2 小时内基于 `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe` 快速构建一个具备完整支付与会员权限闭环的 SaaS MVP。
 
 ---
 

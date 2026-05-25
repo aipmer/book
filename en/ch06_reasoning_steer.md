@@ -4,7 +4,7 @@
 
 In traditional software development, when hiring a junior programmer, your biggest fear is not that they won't write code. Rather, it is that they will secretly work in isolation and ultimately hand you a pile of code that completely deviates from the business requirements, or worse, crashes the system.
 
-This same challenge exists when using Codex driven by reasoning models (o-series / GPT-5.5). Although the AI possesses powerful reasoning capabilities, if its initial assumptions are incorrect, it will sprint down the wrong logical path and can even get stuck in an infinite "self-correction" loop.
+This same challenge exists when using Codex driven by reasoning models (such as GPT-5.5). Although the AI possesses powerful reasoning capabilities, if its initial assumptions are incorrect, it will sprint down the wrong logical path and can even get stuck in an infinite "self-correction" loop.
 
 This chapter teaches you how to look inside Codex's **Chain of Thought (CoT)** so you can intervene like a seasoned tech lead when the agent starts going off course.
 

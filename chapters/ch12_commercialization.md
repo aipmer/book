@@ -98,7 +98,7 @@ async function sendReport() {
 
   const reportText = `📊 【实战产品战报】\n昨日新增注册用户: ${userCount} 人\n当前总活跃订阅: ${activeSubs} 个\n—— 继续加油！`;
 
-  // 微信/Slack 机器人推送
+  // 微信/飞书 机器人推送
   await axios.post(process.env.MOBILE_WEBHOOK_URL, {
     msgtype: 'text',
     text: { content: reportText }

@@ -2,12 +2,11 @@
 
 # Ch.03 破局云端孤岛：沙盒调试与本地环境深度穿透
 
-在“实战产品说”微信公众号后台，我经常收到读者的提问：
-“Hunk，为什么我让 Codex 跑数据库测试，它总是报错说 `Connection refused to localhost:5432`？我本地明明用 Docker 跑着 PostgreSQL 啊！”
+使用 Codex 运行数据库测试时，常见问题之一是智能体报错 `Connection refused to localhost:5432`，即便本地已通过 Docker 启动了 PostgreSQL 服务。
 
-这就是 **沙盒隔离（Sandbox Isolation）** 带来的典型壁垒。为了系统的安全和环境的纯净，Codex 默认是在云端独立的虚拟化容器中执行代码的。这意味着，AI 眼中的 `localhost` 是它自己的虚拟隔离环境，而不是你的 Mac 电脑本身。
+这是由 **沙盒隔离（Sandbox Isolation）** 机制决定的。出于安全和环境隔离的考量，Codex 默认在独立的虚拟化容器中执行指令，其所识别的 `localhost` 属于沙盒容器内部，而非宿主机本身。
 
-本章我们聊聊怎么破局，打通云端沙盒与你本地宿主机的网络通道。
+本章将介绍如何打通云端沙盒与本地宿主机的网络通道，实现环境穿透。
 
 ---
 

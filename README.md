@@ -37,7 +37,7 @@
 
 ### 第三部分：高级多端编排与巡检
 *   [Ch.07 视觉闭环：Desktop Computer Use 自动巡检与设计还原](./chapters/ch07_desktop_computer_use.md) - 模拟用户行为，打通视觉端到端测试
-*   [Ch.08 移动看护工作流：全天候离线编排实战](./chapters/ch08_mobile_workflow.md) - 随时随地，用手机微信/Slack监控项目构建
+*   [Ch.08 移动看护工作流：全天候离线编排实战](./chapters/ch08_mobile_workflow.md) - 随时随地，使用手机微信或飞书监控项目构建
 *   [Ch.09 架构复苏：混乱遗留系统的全景解析与渐进式解耦](./chapters/ch09_legacy_code.md) - 让 AI 读懂并优化百万行混乱代码
 
 ### 第四部分：一人公司的商业闭环

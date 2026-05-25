@@ -2,12 +2,11 @@
 
 # Ch.08 移动看护工作流：全天候离线编排实战
 
-作为独立创始人和产品经理，你的核心追求除了“高效率”外，还有“自由度”。你肯定不希望整天被拴在电脑前，盯着终端控制台看 AI 滚屏编译。
+独立开发者与产品经理的核心追求除了高效率，还有工作的自由度。盯在电脑前查看智能体编译滚动日志的方式并不高效。
 
-在多端协同的 OpenAI Codex 生态下，我们可以搭建一套**“移动看护工作流”**：
-人在地铁上或咖啡馆，本地或云端服务器上的 Codex 正在跑自动化重构；一旦编译失败、或者需要高危部署授权时，你的微信、Slack 或 Telegram 就会瞬间收到通知，你可以直接用手机发送文字进行审批或纠错。
+在多端协同的 OpenAI Codex 生态下，可以通过搭建 **移动看护工作流** 实现离线管理：当本地或云端服务器上的 Codex 进行自动化重构时，一旦遭遇编译失败或触发高危部署授权，微信、飞书或 Telegram 即可实时接收通知卡片，支持直接通过手机进行远程审批或干预。
 
-本章教你如何把手机变成远程控制 Codex 研发军团的“方向盘”。
+本章将介绍如何配置移动端接口，实现对 Codex 进程的远程控制。
 
 ---
 
@@ -16,7 +15,7 @@
 我们通过以下管道将本地/云端的 Codex Agent 接入你的手机：
 
 ```text
-[云端 Codex Agent] ──(Webhook)──> [通知网关 (如 Pusher/Slack API)] ──> [手机端微信/Slack]
+[云端 Codex Agent] ──(Webhook)──> [通知网关 (如 Pusher/飞书 API)] ──> [手机端微信/飞书]
        ▲                                                                   │
        └───────────────(手机打字回复 "Approve / Stop") ────────────────────┘
 ```
@@ -78,7 +77,7 @@ jobs:
 接收到失败通知只是第一步。更高级的玩法是，直接在手机端对 Codex 进行远程指令干预。
 
 ### 1. 场景：生产环境部署审批
-当 Codex 跑通了所有的测试，准备将代码合并进 `main` 分支并发布到 Vercel 时，它会暂停并向你的 Slack 或微信群发送卡片：
+当 Codex 完成所有测试并准备将代码合并入 `main` 分支发布至 Vercel 时，将挂起并向飞书或微信群发送审批卡片：
 
 ```text
 🚨 [Codex Auth Requested]
@@ -90,7 +89,7 @@ Tests: 12 passed, 0 failed.
 ```
 
 ### 2. 实现交互的服务器端中转脚本 (Node.js 极简版)
-我们在 `pmer.cn` 的中转网关部署一个极简的接收端脚本，它会解析你手机端发出的微信或 Slack 命令，并通过远程控制端口（SSH / Codex Port）向下游的 Agent 实例发送信号：
+在中转网关部署接收端脚本，解析手机端发送的微信或飞书指令，并通过远程控制端口（SSH / Codex Port）向下游的 Agent 实例发送控制信号：
 
 ```javascript
 // File: /Users/hunkwu/Desktop/ai/book/scratch/gateway.js
@@ -99,7 +98,7 @@ const { exec } = require('child_process');
 const app = express();
 app.use(express.json());
 
-// 接收来自微信/Slack的回复通知
+// 接收来自微信/飞书的回复通知
 app.post('/api/mobile-reply', (req, res) => {
   const { userMessage, user } = req.body;
   

@@ -81,7 +81,7 @@ $ codex run-task compare-ui.task
 [Task Started] Running visual review for /auth/login
 [Step 1] Opening Google Chrome on http://localhost:3000/auth/login...
 [Step 2] Taking screenshot. Saved to /tmp/screenshot_v1.png
-[Step 3] Calling Vision Model (GPT-4o/o3) for image comparison.
+[Step 3] Calling Vision Model (GPT-4o/GPT-5.5) for image comparison.
     - Analysis: "Login card header text 'Welcome Back' font size is too small (approx 16px), should be 24px (text-2xl) based on figma mockup. Card padding-top is insufficient."
 [Step 4] Modifying src/app/login/page.tsx:
     - Target: Replace `className="text-base pt-4"` with `className="text-2xl pt-8"`

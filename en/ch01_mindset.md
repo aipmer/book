@@ -36,7 +36,7 @@ This chapter will help you shift your mindset from a "code typist" to an "AI orc
 
 Codex has pushed us into Stage 3:
 *   **Multi-Device Orchestration**: Compile locally via CLI, monitor builds on the go via ChatGPT Mobile, and run visual browser audits via Desktop Computer Use.
-*   **Reasoning Core**: Backed by reasoning models (like o-series), Codex excels at long-horizon planning, resolving dependency blockages and config failures on its own.
+*   **Reasoning Core**: Powered by GPT-5.5 models, Codex excels at long-horizon planning, resolving dependency blockages and configuration failures autonomously.
 
 ---
 

@@ -2,7 +2,7 @@
 
 # Ch.04 Goal-Driven Engineering: Taming Reasoning Agents with Boundaries and Assertions
 
-In the era of Codex, powered by reasoning models like OpenAI o3 and GPT-5.5, traditional prompt engineering is becoming obsolete. Reasoning models possess immense internal planning space; over-specifying execution steps only limits their efficiency.
+In the era of Codex, powered by reasoning models like GPT-5.5, traditional prompt engineering is becoming obsolete. Reasoning models possess immense internal planning space; over-specifying execution steps only limits their efficiency.
 
 This chapter shares how to guide Codex using a "product specs" approach in actual development.
 
