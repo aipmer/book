@@ -1,4 +1,4 @@
-# 📘 OpenAI Codex 蓝皮书：从入门到架构大师
+# 📘 《Codex 蓝皮书：从入门到架构大师》
 
 ![Codex 实战蓝皮书](./images/cover.jpg)
 
@@ -87,9 +87,9 @@
 
 [ 📥 Download PDF ](./codex_blue_book.pdf) | [ 🌐 中文版 ](#)
 
-# 📘 Codex Book: From Beginner to Architect
+# 📘 *Codex Practical Blue Book: From Beginner to Architect*
 
-![Codex Blue Book](./images/cover.jpg)
+![Codex Practical Blue Book](./images/cover_en.jpg)
 
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >
