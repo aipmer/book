@@ -39,7 +39,7 @@ jobs:
       - name: Install Chinese Fonts
         run: |
           sudo apt-get update
-          sudo apt-get install -y fonts-noto-cjk wqy-zenhei
+          sudo apt-get install -y fonts-noto-cjk fonts-wqy-zenhei
 
       - name: Install PDF compiler dependency
         run: npm install md-to-pdf
