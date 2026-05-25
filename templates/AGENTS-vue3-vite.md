@@ -1,34 +1,72 @@
 # 🤖 Vue 3 + Vite 专属智能体协作规约 (AGENTS.md)
 
 ## 📌 Project Signature
-- **Tech Stack**: Vue 3 (Composition API), Vite, TypeScript, Pinia, Vue Router, TailwindCSS.
-- **Styling**: TailwindCSS, CSS Variables.
-- **Lint & Format**: ESLint, Prettier.
+- **Tech Stack**: Vue 3 (Composition API), Vite, TypeScript, Pinia, Vue Router, TailwindCSS。
+- **Styling**: TailwindCSS, CSS Variables。
+- **Lint & Format**: ESLint, Prettier。
 
 ## 💻 Developer Commands
 - **Install Dependencies**: `npm install` (仅在 package.json 发生变更时运行)
-- **Dev Server**: `npm run dev` (侦听端口：localhost:3000 / 5173)
+- **Dev Server**: `npm run dev` (侦听端口：localhost:5173，部分项目配置为 3000)
 - **Build App**: `npm run build` (用于验证生产包是否能编译成功)
 - **Lint Code**: `npm run lint`
 
 ## 🎨 Styles & Architecture Patterns
 - **目录分配规范**：
   - **页面级组件**：强制存放于 `src/views/` 目录下。
-  - **通用 UI 组件**：存放于 `src/components/ui/`（若是 Shadcn-vue）或 `src/components/`。
+  - **通用 UI 组件**：存放于 `src/components/ui/`（若使用 Shadcn-vue）或 `src/components/`。
   - **状态管理**：Pinia Stores 必须统一存放于 `src/stores/` 目录。
   - **路由配置**：统一置于 `src/router/index.ts`。
   - **API 网络接口**：必须统一存放于 `src/api/`，严禁在页面或组件中直接引入 axios 发起网络请求。
-- **安全与编码准则**：
-  - 单文件组件 (SFC) 必须强制使用 `<script setup lang="ts">` 语法糖。
-  - 每一个 reactive 状态与 props 必须显式定义 TypeScript 接口 (Interface) 或类型。
-  - 组件长度限制：如果单个组件代码超过 250 行，智能体必须进行组件拆分或提取为 Composable 组合式函数（存放在 `src/composables/`）。
+  - **组合式函数**：存放于 `src/composables/`。
+- **Composition API 强制规范**：
+  - 单文件组件 (SFC) 必须使用 `<script setup lang="ts">` 语法糖。禁止使用 Options API（`data()`、`methods`、`computed` 等选项式写法）。
+  - 智能体生成的任何 Vue 组件如果包含 Options API 代码，视为不合格产出，必须重写。
+  - 每一个 reactive 状态与 props 必须显式定义 TypeScript 接口或类型。
+- **Pinia 状态管理纪律**：
+  - 所有 state 变更必须通过 Pinia Store 的 `actions` 执行。禁止在组件中直接修改 store 的 `$state` 或通过 `$patch` 在组件层面绕过 action。
+  - Store 定义必须使用 `defineStore` 的 Setup 函数风格或 Options 风格，保持项目内统一。
+  - 异步操作（API 调用）必须封装在 actions 中，禁止在组件的 `onMounted` 中直接调用 API 并手动赋值 store state。
+- **组件长度限制**：单个组件代码超过 250 行时，智能体必须进行组件拆分或提取为 Composable 组合式函数。
+- **`vite.config.ts` 代理配置保护**：
+  - `vite.config.ts` 中的 `server.proxy` 配置为基础设施层配置。智能体不得擅自修改代理目标地址、路径重写规则或新增代理条目。
+  - 如确需修改，智能体必须中断任务流，向用户说明修改原因并等待确认。
+
+## 🔄 AI 循环防范 (Anti-Loop Safeguards)
+- **依赖安装循环**：`npm install` 失败后最多重试 2 次。第 3 次失败时停止操作，向用户报告完整错误日志，由用户决定后续方案。
+- **Vite HMR 无限重载**：如果开发服务器出现页面持续刷新或控制台反复输出 HMR 更新日志，立即执行以下流程：
+  1. 终止开发服务器进程。
+  2. 检查是否存在循环导入：`madge --circular src/`。
+  3. 检查 `vite.config.ts` 中的 `optimizeDeps` 配置是否遗漏了关键依赖。
+  4. 如果无法在 2 轮内定位问题，停止尝试并向用户报告诊断结果。
+- **TypeScript 级联错误**：修复文件 A 导致文件 B/C 出现新的类型错误时，立即停止修复。列出完整的依赖链 (A → B → C)，向用户报告级联关系，等待用户确认修复策略。
+- **测试 Mock 伪造**：禁止通过编写复杂的 mock 对象来强行通过测试。测试失败时，先检查 fixture 数据与类型定义是否匹配，再检查业务逻辑。Mock 层级不得超过 2 层。
+
+## 🏗️ 沙盒与环境边界 (Sandbox & Environment Boundaries)
+- **端口冲突检测**：
+  - Vite 开发服务器默认端口为 `5173`，部分项目配置为 `3000`。启动前需检查端口占用：`lsof -i :5173` 或 `lsof -i :3000`。
+  - 如端口被占用，禁止自动更换端口。智能体应终止占用进程或向用户报告冲突，由用户决定处理方式。
+- **Connection Refused 诊断流程** (最多 3 步)：
+  1. 检查目标端口是否被占用：`lsof -i :<port>`。
+  2. 检查 Vite 开发服务器是否正在运行：`ps aux | grep vite`。
+  3. 检查 `vite.config.ts` 中 `server.host` 配置是否正确（是否绑定了 `0.0.0.0` 或 `localhost`）。若 3 步均无法定位原因，停止尝试并向用户报告。
+- **分支安全**：
+  - 涉及部署配置的文件（`vite.config.ts`、`.env.production`、`nginx.conf`）在 `main`、`master`、`production` 分支上不得由智能体直接修改。
+  - `git push --force` 严禁在上述受保护分支上使用。
+  - 智能体执行部署相关命令前，必须通过 `git branch --show-current` 确认当前分支。
 
 ## 🛑 Agent Boundary & Hard Rules (安全红线)
 - **只读目录/文件限制**：
-  - 严禁擅自修改 `src/router/index.ts`。如果必须修改路由或路由拦截守卫（如权限校验拦截），智能体必须先在 CoT 中断思考，并向用户发起确认申请。
+  - 严禁擅自修改 `src/router/index.ts`。如果必须修改路由或路由拦截守卫（如权限校验拦截），智能体必须中断任务流，向用户发起确认申请。
+  - `vite.config.ts` 的 `server.proxy` 配置区块为受保护区域。未经用户确认，禁止修改代理目标地址或新增代理条目。
+- **Pinia 纪律红线**：
+  - 组件代码中出现 `store.$state.xxx = ...` 或 `store.$patch(...)` 形式的直接状态修改，视为违规。所有状态变更必须通过 actions 完成。
+  - 违反此规则的代码在 Code Review 阶段必须被拦截并重写。
+- **Options API 禁令**：
+  - 智能体生成的 Vue 组件中，如果出现 `data()`、`methods`、`computed`、`watch` 等 Options API 字段，视为不合格产出，必须使用 `<script setup lang="ts">` 重写。
 - **构建前安全检查**：
   - 严禁提交任何包含真实 API Key/Token 的 `.env` 环境变量文件。
-  - 在宣布任务完成前，智能体必须在本地运行 `npm run build` 和 `npm run lint`。如果发生任何编译警告或报错，必须立即定位并修复，严禁将无法通过打包的代码遗留给用户。
+  - 在宣布任务完成前，智能体必须运行 `npm run build` 和 `npm run lint`。如果发生任何编译警告或报错，必须立即定位并修复。严禁将无法通过打包的代码遗留给用户。
 
 ---
 
@@ -43,7 +81,7 @@
 
 ## 💻 Developer Commands
 - **Install Dependencies**: `npm install` (run only when package.json changes)
-- **Dev Server**: `npm run dev` (listening port: localhost:3000 / 5173)
+- **Dev Server**: `npm run dev` (listening port: localhost:5173, some projects configured to 3000)
 - **Build App**: `npm run build` (run to verify that production bundles compile successfully)
 - **Lint Code**: `npm run lint`
 
@@ -53,15 +91,53 @@
   - **Generic UI Components**: Stored inside `src/components/ui/` (if using Shadcn-vue) or `src/components/`.
   - **State Management**: Pinia stores must be centralized in `src/stores/`.
   - **Routing Config**: Centralized in `src/router/index.ts`.
-  - **API Request Interceptors**: Must be centralized in `src/api/`. Raw axios/fetch requests inside individual view components are strictly prohibited.
-- **Coding Standards**:
-  - Single File Components (SFC) must use `<script setup lang="ts">` syntax.
+  - **API Request Layer**: Must be centralized in `src/api/`. Raw axios/fetch calls inside view or component files are strictly prohibited.
+  - **Composables**: Stored inside `src/composables/`.
+- **Composition API Enforcement**:
+  - Single File Components (SFC) must use `<script setup lang="ts">` syntax. Options API (`data()`, `methods`, `computed`, etc.) is forbidden.
+  - Any Vue component generated by the agent using Options API is considered non-conforming and must be rewritten.
   - Every reactive state and prop definition must be typed explicitly using TypeScript interfaces/types.
-  - Component Size Limit: If a component exceeds 250 lines, the agent must extract sub-components or extract business logic into composables (under `src/composables/`).
+- **Pinia State Management Discipline**:
+  - All state mutations must go through Pinia Store `actions`. Direct `$state` modification or `$patch` calls from component code are forbidden.
+  - Store definitions must use the `defineStore` Setup function style or Options style consistently across the project.
+  - Async operations (API calls) must be encapsulated inside actions. Calling APIs directly in `onMounted` and manually assigning to store state is forbidden.
+- **Component Size Limit**: If a component exceeds 250 lines, the agent must extract sub-components or refactor logic into composables.
+- **`vite.config.ts` Proxy Protection**:
+  - The `server.proxy` configuration in `vite.config.ts` is infrastructure-level config. The agent must not modify proxy targets, path rewrite rules, or add new proxy entries without permission.
+  - If modification is required, the agent must halt the task flow, explain the rationale, and wait for user confirmation.
+
+## 🔄 Anti-Loop Safeguards
+- **Dependency Install Loops**: Retry `npm install` at most 2 times on failure. On the 3rd failure, stop and report the full error log to the user for decision.
+- **Vite HMR Infinite Reload**: If the dev server enters a continuous page refresh loop or the console shows repeated HMR update logs, execute the following:
+  1. Kill the dev server process.
+  2. Check for circular imports: `madge --circular src/`.
+  3. Check `vite.config.ts` `optimizeDeps` for missing critical dependencies.
+  4. If the issue cannot be identified within 2 rounds, stop and report diagnostic results to the user.
+- **TypeScript Cascade Errors**: If fixing file A introduces new type errors in files B/C, stop immediately. List the full dependency chain (A → B → C), report the cascade to the user, and wait for confirmation on the fix strategy.
+- **Test Mock Forgery**: Do not write elaborate mock objects just to force tests to pass. On test failure, first verify that fixture data and type definitions align, then check business logic. Mock depth must not exceed 2 layers.
+
+## 🏗️ Sandbox & Environment Boundaries
+- **Port Conflict Detection**:
+  - Vite dev server defaults to port `5173`; some projects are configured to `3000`. Check port availability before starting: `lsof -i :5173` or `lsof -i :3000`.
+  - If the port is occupied, do not silently switch to another port. The agent should terminate the conflicting process or report the conflict to the user for decision.
+- **Connection Refused Diagnostic Flow** (max 3 steps):
+  1. Check if the target port is occupied: `lsof -i :<port>`.
+  2. Check if the Vite dev server is running: `ps aux | grep vite`.
+  3. Check `vite.config.ts` `server.host` configuration (whether it binds to `0.0.0.0` or `localhost`). If all 3 steps fail to identify the issue, stop and report to the user.
+- **Branch Safety**:
+  - Deployment-related files (`vite.config.ts`, `.env.production`, `nginx.conf`) must not be modified by the agent on `main`, `master`, or `production` branches.
+  - `git push --force` is strictly forbidden on the above protected branches.
+  - Before executing deployment-related commands, the agent must verify the current branch via `git branch --show-current`.
 
 ## 🛑 Agent Boundary & Hard Rules
 - **Read-Only / Protected Files**:
-  - Do not modify `src/router/index.ts` without explicit user permission. If adding routes or auth middleware guard logic, the agent must pause CoT and request user approval.
+  - Do not modify `src/router/index.ts` without explicit user permission. If adding routes or auth middleware guard logic, the agent must pause the task flow and request user approval.
+  - The `server.proxy` block in `vite.config.ts` is a protected zone. Modifying proxy targets or adding new proxy entries without user confirmation is forbidden.
+- **Pinia Discipline Rules**:
+  - Any `store.$state.xxx = ...` or `store.$patch(...)` direct state mutation in component code is a violation. All state changes must go through actions.
+  - Code violating this rule must be caught and rewritten during Code Review.
+- **Options API Ban**:
+  - Any agent-generated Vue component containing `data()`, `methods`, `computed`, or `watch` Options API fields is non-conforming and must be rewritten using `<script setup lang="ts">`.
 - **Pre-flight & Security Check**:
   - Never commit `.env` files containing raw secrets, API tokens, or passwords to Git.
   - Before declaring a task complete, the agent must run `npm run build` and `npm run lint` in the sandbox. Any warning or error must be resolved immediately; pushing broken builds is unacceptable.
