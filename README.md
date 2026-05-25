@@ -1,5 +1,7 @@
 # 📘 OpenAI Codex 蓝皮书：从入门到架构大师
 
+![Codex 实战蓝皮书](./images/cover.jpg)
+
 [ 📥 下载 PDF 电子书 (Download PDF) ](./codex_blue_book.pdf) | [ 🌐 English Version ](#english-version)
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
@@ -8,6 +10,7 @@
 
 ---
 
+<!--
 ## 🗺️ 多端发布与传播矩阵
 
 本项目为 **“一源多端”** 发布体系，内容同步发布于以下渠道：
@@ -16,6 +19,7 @@
 *   **个人站点**：[pmer.cn](https://pmer.cn) - 精美极客风在线文档站，支持暗黑模式、移动端优化与代码一键复制。
 *   **微信公众号**：**实战产品说** - 深度硬核干货剖析、开发避坑踩坑实录、一人公司商业变现逻辑。
 *   **高密 PDF**：简化双语合并版 PDF，适合朋友圈与开发者社群一键转发。
+-->
 
 ---
 
@@ -85,12 +89,15 @@
 
 # 📘 Codex Book: From Beginner to Architect
 
+![Codex Blue Book](./images/cover.jpg)
+
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >
 > "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
+<!--
 ## 🗺️ Multi-Surface Publishing Matrix
 
 This book is released across multiple platforms:
@@ -99,6 +106,7 @@ This book is released across multiple platforms:
 *   **Website**: [pmer.cn](https://pmer.cn) - Fully responsive documentation site with dark mode.
 *   **WeChat Official Account**: **实战产品说** - Real-world PM postmortems, SaaS strategies, and debugging stories.
 *   **Simplified PDF**: Concise, high-density printout for quick community sharing.
+-->
 
 ---
 
