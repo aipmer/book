@@ -2,23 +2,24 @@
 
 # Ch.08 Mobile Sentinel Workflows: 24/7 Remote Development and Orchestration
 
-As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." You certainly do not want to be chained to your desk all day long, watching terminal consoles scroll compile logs.
+As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." Sitting in front of a computer screen watching rolling compile logs is far from efficient.
 
-Under the multi-surface collaborative OpenAI Codex ecosystem, we can construct a **"mobile watchdog workflow"**:
-While you are on the subway or at a café, Codex runs automated refactoring on your local or cloud server. The moment a build fails, or high-risk production deployment permissions are requested, your WeChat, Slack, or Telegram will instantly receive a notification card. You can reply with simple text commands from your phone to approve or guide the correction.
+In this chapter, we will build a **Mobile Sentinel Workflow**: when Codex runs automated refactoring on your local or cloud server, if a compile fails or a high-risk production deployment authorization is triggered, your WeChat, Feishu, or Telegram will instantly receive notification cards, allowing you to approve or intervene remotely from your phone.
 
-This chapter teaches you how to turn your mobile phone into the steering wheel for your remote Codex engineering army.
+> ⚠️ **Important Note**: Codex itself **does not have a built-in field for "auto-pushing to Feishu/WeChat on task failure"**. The workflow demonstrated in this chapter is a custom setup composed of **GitHub Actions + Webhook Gateway + Bot**—all official components are real and operational, but you will need to deploy the relay gateway yourself.
+
+> As a side note: If you log into Codex using your ChatGPT account, your cloud Codex tasks will **automatically sync to your ChatGPT mobile app**. This is an official capability provided by OpenAI, which can serve as a simplified alternative to this custom setup.
 
 ---
 
-## 8.1 Architecture of the Mobile Watchdog Loop
+## 8.1 Architecture of the Mobile Sentinel Loop
 
 We connect the local or cloud Codex agent to your phone through the following pipeline:
 
 ```text
-[Cloud Codex Agent] ──(Webhook)──> [Notification Gateway (Pusher/Slack API)] ──> [Mobile WeChat/Slack]
-       ▲                                                                               │
-       └───────────────(Reply "1" for Approve / "0" for Abort from phone) ─────────────┘
+[Cloud Codex Agent] ──(Webhook)──> [Relay Gateway (Your self-deployed Node service)] ──> [Mobile WeChat/Feishu]
+       ▲                                                                                     │
+       └───────────────(Type and reply "Approve / Stop" from phone) ─────────────────────────┘
 ```
 
 ---
@@ -51,10 +52,12 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run Codex Sandbox Compile & Test
+      - name: Run Codex Validation (exec mode)
         id: run_agent
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          # Simulate running Codex validation task
+          # Run Codex validation in non-interactive exec mode
           npm ci
           npm run test || echo "STATUS=failed" >> $GITHUB_ENV
 
@@ -71,6 +74,8 @@ jobs:
             ${{ secrets.MOBILE_WEBHOOK_URL }}
 ```
 
+> 💡 **Tip**: When running Codex in CI scenarios, it is highly recommended to authenticate using an API Key (injected via GitHub Secrets as `OPENAI_API_KEY`). ChatGPT account OAuth is not suitable for unattended CI pipelines.
+
 ---
 
 ## 8.3 Mobile Bidirectional Interaction and Approval
@@ -78,7 +83,8 @@ jobs:
 Receiving failure warnings is only the first step. The advanced usage is sending remote control commands to Codex directly from your phone.
 
 ### 1. Scenario: Production Deployment Approval Gate
-When Codex passes all test suites and is ready to merge code into `main` and deploy to Vercel, it pauses and posts a card to your Slack or WeChat group:
+
+When Codex passes all test suites and is ready to merge code into `main` and deploy to Vercel, it pauses and posts an approval card to your Feishu or WeChat group:
 
 ```text
 🚨 [Codex Auth Requested]
@@ -89,18 +95,18 @@ Tests: 12 passed, 0 failed.
 [Directive Command]: Reply "1" to approve deployment, "0" to abort and roll back.
 ```
 
-### 2. Node.js Gateway Script for Remote Execution
+### 2. Server-Side Relay Script for Interaction (Node.js Minimal Version)
 
-We deploy a minimalist gateway server script on the server behind `pmer.cn` to parse incoming messaging webhook payloads and communicate with the downstream agent instance:
+We deploy a minimalist gateway server script on the server behind `pmer.cn` to parse incoming messaging webhook payloads (from WeChat or Feishu) and communicate with the downstream agent instance via a control file or port:
 
 ```javascript
-// File: /Users/hunkwu/Desktop/ai/book/scratch/gateway.js
+// File: gateway.js (Deployed on your VPS)
 const express = require('express');
 const { exec } = require('child_process');
 const app = express();
 app.use(express.json());
 
-// Receive reply notifications from WeChat/Slack
+// Receive reply notifications from WeChat/Feishu
 app.post('/api/mobile-reply', (req, res) => {
   const { userMessage, user } = req.body;
   
@@ -110,7 +116,7 @@ app.post('/api/mobile-reply', (req, res) => {
   }
 
   if (userMessage === '1') {
-    // Send signal to the background suspended Codex process, approving merge and deploy
+    // Write approval signal to file, which is watched by downstream Codex hooks
     exec('echo "approved" > /tmp/codex_deploy_signal', (err) => {
       if (err) return res.status(500).send('Error triggering deploy');
       res.json({ reply: '🚀 Deployment approved, production environment is going live!' });

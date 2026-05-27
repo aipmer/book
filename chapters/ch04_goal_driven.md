@@ -4,19 +4,29 @@
 
 在以 GPT-5.5 等强推理模型为核心的 Codex 时代，传统的过程式 Prompt 工程已不再适用。推理模型具备内生规划（Internal Planning）空间，过细的执行步骤会限制其规划效率。
 
-本章将介绍如何在实际开发中，通过定义产品 Specs 的方式驱使 Codex 自主规划与执行。
+
+
+本章将分享如何在实际开发中，用“产品 Specs”的方式去驱使 Codex。
 
 ---
 
 ## 4.1 核心逻辑：别教米其林大厨怎么切菜
 
 面对具备强推理能力的智能体，过细的指令往往适得其反：
-❌ *「请拿起菜刀，将土豆切成 2mm 细丝，然后将锅烧热，倒入 15g 花生油，下锅翻炒 3 分钟，最后放入 3g 盐。」*
 
-这种方式属于 **过程驱动**，极易因环境或工具差异导致执行偏差。
+❌ *“请你拿起菜刀，把土豆切成 2mm 的细丝，然后把锅烧热，倒入 15g 花生油，下锅翻炒 3 分钟，最后放 3g 盐。”*
+
+
+
+这叫**“过程驱动”**。不仅累，而且很容易因为火候不同而把菜烧焦。
+
+
 
 更高效的协作模式是 **目标驱动**：
-✅ *「我需要一盘香脆可口的土豆料理作为牛排配菜。要求：热量控制在 200 卡内，不使用黄油，且必须在 15 分钟内出锅。」*
+
+✅ *“我需要一盘香脆可口的土豆料理作为牛排的配菜。要求：热量控制在 200 卡内，不能使用黄油，并且必须在 15 分钟内出锅。”*
+
+
 
 通过给出 **目标 (Goal)**、**红线 (Constraints)** 和 **验证标准 (Validation)**，将具体的执行细节交给智能体推理并实现。
 
@@ -26,7 +36,7 @@
 
 当你在本地或云端向 Codex 发起编码任务时，不要堆砌毫无章法的对话，使用以下标准 Markdown 格式：
 
-```markdown
+```Markdown
 # 🎯 Goal
 [描述你希望达到的最终状态。例如：实现一个支持 Github 登录并能存储用户偏好设置的路由。]
 
@@ -47,10 +57,16 @@
 假设我们要写一个 **“带 Redis 限流的 API 代理服务”**。
 
 ### ❌ 传统过程驱动型 Prompt
-> “请帮我用 Express 写一个 API 代理。首先引入 express 和 express-rate-limit。然后配置 rate-limit，设置 windowMs 为 15 分钟，max 为 100 次。接着写一个路由 `/api/proxy`，使用 axios 请求第三方 API `https://api.github.com`。如果请求成功就返回数据，如果失败就返回 500 错误。注意在请求头里带上 Authorization Bearer Token。”
 
-### ✅ 目标驱动 Specs（实战产品说推荐）
-```markdown
+> “请帮我用 Express 写一个 API 代理。首先引入 express 和 express-rate-limit。然后配置 rate-limit，设置 windowMs 为 15 分钟，max 为 100 次。接着写一个路由 `/api/proxy`，使用 axios 请求第三方 API `https://api\.github\.com`。如果请求成功就返回数据，如果失败就返回 500 错误。注意在请求头里带上 Authorization Bearer Token。”
+> 
+> 
+
+
+
+### ✅ 目标驱动 Specs
+
+```Markdown
 # 🎯 Goal
 实现一个 Express API 代理路由，代理所有发往 GitHub API 的请求。
 
@@ -70,7 +86,7 @@
 
 当你把这套规范扔给 Codex 后，它的内部思维链（Chain of Thought）会这样运转：
 
-```mermaid
+```Plain Text
 graph TD
     A[解析 Specs 目标] --> B{分析 Constraints}
     B -->|硬约束: Redis 限流| C[决定引入 ioredis 和 rate-limit-redis]
@@ -84,6 +100,8 @@ graph TD
 ```
 
 你会发现，Codex 甚至会自动处理 Redis 连接重试、超时的捕获等健壮性逻辑——而这些在以前，是需要你写上百字去千叮咛万嘱咐的。
+
+
 
 **把逻辑规划权让渡给 AI，把验收标准牢牢攥在自己手里。** 这就是 AI 时代最高效的人机协同法则。
 

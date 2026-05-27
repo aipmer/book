@@ -2,7 +2,7 @@
 
 # Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours
 
-As an independent developer (Indie Hacker) or micro-startup, your key milestone is not building a "perfect architecture." It is **"receiving your first payment."** Many developers spend far too much time repeatedly configuring boilerplate project templates and delaying their actual launch.
+As an independent developer (Indie Hacker) or micro-startup, your core milestone is not building a "perfect architecture"—it is **"receiving your first payment."** Many developers waste time repeatedly configuring boilerplate templates, delaying their actual launch.
 
 In this chapter, in a fast-paced hacker style, we will teach you how to direct Codex to ship a SaaS MVP with a complete payment and subscription access control loop in under 2 hours using `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe`.
 
@@ -10,7 +10,7 @@ In this chapter, in a fast-paced hacker style, we will teach you how to direct C
 
 ## 10.1 Initialization and Database Schema Design
 
-Our goal is to build a subscription-based AI translation service. First, create [AGENTS.md](../AGENTS.md) in the project root to enforce strict boundaries. Then, instruct Codex to generate the core database models.
+Our goal is to build a subscription-based AI translation service. First, initialize the project using Next.js 16's `create-next-app`, which **generates AGENTS.md by default**, allowing you to lock down boundary rules from the start. Next, instruct Codex to generate the core database models.
 
 ### 1. Designing the Prisma Schema (Database Entity Modeling)
 Dispatch the following goal-driven specs to Codex:
@@ -83,18 +83,20 @@ The core of a payment system is **callback security**. When a user successfully 
 ### Practice: Dispatching Webhook Route Specifications to Codex
 ```markdown
 # 🎯 Goal
-Implement a Next.js App Router style Stripe Webhook route handler `/api/webhooks/stripe`.
+Implement a Next.js 16 App Router style Stripe Webhook route handler `/api/webhooks/stripe`.
 
 # 🛑 Constraints
 - Verify the signature of incoming webhook requests using `stripe.webhooks.constructEvent` to prevent forgery attacks.
 - Update user subscription status in the database on receiving `checkout.session.completed` or `invoice.payment_succeeded` events.
-- Do not parse the request body as JSON. Stripe verification requires the raw binary buffer.
+- Must use the latest stable Stripe API version (2026-04-22.dahlia at the time of writing).
+- Do not parse the request body as JSON. Stripe verification requires the raw request body string.
 
 # 🧪 Validation Specs
 - Write automated mock requests verifying that invalid signatures return HTTP 400 Bad Request, while valid sessions return HTTP 200 OK.
+- The actual subscription billing period must be retrieved from the Stripe response, rather than being hardcoded.
 ```
 
-Codex will autonomously search the sandbox for solutions (such as reading the raw body using `request.text()` in Next.js 15) and generate the compliant handler code:
+Codex will autonomously search the sandbox for solutions (such as reading the raw body using `request.text()` in Next.js 16) and generate the compliant handler code:
 
 ```typescript
 // File: src/app/api/webhooks/stripe/route.ts
@@ -103,7 +105,8 @@ import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
+  // Use the latest stable API version at the time of writing; check the Stripe Changelog before going live
+  apiVersion: '2026-04-22.dahlia',
 });
 
 export async function POST(req: Request) {
@@ -128,15 +131,20 @@ export async function POST(req: Request) {
     const stripeSubId = session.subscription as string;
     const customerEmail = session.customer_details?.email!;
     
-    // Asynchronously update database state
+    // Production practice: Retrieve the actual subscription object from Stripe to get the accurate current_period_end
+    const subscription = await stripe.subscriptions.retrieve(stripeSubId);
+
     await prisma.subscription.upsert({
       where: { stripeSubId },
-      update: { status: 'ACTIVE' },
+      update: {
+        status: 'ACTIVE',
+        currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+      },
       create: {
         stripeSubId,
         status: 'ACTIVE',
-        priceId: session.metadata?.priceId || 'default',
-        currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // Temporarily set to 30 days for demonstration
+        priceId: subscription.items.data[0]?.price.id || 'default',
+        currentPeriodEnd: new Date(subscription.current_period_end * 1000),
         user: { connect: { email: customerEmail } }
       }
     });
@@ -146,17 +154,21 @@ export async function POST(req: Request) {
 }
 ```
 
+> 💡 **Avoid the Pitfall**: Many tutorials in the past hardcoded `currentPeriodEnd = Date.now() + 30 * 24 * 60 * 60 * 1000`. This will calculate incorrectly in scenarios like annual subscriptions, trial periods, or coupon discounts. Always retrieve the actual timestamp from `stripe.subscriptions.retrieve`.
+
 ---
 
-## 10.3 Local Debugging: Using the Sandbox Mock for E2E Validation
+## 10.3 Local Debugging: Using Stripe CLI for Payment Integration
 
 Debugging Stripe locally requires the Stripe CLI to forward webhooks. Using the network penetration techniques covered in Ch.03, we can configure our local environment:
 
-1.  Run the Stripe webhook forwarding command locally:
+1. Run the Stripe webhook forwarding command locally:
+
     ```bash
     stripe listen --forward-to localhost:3000/api/webhooks/stripe
     ```
-2.  Add the `whsec_xxx` webhook signing secret printed by the console to your local `.env` file and instruct Codex to run the verification tests.
+
+2. Add the `whsec\_xxx` webhook signing secret printed by the console to your local `\.env` file and instruct Codex to run the verification tests.
 
 By following this loop (Spec Definition -> AI Coding -> Sandbox Validation -> Real-World Stripe Integration Test), independent developers can compress what normally takes two days of integration struggle down to under 30 minutes.
 

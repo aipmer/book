@@ -2,17 +2,17 @@
 
 # Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging
 
-After completing a web-based SaaS, many independent developers hope to extend their reach to mobile. However, in traditional mobile development (React Native or Flutter), the most time-consuming part is often the complex local environment setup: iOS certificate management, Android Gradle errors, Cocoapods version conflicts. This local environment hell often deters developers.
+As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." However, in traditional mobile development (React Native or Flutter), the most time-consuming part is often the complex local environment setup: iOS certificate management, Android Gradle errors, Cocoapods version conflicts. This local environment hell often deters developers.
 
-In "Real-World Product Talk", I firmly believe: **"Cloud compilation and packaging (EAS) is the only viable path for independent developers to build native mobile apps."** Combined with Codex's automated compilation error diagnostics, you can entirely skip the tedious configurations of local Xcode/Android Studio and directly package a native App ready for submission.
+I firmly believe that **"cloud compilation and packaging (EAS) is the only viable path for independent developers to build native mobile apps."** Combined with Codex's automated compilation error diagnostics, you can entirely skip the tedious configurations of local Xcode/Android Studio and directly package a native App ready for submission.
 
 This chapter teaches you how to direct Codex to handle all of this autonomously.
 
 ---
 
-## 11.1 Rapid Expo Project Initialization
+## 11.1 Expo Project Rapid Initialization and Simulator Mapping
 
-To use EAS (Expo Application Services) for configuration-free cloud packaging, we first need to establish a connection between the sandbox and the local environment.
+To use EAS (Expo Application Services) for configuration-free cloud packaging, we first initialize a standard Expo project.
 
 ### 1. Writing App Initialization Specs
 Issue the following specs command to Codex to generate a standard Expo TypeScript project:
@@ -22,11 +22,13 @@ Issue the following specs command to Codex to generate a standard Expo TypeScrip
 Initialize a React Native Expo project using TypeScript.
 
 # 🛑 Constraints
-- Use Expo Router v3 to implement file-system-based routing.
-- Integrate the Tailwind CSS styled library NativeWind.
+- Use the latest stable Expo SDK (currently SDK 56), paired with the latest version of Expo Router to implement file-system-based routing.
+- Integrate NativeWind as the Tailwind CSS styling solution.
+- Use the `src/` prefix for directory conventions (i.e., `src/app/` as the routing root).
 
 # 🧪 Validation Specs
 - Running `npx expo lint` must return zero errors.
+- Run `npx expo-doctor` to verify dependency version alignment.
 ```
 
 Codex will automatically pull the latest Expo template and generate the basic directory structure:
@@ -46,21 +48,21 @@ Codex will automatically pull the latest Expo template and generate the basic di
 
 ## 11.2 Resolving Mobile Obstacles: Native Module Conflicts
 
-The most feared scenario in React Native development is upgrading or introducing a third-party library that contains native modules (such as Camera or File System access). This frequently leads to build failures in iOS Podfile or Android build.gradle.
+React Native development most fears upgrading or introducing a third-party library that contains native modules (such as Camera or File System access). This frequently leads to build failures in iOS Podfile or Android build.gradle.
 
 Under Vibe Coding, when Codex installs dependencies and encounters native errors, we should guide it to follow the troubleshooting strategy below.
 
 ### Practice: Guiding Codex to Troubleshoot Podfile Failures
-If Codex fails to compile iOS native modules inside the sandbox, its CoT logs will display a warning similar to:
+If Codex fails to compile iOS native modules inside the sandbox, its reasoning summary will display a warning similar to:
 `[Error] [Cocoapods] Auto-linking failed for react-native-reanimated.`
 
-At this point, use the `refine` command in the CLI to add specific constraints:
+At this point, **directly type and enter the correction instruction in the TUI** (without any special subcommands, as detailed in Ch.06):
 
 ```bash
-codex refine "Reinstall the package using 'npx expo install' to match SDK versions. Never use standard 'npm install' to install third-party packages containing native mobile code."
+Please use `npx expo install react-native-reanimated` to reinstall this dependency instead. It will automatically adapt to the current Expo SDK version. In this project, using standard `npm install` to install any third-party packages with native code is strictly prohibited. Please append this rule to AGENTS.md.
 ```
 
-> 💡 **Founder's Advice**: The greatest strength of Expo SDK is its built-in dependency alignment mechanism (`npx expo install`). Whenever a native package throws an error, force Codex to use Expo's native package command to install dependencies, which automatically resolves 90% of version conflicts.
+> 💡 **Orchestrator's Advice**: The greatest strength of Expo SDK is its built-in dependency alignment mechanism (`npx expo install`). Whenever a native package throws an error, force Codex to use Expo's native package command to install dependencies, which automatically resolves 90% of version conflicts.
 
 ---
 
@@ -71,7 +73,7 @@ In traditional App packaging pipelines, applying for Apple developer certificate
 ### 1. Configuring `eas.json` (EAS Cloud Build Config)
 Have Codex generate the cloud build environment configurations for production and testing.
 
-`eas.json` configuration file:
+`eas\.json` configuration file:
 
 ```json
 {
@@ -96,18 +98,25 @@ Have Codex generate the cloud build environment configurations for production an
 ```
 
 ### 2. Instructing Codex to Monitor Cloud Build Logs
-Trigger the EAS build task from the local terminal:
+Trigger the EAS build task from the local terminal and save the logs to a local file for Codex to analyze:
 
 ```bash
-# Start EAS iOS build task and pipe logs to Codex
-eas build --platform ios --profile production --non-interactive | codex watch-eas
+# Start EAS iOS build task and save the logs to a local file
+eas build --platform ios --profile production --non-interactive 2>&1 | tee eas-build.log
 ```
 
-During the cloud compilation process, if a Provisioning Profile mismatch or certificate expiration occurs, Codex will analyze the cloud build logs in its CoT thinking chain in real-time, reconnect to sync the developer console certificate state, and auto-correct.
+Once the build finishes (or fails), feed the logs directly to Codex:
 
-Ultimately, it will output a QR code. You only need to scan it with your phone to download and install the preview App.
+```bash
+# Feed the build logs to Codex for diagnostics
+codex exec "Analyze eas-build.log, locate the failure reason, and provide a fix. If it's a Provisioning Profile mismatch or certificate expiration, tell me exactly what eas credentials commands to run."
+```
 
-**Native mobile development no longer requires a bulky IDE setup. Move packaging to the cloud with Expo + EAS, and let Codex act as your safety net.**
+> ⚠️ **Boundary Clarification**: Codex **will not automatically log into your Apple Developer Portal to regenerate certificates on your behalf**—certificate issuance and rotation are handled between EAS (via `eas credentials`) and Apple. What Codex can do is: read and parse EAS error logs, identify typical issues such as expired certificates or mismatched Provisioning Profiles, guide you to run the correct remediation commands, and automatically generate patch scripts.
+
+Ultimately, EAS will return a QR code. You only need to scan it with your phone to download and install the preview App.
+
+**Native mobile development no longer requires a bulky IDE setup. Move packaging to the cloud with Expo + EAS, and let Codex act as your co-pilot for mobile development.**
 
 ---
 

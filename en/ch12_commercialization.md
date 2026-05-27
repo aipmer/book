@@ -2,7 +2,7 @@
 
 # Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS
 
-On my WeChat public account "Real-World Product Talk" and pmer.cn, I have written numerous articles about "independent development and side hustles." I have observed that the most common trap developers fall into is: **spending 99% of their energy optimizing code, but only 1% of their energy finding users.**
+On my WeChat public account "Real-World Product Talk" and pmer.cn, I have written numerous articles about "independent development and side hustles." I have observed that the most common trap developers fall into is: **spending 99% of their energy optimizing code, but only 1% of their energy finding users and their actual needs.**
 
 No matter how elegant your code is or how perfect your architecture config is, as long as nobody uses it, it is just a pretty ornament. In the AI era, we must not only let Codex help us "manufacture products," but also let it help us "spin the commercial flywheel."
 
@@ -73,11 +73,12 @@ generate();
 
 ---
 
-## 12.2 Hooking Up Data Sentinels for Daily Business Reports
+## 12.2 Connecting Business Data for Daily Telemetry
 
 To keep yourself sensitive to cash flow dynamics, you can ask Codex to write a lightweight telemetry script that fetches Stripe's yesterday earnings and new user registrations from Supabase every morning and broadcasts a report card straight to your phone.
 
 ### Daily Data Report Script (Node.js)
+
 ```javascript
 // File: scripts/daily-report.js
 const { PrismaClient } = require('@prisma/client');
@@ -108,20 +109,23 @@ async function sendReport() {
 sendReport();
 ```
 
+By scheduling this on your server's crontab (triggered at 8:00 every day), you create your lowest-cost "business monitoring dashboard."
+
 ---
 
-## 12.3 Final Lesson: The Only Barrier in the AI-Native Era
+## 12.3 The Final Moat: The Only Barrier in the AI-Native Era
 
-When anyone can generate thousands of lines of code in two hours, build a native mobile app, and hook up automated marketing pipelines, **technology itself becomes completely commoditized**.
+When anyone can generate thousands of lines of code in two hours, build a native mobile app, and hook up automated marketing pipelines, **technology itself becomes completely commoditized**. In this new era of "infinite code," the ultimate moat for independent developers and product managers is no longer knowing how to use a specific framework, but rather:
 
-In this new era of "infinite code," the ultimate moat for independent developers and product managers is no longer knowing how to use a specific framework, but rather:
-*   **Your deep empathy for the user's actual pain points (User Empathy)**.
-*   **Your domain expertise accumulated over years in a specific industry (Domain Knowledge)**.
-*   **Your execution ability to turn AI-Native tools (like Codex) into your own leverage, shipping products and completing the commercial loop quickly.**
+- **Your deep empathy for user pain points (User Empathy).**
+- **Your domain expertise accumulated over years in a specific industry (Domain Knowledge).**
+- **Your execution capability to leverage AI-native tools (like Codex), launch rapidly, and establish a commercial closed-loop.**
 
-**Do not be a mere code typist. Be the one who defines the problems, holds the reins, and resolves real-world pain points.**
+**Do not be a mere typist. Go and be the one who defines problems, holds the reins, and resolves real-world pain points.**
 
-Thank you for reading the *Codex Blue Book*. Now, configure your `AGENTS.md` in your project root, run your first `codex` command, and go write your own business story!
+Thank you for reading the *Codex Blue Book*. Don't forget to bookmark, share, and give a GitHub star! ⭐
+
+Now, configure your `AGENTS.md` in your project root, run your first `codex` command, and go write your own business story.
 
 ---
 

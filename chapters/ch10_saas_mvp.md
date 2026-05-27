@@ -2,20 +2,23 @@
 
 # Ch.10 商业实战：2小时跑通 Next.js + Stripe 商业级 MVP
 
-作为独立开发者（Indie Hacker）或微型团队，最核心的里程碑是跑通商业闭环、收到第一笔付款，而非追求完美架构。过多时间被耗费在脚手架的重复配置上，往往导致产品延迟上线。
+作为独立开发者（Indie Hacker）或微型创业团队，你最核心的里程碑不是“完美架构”，应该是“收到第一笔付款”。很多人把时间浪费在了反复配置脚手架上，迟迟无法上线。
 
-本章将介绍如何指挥 Codex，在 2 小时内基于 `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe` 快速构建一个具备完整支付与会员权限闭环的 SaaS MVP。
+
+
+本章我们以极客速战速决的风格，教你如何指挥 Codex，在 2 小时内利用 `Next\.js 15 \(App Router\) \+ Supabase \(PostgreSQL\) \+ Stripe` 搓出一个具有完整支付与会员权限闭环的 SaaS MVP。
 
 ---
 
 ## 10.1 初始化骨架与数据库 Schema 设计
 
-我们的目标是做一款订阅制的 AI 翻译工具。首先，在根目录下建立 [AGENTS.md](../AGENTS.md) 锁死边界。接着，让 Codex 生成核心的数据库模型。
+我们的目标是做一款订阅制的 AI 翻译工具。首先，使用 Next.js 16 的 `create\-next\-app` 初始化项目，它会**默认生成 AGENTS.md**，你可以在此基础上锁死边界。接着，让 Codex 生成核心的数据库模型。
 
 ### 1. 编写 Prisma Schema (Prisma 实体建模)
+
 向 Codex 下达目标 Specs，让其编写数据库模型：
 
-```markdown
+```Markdown
 # 🎯 Goal
 编写 Prisma 数据库模型，支持用户表（User）、订阅表（Subscription）与翻译记录表（TranslationRecord）。
 
@@ -27,9 +30,9 @@
 - 运行 `npx prisma validate` 无错误提示。
 ```
 
-Codex 会自动输出标准的 `schema.prisma` 模型，包含合理的级联删除（Cascade）和索引（Indexes）：
+Codex 会自动输出标准的 `schema\.prisma` 模型，包含合理的级联删除（Cascade）和索引（Indexes）：
 
-```prisma
+```Plain Text
 // File: prisma/schema.prisma
 datasource db {
   provider = "postgresql"
@@ -78,32 +81,38 @@ model TranslationRecord {
 
 ## 10.2 集成 Stripe 订阅与 Webhook 监听
 
+
+
 支付系统的核心是**回调安全**。当用户支付成功后，Stripe 的服务器会向你的 Next.js 服务发送一个 Webhook 请求。我们需要 Codex 帮我们快速编写这套验证与状态流转逻辑。
 
 ### 实战：向 Codex 下达 Webhook 路由编写 Specs
-```markdown
+
+```Markdown
 # 🎯 Goal
-实现 Next.js App Router 风格的 Stripe Webhook 路由处理程序 `/api/webhooks/stripe`。
+实现 Next.js 16 App Router 风格的 Stripe Webhook 路由处理程序 `/api/webhooks/stripe`。
 
 # 🛑 Constraints
 - 必须使用 `stripe.webhooks.constructEvent` 验证请求签名的真实性，防止伪造攻击。
 - 当接收到 `checkout.session.completed` 或 `invoice.payment_succeeded` 事件时，更新用户的订阅状态。
-- 严禁对响应体进行普通 JSON 解析，Stripe 验证要求使用原始二进制 Buffer。
+- 必须使用最新稳定的 Stripe API 版本（截稿时为 2026-04-22.dahlia）。
+- 严禁对响应体进行普通 JSON 解析，Stripe 验证要求使用原始 body 字符串。
 
 # 🧪 Validation Specs
-- 编写对应的自动化 Mock 请求测试，验证验证签名失败时返回 400，成功时返回 200。
+- 编写对应的自动化 Mock 请求测试，验证签名失败时返回 400，成功时返回 200。
+- 真实订阅周期必须从 Stripe 响应中读取，不得硬编码。
 ```
 
-Codex 会在沙盒中自主寻找正确的处理方案（例如如何读取 Next.js 15 新版 `request.text()` 获取 Raw Body 进行验证），并输出符合规范的代码：
+Codex 会在沙盒中自主寻找正确的处理方案（例如如何读取 Next.js 16的 `request\.text\(\)` 获取 Raw Body 进行验证），并输出符合规范的代码：
 
-```typescript
+```TypeScript
 // File: src/app/api/webhooks/stripe/route.ts
 import { NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-12-18.acacia',
+  // 使用截稿时最新稳定的 API 版本；上线前查阅 Stripe Changelog 确认
+  apiVersion: '2026-04-22.dahlia',
 });
 
 export async function POST(req: Request) {
@@ -127,16 +136,21 @@ export async function POST(req: Request) {
     const session = event.data.object as Stripe.Checkout.Session;
     const stripeSubId = session.subscription as string;
     const customerEmail = session.customer_details?.email!;
-    
-    // 异步更新数据库状态
+
+    // 生产实践：从 Stripe 拉取真实的订阅对象，拿到准确的 current_period_end
+    const subscription = await stripe.subscriptions.retrieve(stripeSubId);
+
     await prisma.subscription.upsert({
       where: { stripeSubId },
-      update: { status: 'ACTIVE' },
+      update: {
+        status: 'ACTIVE',
+        currentPeriodEnd: new Date(subscription.current_period_end * 1000),
+      },
       create: {
         stripeSubId,
         status: 'ACTIVE',
-        priceId: session.metadata?.priceId || 'default',
-        currentPeriodEnd: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 演示暂设30天
+        priceId: subscription.items.data[0]?.price.id || 'default',
+        currentPeriodEnd: new Date(subscription.current_period_end * 1000),
         user: { connect: { email: customerEmail } }
       }
     });
@@ -146,17 +160,21 @@ export async function POST(req: Request) {
 }
 ```
 
+> 💡 **避坑提醒**：原始版本里很多教程会硬编码 `currentPeriodEnd = now\(\) \\\+ 30 天`，这在跨年订阅、试用期、Coupon 折扣等场景下**会算错**。务必从 `stripe\\\.subscriptions\\\.retrieve` 拿真实数据。
+
 ---
 
-## 10.3 本地联调：用沙盒 Mock 通过支付闭环
+## 10.3 本地联调：用 Stripe CLI 通过支付闭环
 
 Stripe 在本地调试需要使用 Stripe CLI 进行 Webhook 转发。我们可以利用 Ch.03 学到的沙盒网络穿透技术，配置本地调试：
 
-1.  在本地运行 Stripe 转发：
-    ```bash
+1. 在本地运行 Stripe 转发：
+
+    ```Bash
     stripe listen --forward-to localhost:3000/api/webhooks/stripe
     ```
-2.  将控制台给出的 `whsec_xxx` 写入本地的 `.env` 中，让 Codex 运行单元测试。
+
+2. 将控制台给出的 `whsec\_xxx` 写入本地的 `\.env` 中，让 Codex 运行单元测试。
 
 通过这种“Specs 定义接口 -> AI 编码 -> 沙盒校验 -> Stripe 真实联动测试”的方式，独立开发者可以把原本需要折腾两天的第三方集成工作缩短到半小时内。
 

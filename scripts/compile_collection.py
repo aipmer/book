@@ -107,6 +107,7 @@ def clean_and_process_file(filepath, is_en=False):
 def build_zh():
     combined = []
     combined.append("# 《Codex 蓝皮书：从入门到架构大师》\n")
+    combined.append("![Codex 实战蓝皮书](./images/cover.jpg)\n\n")
     combined.append("主理人: [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))\n")
     combined.append("[ 🌐 English PDF Version ](./codex_blue_book_en.pdf) | [ 🌐 English Online Version ](./en/ch01_mindset.md)\n")
     combined.append(toc_zh.strip() + "\n\n---\n")
@@ -128,6 +129,7 @@ def build_zh():
 def build_en():
     combined = []
     combined.append("# Codex Practical Blue Book: From Beginner to Architect\n")
+    combined.append("![Codex Practical Blue Book](./images/cover_en.jpg)\n\n")
     combined.append("Author: [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))\n")
     combined.append("[ 🌐 中文 PDF 版 ](./codex_blue_book_zh.pdf) | [ 🌐 中文在线版 ](./chapters/ch01_mindset.md)\n")
     combined.append(toc_en.strip() + "\n\n---\n")
