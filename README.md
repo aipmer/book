@@ -6,7 +6,7 @@
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
-> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是‘人被 AI 牵着走’。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的 Codex 客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是‘实战产品说’一贯的硬核实战风格。” —— 主理人 [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
+> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是人被 AI 牵着走。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的 Codex 客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是实战产品说一贯风格。” —— 主理人 [aipmer](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
@@ -15,7 +15,7 @@
 
 本项目为 **“一源多端”** 发布体系，内容同步发布于以下渠道：
 
-*   **开源源码库**：[GitHub Repository](https://github.com/hunkwu/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
+*   **开源源码库**：[GitHub Repository](https://github.com/aipmer/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
 *   **个人站点**：[pmer.cn](https://pmer.cn) - 精美极客风在线文档站，支持暗黑模式、移动端优化与代码一键复制。
 *   **微信公众号**：**实战产品说** - 深度硬核干货剖析、开发避坑踩坑实录、一人公司商业变现逻辑。
 *   **高密 PDF**：简化双语合并版 PDF，适合朋友圈与开发者社群一键转发。
@@ -26,7 +26,7 @@
 ## 🧭 全书目录与导航
 
 ### 第一部分：AI-Native 时代的产品生存法则
-*   [Ch.01 告别手写代码：Vibe Coding 时代的产品心智](file:///Users/hunkwu/Desktop/ai/book/chapters/ch01_mindset.md) - 重新思考人机协作边界
+*   [Ch.01 告别手写代码：Vibe Coding 时代的产品心智](file:///Users/aipmer/Desktop/ai/book/chapters/ch01_mindset.md) - 重新思考人机协作边界
 *   [Ch.02 跨端掌控：Codex 多端生产力矩阵搭建](file:///Users/hunkwu/Desktop/ai/book/chapters/ch02_setup.md) - CLI、桌面端与移动端联调
 *   [Ch.03 破局云端孤岛：沙盒调试与本地环境深度穿透](file:///Users/hunkwu/Desktop/ai/book/chapters/ch03_sandbox.md) - 网络、文件挂载与端口映射
 
