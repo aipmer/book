@@ -12,6 +12,8 @@
 - [x] **全书骨架搭建**：创建 Ch.01 至 Ch.12 中文章节，涵盖 AI 原生心智、沙盒穿透、智能体约束、CI/CD 与商业化闭环。
 - [x] **全书英文翻译**：完成 Ch.01 至 Ch.12 的英文翻译与核对，并存放于 [en/](file:///Users/hunkwu/Desktop/ai/book/en) 文件夹。
 - [x] **文档双语化合并**：将 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md)、[AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md) 及 [CONTRIBUTING.md](file:///Users/hunkwu/Desktop/ai/book/CONTRIBUTING.md) 合并为统一的双语结构。
+- [x] **中英文内容同步 (2026年5月27日)**：完成了本地最新中文章节修改内容的翻译同步，校对确保中英文内容完全一致。
+- [x] **封面图片与 PDF 电子书更新**：修复了 Markdown 中失效的飞书图片链接，统一替换为本地封面图片 [images/cover.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover.jpg) 及 [images/cover_en.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover_en.jpg)，并成功重新构建生成了最新的中英文 PDF 电子书。
 
 ### 2. 自动化构建与 CI 问题修复
 - [x] **自动化 PDF 编译**：使用 `md-to-pdf` 并通过 [compile_pdf.js](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_pdf.js) 编译输出中英文 PDF。
@@ -23,6 +25,7 @@
 - [x] **Watchdog CLI 重构**：实现完全自包含的辅助工具包，用于手机 webhook 通信网关和云端/本地反向穿透，见 [scripts/codex-watchdog](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/README.md)。
 - [x] **6套主流框架模板**：添加 Django、FastAPI、Next.js、React Native、Spring Boot、Vue 3 的智能体规约文件，见 [templates/](file:///Users/hunkwu/Desktop/ai/book/templates)。
 - [x] **规约模版深度优化**：融入 **AI 循环防范机制 (Anti-Loop Safeguards)**、沙盒边界与去 AI 口水话表达。
+- [x] **统一飞书插件克隆地址 (2026年5月27日)**：将 `plugins-codex-feishu` 仓库内所有克隆和引用链接统一规范为官方组织库 `https://github.com/aipmer/plugins-codex-feishu.git`，避免混淆。
 
 ---
 
@@ -53,6 +56,8 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **Book Scaffolding**: Generated Ch.01 to Ch.12 (Chinese chapters) covering AI-Native dev, sandboxing, agent restrictions, and SaaS MVP pipelines.
 - [x] **English Translation**: Complete translation and verification of all 12 chapters, located in the [en/](file:///Users/hunkwu/Desktop/ai/book/en) directory.
 - [x] **Bilingual Consolidations**: Merged [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md), [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/AGENTS.md), and [CONTRIBUTING.md](file:///Users/hunkwu/Desktop/ai/book/CONTRIBUTING.md) into single bilingual files.
+- [x] **Bilingual Synchronization (May 27, 2026)**: Translated and synchronized all recent Chinese edits to chapters 1-12 in the [en/](file:///Users/hunkwu/Desktop/ai/book/en) directory.
+- [x] **Cover & PDF Compilation Update**: Replaced broken Feishu image links with local cover images [images/cover.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover.jpg) and [images/cover_en.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover_en.jpg), and successfully recompiled and updated PDF ebooks.
 
 ### 2. PDF Automation & CI Fixes
 - [x] **Automated PDF Compiling**: Created compilation script [compile_pdf.js](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_pdf.js) and configured automated runner compilation.
@@ -64,6 +69,7 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **Watchdog CLI Refactoring**: Refactored [scripts/codex-watchdog](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/README.md) into a standalone command-line helper.
 - [x] **6 Technology Templates**: Completed Django, FastAPI, Next.js, React Native, Spring Boot, and Vue 3 templates, located under [templates/](file:///Users/hunkwu/Desktop/ai/book/templates).
 - [x] **Template Hardening**: Integrated **AI Anti-Loop Safeguards**, sandbox boundary guards, and text refinement into templates.
+- [x] **Unify Feishu Plugin Repository Clone URLs (May 27, 2026)**: Unified all repository clone and reference URLs in `plugins-codex-feishu` repository to the official organization repository `https://github.com/aipmer/plugins-codex-feishu.git`.
 
 ---
 

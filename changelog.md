@@ -6,6 +6,22 @@
 
 ---
 
+## 📅 2026年5月27日
+### 🚀 项目更新
+- **中英双语同步**：完成了中文新增内容的英文翻译并同步至所有章节，对 [en/](file:///Users/hunkwu/Desktop/ai/book/en) 目录下所有章节进行了校验，确保中英文内容完全匹配。
+- **飞书图片链接修复**：修复了 Markdown 中无法正常打开的飞书图片链接，统一替换为 GitHub 本地封面图片 [images/cover.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover.jpg) 及 [images/cover_en.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover_en.jpg)，并成功重新构建生成了最新的中英文 PDF 电子书。
+- **README 路径优化**：将 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 中的本地绝对路径 `file:///Users/hunkwu/Desktop/ai/book/` 全部优化为 `./` 相对路径，确保在 GitHub 线上展示时链接的正确性。
+
+### 🐞 遇到问题与解决方案
+- **问题 4：大文件推送至 GitHub 时发生 HTTP 408/SSL 握手超时错误**
+  - **症状**：推送大文件（编译生成的中英文 PDF 电子书，大小各十余MB）时，因网络连接不稳定导致 `RPC failed; HTTP 408 curl 18 transfer closed with outstanding read data remaining` 及 `LibreSSL SSL_read: SSL_ERROR_SYSCALL` 错误，多次推送均失败。
+  - **解决方案**：将 Git 本地 http post 缓冲区大小提升至 500MB，以支持大文件稳定上传：
+    ```bash
+    git config http.postBuffer 524288000
+    ```
+
+---
+
 ## 📅 2026年5月25日
 ### 🚀 项目更新
 - **智能体规约优化**：深度优化了 [templates/](file:///Users/hunkwu/Desktop/ai/book/templates) 目录下的 6 套 `AGENTS-*.md` 智能体协作规约，新增了 **AI 循环防范机制 (Anti-Loop Safeguards)** 与 **沙盒/环境边界保护**，强化了技术栈编码规范与安全红线。
@@ -55,6 +71,22 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 May 27, 2026
+### 🚀 Project Updates
+- **Bilingual Sync**: Completed English translation of newly added Chinese contents and synchronized all chapters. Validated all chapters in the [en/](file:///Users/hunkwu/Desktop/ai/book/en) directory to ensure full alignment between Chinese and English text.
+- **Feishu Image Links Fix**: Repaired broken Feishu image links in Markdown files by replacing them with local cover image links [images/cover.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover.jpg) and [images/cover_en.jpg](file:///Users/hunkwu/Desktop/ai/book/images/cover_en.jpg). Recompiled and published the latest PDF ebooks successfully.
+- **README Path Optimization**: Optimized all local absolute paths (`file:///Users/hunkwu/Desktop/ai/book/`) in [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) to relative `./` paths to ensure all links render correctly on GitHub.
+
+### 🐞 Issues & Solutions
+- **Issue 4: Git push failed with HTTP 408 / SSL Syscall error on large PDF uploads**
+  - **Symptom**: Pushing large compiled PDFs to GitHub failed repeatedly with `RPC failed; HTTP 408 curl 18 transfer closed` and `LibreSSL SSL_read: SSL_ERROR_SYSCALL` due to network instability.
+  - **Solution**: Configured the local Git HTTP post buffer size to 500MB (524288000 bytes) to support stable upload of larger binary assets:
+    ```bash
+    git config http.postBuffer 524288000
+    ```
 
 ---
 
