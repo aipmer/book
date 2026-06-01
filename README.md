@@ -6,7 +6,7 @@
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
-> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是‘人被 AI 牵着走’。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的 Codex 客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是‘实战产品说’一贯的硬核实战风格。” —— 主理人 [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
+> “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是人被 AI 牵着走。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的 Codex 客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是实战产品说一贯风格。” —— 主理人 [aipmer](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
@@ -15,7 +15,7 @@
 
 本项目为 **“一源多端”** 发布体系，内容同步发布于以下渠道：
 
-*   **开源源码库**：[GitHub Repository](https://github.com/hunkwu/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
+*   **开源源码库**：[GitHub Repository](https://github.com/aipmer/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
 *   **个人站点**：[pmer.cn](https://pmer.cn) - 精美极客风在线文档站，支持暗黑模式、移动端优化与代码一键复制。
 *   **微信公众号**：**实战产品说** - 深度硬核干货剖析、开发避坑踩坑实录、一人公司商业变现逻辑。
 *   **高密 PDF**：简化双语合并版 PDF，适合朋友圈与开发者社群一键转发。
@@ -77,7 +77,7 @@
 
 ## 🔌 关联开源项目
 
-*   **[Codex 飞书插件](https://github.com/hunkwu/plugins-codex-feishu)**：将 Codex 强大的智能体自动化开发与重构能力无缝接入飞书多维表格与机器人工作流，实现日常办公任务的自动化编排与高效数据流转。
+*   **[Codex 飞书插件](https://github.com/aipmer/plugins-codex-feishu)**：将 Codex 强大的智能体自动化开发与重构能力无缝接入飞书多维表格与机器人工作流，实现日常办公任务的自动化编排与高效数据流转。
 
 ---
 
@@ -123,7 +123,7 @@
 
 > 💡 **AI-Native Product Development & Multi-Surface Orchestration**
 >
-> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn and '实战产品说'." —— Main Author [Hunk Wu](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
+> "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn" —— Main Author [aipmer](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
 
@@ -181,7 +181,7 @@ To quickly deploy the **Codex Collaboration Protocol (CAP)** in your own tech st
 
 ## 🔌 Related Projects
 
-*   **[Codex Feishu Plugin](https://github.com/hunkwu/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows.
+*   **[Codex Feishu Plugin](https://github.com/aipmer/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows.
 
 ---
 
