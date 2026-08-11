@@ -26,6 +26,7 @@
 - [x] **6套主流框架模板**：添加 Django、FastAPI、Next.js、React Native、Spring Boot、Vue 3 的智能体规约文件，见 [templates/](file:///Users/hunkwu/Desktop/ai/book/templates)。
 - [x] **规约模版深度优化**：融入 **AI 循环防范机制 (Anti-Loop Safeguards)**、沙盒边界与去 AI 口水话表达。
 - [x] **统一飞书插件克隆地址 (2026年5月27日)**：将 `plugins-codex-feishu` 仓库内所有克隆和引用链接统一规范为官方组织库 `https://github.com/aipmer/plugins-codex-feishu.git`，避免混淆。
+- [x] **新增 Ch.13 前沿瞭望章节 (2026年8月11日)**：基于官方 Changelog 与 codexguide.ai，完成 2026 生态全景升级章节（中英双语），涵盖桌面端合并、GPT-5.6 模型换代、CLI 0.14x 变更、插件生态与 Codex Security，并同步 README 目录、构建脚本与 PDF。
 
 ---
 
@@ -70,6 +71,7 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **6 Technology Templates**: Completed Django, FastAPI, Next.js, React Native, Spring Boot, and Vue 3 templates, located under [templates/](file:///Users/hunkwu/Desktop/ai/book/templates).
 - [x] **Template Hardening**: Integrated **AI Anti-Loop Safeguards**, sandbox boundary guards, and text refinement into templates.
 - [x] **Unify Feishu Plugin Repository Clone URLs (May 27, 2026)**: Unified all repository clone and reference URLs in `plugins-codex-feishu` repository to the official organization repository `https://github.com/aipmer/plugins-codex-feishu.git`.
+- [x] **New Chapter Ch.13 Frontier Watch (August 11, 2026)**: Based on the official changelog and codexguide.ai, completed the 2026 ecosystem overhaul chapter (bilingual) covering the desktop merger, GPT-5.6 model transition, CLI 0.14x changes, the plugin economy, and Codex Security; synced README TOCs, the build script, and PDFs.
 
 ---
 

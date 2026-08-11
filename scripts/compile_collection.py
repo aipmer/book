@@ -19,7 +19,8 @@ chapter_files = [
     "ch09_legacy_code.md",
     "ch10_saas_mvp.md",
     "ch11_expo_mobile.md",
-    "ch12_commercialization.md"
+    "ch12_commercialization.md",
+    "ch13_2026_frontier.md"
 ]
 
 toc_zh = """
@@ -44,6 +45,9 @@ toc_zh = """
 - [Ch.10 商业实战：2小时跑通 Next.js + Stripe 商业级 MVP](#ch10-商业实战2小时跑通-nextjs--stripe-商业级-mvp)
 - [Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包](#ch11-触角延伸expo-跨端原生-app-开发与云端打包)
 - [Ch.12 终局思考：独立开发者如何打造自动化商业飞轮](#ch12-终局思考独立开发者如何打造自动化商业飞轮)
+
+### 第五部分：前沿瞭望与版本迁移
+- [Ch.13 前沿瞭望：2026 Codex 生态全景升级](#ch13-前沿瞭望2026-codex-生态全景升级)
 """
 
 toc_en = """
@@ -68,6 +72,9 @@ toc_en = """
 - [Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours](#ch10-monetization-in-practice-shipping-a-commercial-saas-mvp-in-2-hours)
 - [Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging](#ch11-mobile-extension-expo-cross-platform-app-development-and-cloud-packaging)
 - [Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS](#ch12-the-final-frontier-building-an-automated-growth-flywheel-for-a-one-person-saas)
+
+### Part 5: Frontier Watch & Version Migration
+- [Ch.13 Frontier Watch: The 2026 Codex Ecosystem Overhaul](#ch13-frontier-watch-the-2026-codex-ecosystem-overhaul)
 """
 
 def clean_and_process_file(filepath, is_en=False):

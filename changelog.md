@@ -6,6 +6,17 @@
 
 ---
 
+## 📅 2026年8月11日
+### 🚀 项目更新
+- **新增 Ch.13 前沿瞭望章节**：基于 OpenAI 官方 Changelog 与 CodexGuide 站点内容，新增 [Ch.13 前沿瞭望：2026 Codex 生态全景升级](file:///Users/hunkwu/Desktop/ai/book/chapters/ch13_2026_frontier.md)（中英双语），覆盖四大结构性变化：
+  1. **桌面端合并**：独立 Codex App 退役，能力并入 ChatGPT 桌面客户端 Code Mode，含 Sites、Annotations 与多仓库审查。
+  2. **模型换代**：`GPT-5.4`/`GPT-5.4 mini` 于 2026-08-31 退役，迁移至 `gpt-5.6-terra` 与 `gpt-5.6-luna`，附 `config.toml` 迁移示例。
+  3. **CLI 0.14x 决定性变更**：`--full-auto` 移除（改用 `--sandbox workspace-write`）、Hooks 引擎转正、Agent Plugins 与插件市场、子智能体并行编排、Guardian 自动审批（`--approve-for-me`）、MCP 2026-07-28 协议。
+  4. **安全能力独立成军**：Daybreak Blue/Red 双层访问体系与 Codex Security 插件/CLI。
+- **目录与构建同步**：更新 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 双语目录（新增第五部分）、[compile_collection.py](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_collection.py) 章节清单，并重新构建中英文合并书稿与 PDF 电子书。
+
+---
+
 ## 📅 2026年5月27日
 ### 🚀 项目更新
 - **中英双语同步**：完成了中文新增内容的英文翻译并同步至所有章节，对 [en/](file:///Users/hunkwu/Desktop/ai/book/en) 目录下所有章节进行了校验，确保中英文内容完全匹配。
@@ -71,6 +82,17 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 August 11, 2026
+### 🚀 Project Updates
+- **New Chapter Ch.13 Frontier Watch**: Based on the official OpenAI Changelog and content from codexguide.ai, added [Ch.13 Frontier Watch: The 2026 Codex Ecosystem Overhaul](file:///Users/hunkwu/Desktop/ai/book/en/ch13_2026_frontier.md) (bilingual), covering four structural shifts:
+  1. **Desktop merger**: the standalone Codex App retired; capabilities moved into the ChatGPT desktop client as Code Mode, including Sites, Annotations, and multi-repo review.
+  2. **Model transition**: `GPT-5.4`/`GPT-5.4 mini` retire on 2026-08-31 in favor of `gpt-5.6-terra` and `gpt-5.6-luna`, with `config.toml` migration examples.
+  3. **CLI 0.14x breaking changes**: `--full-auto` removed (use `--sandbox workspace-write`), hooks engine stable, Agent Plugins and marketplaces, parallel subagents, Guardian auto-approval (`--approve-for-me`), and the MCP 2026-07-28 protocol.
+  4. **Security as a product line**: the Daybreak Blue/Red access tiers and the Codex Security plugin/CLI.
+- **TOC & Build Sync**: Updated the bilingual TOCs in [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) (new Part 5), the chapter list in [compile_collection.py](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_collection.py), and rebuilt the merged manuscripts and PDF ebooks.
 
 ---
 

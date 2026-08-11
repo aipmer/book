@@ -45,6 +45,9 @@
 *   [Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包](./chapters/ch11_expo_mobile.md) - 从本地模拟器联调到云端一键打包
 *   [Ch.12 终局思考：独立开发者如何打造自动化商业飞轮](./chapters/ch12_commercialization.md) - 一人公司（One-Person SaaS）的流量与变现路径
 
+### 第五部分：前沿瞭望与版本迁移
+*   [Ch.13 前沿瞭望：2026 Codex 生态全景升级](./chapters/ch13_2026_frontier.md) - 桌面端合并、GPT-5.6 换代、插件生态与安全能力迁移指南
+
 ---
 
 ## 🛠️ Codex 智能体协作模板 (AGENTS-*.md)
@@ -148,6 +151,9 @@
 *   [Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours](./en/ch10_saas_mvp.md)
 *   [Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging](./en/ch11_expo_mobile.md)
 *   [Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS](./en/ch12_commercialization.md)
+
+### Part 5: Frontier Watch & Version Migration
+*   [Ch.13 Frontier Watch: The 2026 Codex Ecosystem Overhaul](./en/ch13_2026_frontier.md) - Desktop merger, GPT-5.6 transition, plugin economy, and the security migration guide
 
 ---
 
