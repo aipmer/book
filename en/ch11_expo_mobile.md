@@ -8,6 +8,8 @@ I firmly believe that **"cloud compilation and packaging (EAS) is the only viabl
 
 This chapter teaches you how to direct Codex to handle all of this autonomously.
 
+> 📦 **Companion Source Code**: [examples/ch11-expo-mobile](../examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
+
 ---
 
 ## 11.1 Expo Project Rapid Initialization and Simulator Mapping

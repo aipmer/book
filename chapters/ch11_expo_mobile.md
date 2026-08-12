@@ -12,6 +12,8 @@
 
 本章教你如何让 Codex 自主搞定这一切。
 
+> 📦 **配套实战源码**：[examples/ch11-expo-mobile](../examples/ch11-expo-mobile) —— 完整可运行的 Expo SDK 57 工程（Expo Router `src/app` 路由 + NativeWind + EAS 三档打包配置），自带 CAP 协议 `AGENTS.md`，已通过 `npx expo lint`（零错误）与 `npx expo-doctor`（20/20）验证。
+
 ---
 
 ## 11.1 Expo 项目极速初始化与模拟器映射

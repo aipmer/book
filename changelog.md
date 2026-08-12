@@ -6,6 +6,21 @@
 
 ---
 
+## 📅 2026年8月12日
+### 🚀 项目更新
+- **Ch.11 配套实战工程落地**：新增 [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) —— 基于 `create-expo-app` 的 Expo SDK 57 工程，按章节 Specs 配齐 Expo Router（`src/app` 文件路由）、NativeWind（tailwind.config / metro / babel / global.css 指令全套）与 `eas.json` 三档打包 profile，首页内置 NativeWind className 渲染演示。自带 CAP 协议 `AGENTS.md`。章节（中英双语）已加入源码链接。
+- **验证**：`npx expo lint` 零错误、`npx expo-doctor` 20/20 全部通过。
+
+### 🐞 遇到问题与解决方案
+- **问题 7：`create-expo-app` 在已有 Git 仓库内交互式提示卡死**
+  - **症状**：脚手架询问「是否跳过 git init」时 TUI 挂起，非交互终端无法回应。
+  - **解决方案**：以 `CI=1 npx create-expo-app` 非交互模式重跑，成功生成模板。
+- **问题 8：Expo 模板自带 `use-color-scheme.web.ts` 触发 React Compiler lint 错误**
+  - **症状**：`npx expo lint` 报 `set-state-in-effect`（effect 内同步 setState 导致级联渲染）。
+  - **解决方案**：重构为 `useSyncExternalStore`（服务端快照 false / 客户端快照 true），lint 归零。
+
+---
+
 ## 📅 2026年8月11日
 ### 🚀 项目更新
 - **新增 Ch.13 前沿瞭望章节**：基于 OpenAI 官方 Changelog 与 CodexGuide 站点内容，新增 [Ch.13 前沿瞭望：2026 Codex 生态全景升级](file:///Users/hunkwu/Desktop/ai/book/chapters/ch13_2026_frontier.md)（中英双语），覆盖四大结构性变化：
@@ -91,6 +106,21 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 August 12, 2026
+### 🚀 Project Updates
+- **Ch.11 Companion Project Shipped**: Added [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) — an Expo SDK 57 project scaffolded with `create-expo-app`, configured per the chapter specs with Expo Router (`src/app` file-based routing), NativeWind (full tailwind.config / metro / babel / global.css directive setup), and a three-tier `eas.json` build profile. The home screen includes a NativeWind `className` rendering demo. Ships a CAP-protocol `AGENTS.md`. Chapter files (bilingual) now link to the source.
+- **Validation**: `npx expo lint` passed with zero errors; `npx expo-doctor` passed 20/20 checks.
+
+### 🐞 Issues & Solutions
+- **Issue 7: `create-expo-app` hung on an interactive prompt inside an existing Git repo**
+  - **Symptom**: The scaffold asked whether to skip `git init` and stalled in a non-interactive terminal.
+  - **Solution**: Re-ran with `CI=1 npx create-expo-app` for non-interactive scaffolding.
+- **Issue 8: Template's `use-color-scheme.web.ts` triggered a React Compiler lint error**
+  - **Symptom**: `npx expo lint` reported `set-state-in-effect` (synchronous setState inside an effect).
+  - **Solution**: Refactored to `useSyncExternalStore` (server snapshot false / client snapshot true); lint is now clean.
 
 ---
 
