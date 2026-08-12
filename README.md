@@ -60,6 +60,9 @@
 *   [Django (Python) 协作规约](./templates/AGENTS-django.md)
 *   [Spring Boot (Java) 协作规约](./templates/AGENTS-spring-boot.md)
 *   [React Native (Expo) 协作规约](./templates/AGENTS-react-native.md)
+*   [Go (Gin/Fiber) 协作规约](./templates/AGENTS-go-gin.md)
+*   [Rust (Axum) 协作规约](./templates/AGENTS-rust-axum.md)
+*   [Svelte (SvelteKit) 协作规约](./templates/AGENTS-svelte.md)
 
 ---
 
@@ -167,6 +170,9 @@ To quickly deploy the **Codex Collaboration Protocol (CAP)** in your own tech st
 *   [Django (Python) CAP Spec](./templates/AGENTS-django.md)
 *   [Spring Boot (Java) CAP Spec](./templates/AGENTS-spring-boot.md)
 *   [React Native (Expo) CAP Spec](./templates/AGENTS-react-native.md)
+*   [Go (Gin/Fiber) CAP Spec](./templates/AGENTS-go-gin.md)
+*   [Rust (Axum) CAP Spec](./templates/AGENTS-rust-axum.md)
+*   [Svelte (SvelteKit) CAP Spec](./templates/AGENTS-svelte.md)
 
 ---
 

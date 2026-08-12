@@ -10,7 +10,8 @@
 ### 🚀 项目更新
 - **Ch.11 配套实战工程落地**：新增 [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) —— 基于 `create-expo-app` 的 Expo SDK 57 工程，按章节 Specs 配齐 Expo Router（`src/app` 文件路由）、NativeWind（tailwind.config / metro / babel / global.css 指令全套）与 `eas.json` 三档打包 profile，首页内置 NativeWind className 渲染演示。自带 CAP 协议 `AGENTS.md`。章节（中英双语）已加入源码链接。
 - **验证**：`npx expo lint` 零错误、`npx expo-doctor` 20/20 全部通过。
-- **新增 Examples CI 防腐流水线**：[examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) 在 `examples/**` 变更时自动重跑两套验证：Ch.10（prisma validate/generate + next build）与 Ch.11（expo lint + expo-doctor），防止模板升级后工程腐烂。
+- **新增 Examples CI 防腐流水线**：[examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) 在 `examples/**` 变更时自动重跑两套验证：Ch.10（prisma validate/generate + next build）与 Ch.11（expo lint + expo-doctor），防止模板升级后工程腐烂。首跑 53 秒通过。
+- **新增 3 套技术栈规约模板**：[templates/](file:///Users/hunkwu/Desktop/ai/book/templates) 新增 Go (Gin/Fiber)、Rust (Axum)、Svelte (SvelteKit) 双语 `AGENTS-*.md`，沿用 Anti-Loop Safeguards 与沙盒边界体例（覆盖 borrow checker 级联、hydration 循环、数据竞争等栈特有循环场景），模板总数从 6 套扩至 9 套。README 双语模板清单已同步。
 
 ### 🐞 遇到问题与解决方案
 - **问题 7：`create-expo-app` 在已有 Git 仓库内交互式提示卡死**
@@ -114,7 +115,8 @@ This document records the recent updates, technical issues, and solutions for th
 ### 🚀 Project Updates
 - **Ch.11 Companion Project Shipped**: Added [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) — an Expo SDK 57 project scaffolded with `create-expo-app`, configured per the chapter specs with Expo Router (`src/app` file-based routing), NativeWind (full tailwind.config / metro / babel / global.css directive setup), and a three-tier `eas.json` build profile. The home screen includes a NativeWind `className` rendering demo. Ships a CAP-protocol `AGENTS.md`. Chapter files (bilingual) now link to the source.
 - **Validation**: `npx expo lint` passed with zero errors; `npx expo-doctor` passed 20/20 checks.
-- **New Examples CI Anti-Rot Pipeline**: [examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) re-runs both validation suites on any `examples/**` change — Ch.10 (prisma validate/generate + next build) and Ch.11 (expo lint + expo-doctor) — keeping the companion projects from rotting as templates evolve.
+- **New Examples CI Anti-Rot Pipeline**: [examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) re-runs both validation suites on any `examples/**` change — Ch.10 (prisma validate/generate + next build) and Ch.11 (expo lint + expo-doctor) — keeping the companion projects from rotting as templates evolve. First run passed in 53 seconds.
+- **3 New Stack Templates Added**: [templates/](file:///Users/hunkwu/Desktop/ai/book/templates) gained bilingual `AGENTS-*.md` specs for Go (Gin/Fiber), Rust (Axum), and Svelte (SvelteKit), following the Anti-Loop Safeguards and sandbox-boundary format (covering stack-specific loops such as borrow-checker cascades, hydration loops, and data races). The catalog grew from 6 to 9 templates. README bilingual template lists synced.
 
 ### 🐞 Issues & Solutions
 - **Issue 7: `create-expo-app` hung on an interactive prompt inside an existing Git repo**
