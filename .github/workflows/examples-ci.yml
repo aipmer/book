@@ -1,0 +1,74 @@
+name: Examples CI
+
+# 配套实战工程（Ch.10 / Ch.11）防腐流水线：
+# 每次改动 examples/** 时重新验证 install + lint + build，确保模板升级后不腐烂。
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'examples/**'
+      - '.github/workflows/examples-ci.yml'
+  pull_request:
+    paths:
+      - 'examples/**'
+
+jobs:
+  ch10-saas-mvp:
+    name: Ch.10 SaaS MVP (Next.js build)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/ch10-saas-mvp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: examples/ch10-saas-mvp/package-lock.json
+
+      - run: npm ci --no-audit --no-fund
+
+      # 构建期占位环境变量（不含任何真实密钥）
+      - name: Create build-only .env
+        run: |
+          cat > .env <<'EOF'
+          DATABASE_URL="postgresql://postgres:postgres@localhost:5432/postgres"
+          NEXT_PUBLIC_SUPABASE_URL="https://example.supabase.co"
+          NEXT_PUBLIC_SUPABASE_ANON_KEY="ci-build-dummy"
+          STRIPE_SECRET_KEY="sk_test_dummy"
+          NEXT_PUBLIC_STRIPE_PRICE_ID="price_dummy"
+          STRIPE_WEBHOOK_SECRET="whsec_dummy"
+          OPENAI_API_KEY="sk-dummy"
+          EOF
+
+      - run: npx prisma validate
+      - run: npx prisma generate
+      - run: npm run build
+
+  ch11-expo-mobile:
+    name: Ch.11 Expo Mobile (lint + doctor)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/ch11-expo-mobile
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: examples/ch11-expo-mobile/package-lock.json
+
+      - run: npm ci --no-audit --no-fund
+
+      # 章节的 Validation Specs：lint 零错误 + 依赖版本对齐
+      - run: npx expo lint
+        env:
+          CI: 1
+      - run: npx --yes expo-doctor
+        env:
+          CI: 1
