@@ -25,6 +25,15 @@ npm link
 
 安装完成后，您可以在系统任意终端运行 `codex-watchdog` 触发以下子指令：
 
+### 0. 交互式安装向导 (Interactive Onboarding)
+首次使用推荐运行向导：自检环境（Node 版本、ngrok/ssh 可用性）→ 选择能力（网关/隧道）→ 收集参数 → 生成 `watchdog.config.json`，后续运行 `gateway`/`tunnel` 时自动读取该配置作为缺省值（命令行显式参数优先）：
+
+```bash
+codex-watchdog install
+```
+
+> ⚠️ `watchdog.config.json` 可能包含 VPS 地址等敏感信息，已加入根目录 `.gitignore`，请勿提交公共仓库。
+
 ### 1. 启动移动审批中转网关 (Sentinel Webhook Gateway)
 用于接收手机 ChatGPT App 或第三方 Webhook（如 Keepa/Make）转发来的控制卡片回复，控制 Codex 部署或中止：
 
@@ -84,6 +93,15 @@ npm link
 ## 🧭 Usage
 
 Once linked, you can execute the `codex-watchdog` command from any terminal directory on your workstation:
+
+### 0. Interactive Onboarding Wizard
+For first-time setup, run the wizard: it checks your environment (Node version, ngrok/ssh availability), lets you pick capabilities (gateway/tunnel), collects parameters, and writes `watchdog.config.json`. Later `gateway`/`tunnel` runs read this file for defaults (explicit CLI flags always win):
+
+```bash
+codex-watchdog install
+```
+
+> ⚠️ `watchdog.config.json` may contain sensitive values like your VPS address. It is listed in the root `.gitignore` — never commit it to a public repository.
 
 ### 1. Launch Mobile Watchdog Webhook Gateway
 Starts the Express server which listens for incoming approval payloads (forwarded from WeChat, Slack, or Keepa) to authorize or abort Codex sandbox runs:

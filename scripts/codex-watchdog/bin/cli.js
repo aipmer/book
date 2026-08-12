@@ -13,6 +13,7 @@ Usage:
   codex-watchdog <command> [options]
 
 Commands:
+  install    Interactive onboarding wizard — generates watchdog.config.json
   gateway    Launch the mobile watchdog notification gateway (Ch.08)
   tunnel     Launch reverse port-forwarding helper (Ch.03)
 
@@ -42,9 +43,29 @@ for (let i = 1; i < args.length; i += 2) {
   }
 }
 
-if (command === 'gateway') {
-  const port = params.port || '8080';
-  const user = params.user || 'hunkwu';
+// 若存在 install 向导生成的 watchdog.config.json，作为参数缺省值（命令行显式参数优先）
+const fs = require('fs');
+const configPath = path.resolve(process.cwd(), 'watchdog.config.json');
+let savedConfig = null;
+if (fs.existsSync(configPath)) {
+  try {
+    savedConfig = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+  } catch {
+    console.warn(`⚠️  watchdog.config.json 解析失败，忽略该文件。`);
+  }
+}
+
+if (command === 'install') {
+  // 交互式安装向导：自检环境 -> 收集参数 -> 生成 watchdog.config.json
+  require('../lib/install.js').run().catch((err) => {
+    console.error('❌ 安装向导执行失败:', err.message);
+    process.exit(1);
+  });
+
+} else if (command === 'gateway') {
+  const saved = savedConfig && savedConfig.gateway ? savedConfig.gateway : {};
+  const port = params.port || String(saved.port || '8080');
+  const user = params.user || saved.user || 'hunkwu';
   
   process.env.PORT = port;
   process.env.CODEX_USER = user;
@@ -54,8 +75,9 @@ if (command === 'gateway') {
   require('../lib/gateway.js');
 
 } else if (command === 'tunnel') {
-  const type = params.type || 'ngrok';
-  const localPort = params.port || '5432';
+  const saved = savedConfig && savedConfig.tunnel ? savedConfig.tunnel : {};
+  const type = params.type || saved.type || 'ngrok';
+  const localPort = params.port || String(saved.port || '5432');
 
   if (type === 'ngrok') {
     console.log(`[CLI] Launching Ngrok tunnel for local port ${localPort}...`);
@@ -65,8 +87,8 @@ if (command === 'gateway') {
       console.error(err.message);
     });
   } else if (type === 'ssh') {
-    const vps = params.vps;
-    const vpsPort = params.vpsPort || '54320';
+    const vps = params.vps || saved.vps;
+    const vpsPort = params.vpsPort || String(saved.vpsPort || '54320');
     if (!vps) {
       console.error('❌ Error: --vps <user@host> is required for SSH tunneling.');
       process.exit(1);

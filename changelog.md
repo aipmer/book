@@ -12,6 +12,12 @@
 - **验证**：`npx expo lint` 零错误、`npx expo-doctor` 20/20 全部通过。
 - **新增 Examples CI 防腐流水线**：[examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) 在 `examples/**` 变更时自动重跑两套验证：Ch.10（prisma validate/generate + next build）与 Ch.11（expo lint + expo-doctor），防止模板升级后工程腐烂。首跑 53 秒通过。
 - **新增 3 套技术栈规约模板**：[templates/](file:///Users/hunkwu/Desktop/ai/book/templates) 新增 Go (Gin/Fiber)、Rust (Axum)、Svelte (SvelteKit) 双语 `AGENTS-*.md`，沿用 Anti-Loop Safeguards 与沙盒边界体例（覆盖 borrow checker 级联、hydration 循环、数据竞争等栈特有循环场景），模板总数从 6 套扩至 9 套。README 双语模板清单已同步。
+- **Watchdog 交互式安装向导上线**：[codex-watchdog](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/README.md) 新增 `install` 子命令（[lib/install.js](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/lib/install.js)），零依赖实现：环境自检（Node 版本、ngrok/ssh 可用性）→ 能力选择 → 参数收集（含 VPS 格式校验）→ 生成 `watchdog.config.json`；`gateway`/`tunnel` 子命令支持读取该配置作为缺省值（显式参数优先）。根目录 `.gitignore` 已收录该配置文件。
+
+### 🐞 遇到问题与解决方案
+- **问题 9：安装向导在管道（非 TTY）输入下丢失应答行**
+  - **症状**：用 `printf ... | node bin/cli.js install` 做脚本化测试时，`readline.question` 连续提问会吞掉已缓冲的输入行，导致参数错位、配置不落盘。
+  - **解决方案**：将问答机制重写为「行缓冲队列 + waiter 链」（`makeAsker`），`rl.on('line')` 先入队，提问时优先消费缓冲行；管道与真实 TTY 下均验证通过。
 
 ### 🐞 遇到问题与解决方案
 - **问题 7：`create-expo-app` 在已有 Git 仓库内交互式提示卡死**
@@ -117,6 +123,12 @@ This document records the recent updates, technical issues, and solutions for th
 - **Validation**: `npx expo lint` passed with zero errors; `npx expo-doctor` passed 20/20 checks.
 - **New Examples CI Anti-Rot Pipeline**: [examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) re-runs both validation suites on any `examples/**` change — Ch.10 (prisma validate/generate + next build) and Ch.11 (expo lint + expo-doctor) — keeping the companion projects from rotting as templates evolve. First run passed in 53 seconds.
 - **3 New Stack Templates Added**: [templates/](file:///Users/hunkwu/Desktop/ai/book/templates) gained bilingual `AGENTS-*.md` specs for Go (Gin/Fiber), Rust (Axum), and Svelte (SvelteKit), following the Anti-Loop Safeguards and sandbox-boundary format (covering stack-specific loops such as borrow-checker cascades, hydration loops, and data races). The catalog grew from 6 to 9 templates. README bilingual template lists synced.
+- **Watchdog Interactive Install Wizard**: [codex-watchdog](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/README.md) gained an `install` subcommand ([lib/install.js](file:///Users/hunkwu/Desktop/ai/book/scripts/codex-watchdog/lib/install.js)) with zero new dependencies: environment self-check (Node version, ngrok/ssh availability) → capability selection → parameter collection (with VPS format validation) → generates `watchdog.config.json`; the `gateway`/`tunnel` subcommands now fall back to this config (explicit flags win). The config file is listed in the root `.gitignore`.
+
+### 🐞 Issues & Solutions
+- **Issue 9: Install wizard dropped piped (non-TTY) input lines**
+  - **Symptom**: Under scripted testing (`printf ... | node bin/cli.js install`), sequential `readline.question` calls swallowed buffered input lines, misaligning answers and skipping config write.
+  - **Solution**: Rewrote the prompt mechanism as a line-buffered queue with a waiter chain (`makeAsker`): `rl.on('line')` enqueues input, prompts drain the buffer first. Verified under both piped and real TTY input.
 
 ### 🐞 Issues & Solutions
 - **Issue 7: `create-expo-app` hung on an interactive prompt inside an existing Git repo**

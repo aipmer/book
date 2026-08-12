@@ -33,3 +33,6 @@ __pycache__/
 codex_blue_book_zh.md
 codex_blue_book_en.md
 
+# Watchdog 向导生成的本地配置（可能含 VPS 地址等敏感信息）
+watchdog.config.json
+
