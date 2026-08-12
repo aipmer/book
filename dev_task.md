@@ -38,7 +38,7 @@
 
 ## 🗺️ 未来规划 (Roadmap & Backlog)
 - [ ] **扩增技术栈规约模板**：提供 Rust (Axum)、Go (Fiber/Gin) 以及 Svelte 等更多前沿框架的 `AGENTS-*.md` 模板。
-- [ ] **实战工程源码配套**：为 Ch.10 (Next.js SaaS MVP) 和 Ch.11 (Expo Mobile) 建立独立的配套 GitHub 代码仓库，方便读者一键 clone 体验。
+- [ ] **实战工程源码配套**：为 Ch.10 (Next.js SaaS MVP) 和 Ch.11 (Expo Mobile) 建立独立的配套 GitHub 代码仓库，方便读者一键 clone 体验。（Ch.10 已完成 → [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp)）
 - [ ] **Watchdog 交互式部署脚本**：为 `codex-watchdog` 制作一键式安装交互脚本，降低反向穿透的使用门槛。
 - [ ] **加入多端视频演示**：在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies) 或 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 中嵌入自动化巡检 (Desktop Computer Use) 运行过程的录屏演示。
 
@@ -83,6 +83,6 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 
 ## 🗺️ Roadmap & Backlog
 - [ ] **Additional Templates**: Add templates for Rust (Axum), Go (Fiber/Gin), and Svelte frameworks.
-- [ ] **Hands-On Repositories**: Create companion, executable project templates for Chapter 10 (SaaS MVP) and Chapter 11 (Expo Mobile).
+- [ ] **Hands-On Repositories**: Create companion, executable project templates for Chapter 10 (SaaS MVP) and Chapter 11 (Expo Mobile). (Ch.10 done → [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp))
 - [ ] **Watchdog Install Script**: Create interactive command-line onboarding configurations for `codex-watchdog`.
 - [ ] **Visual Democasting**: Integrate recordings of automated visual testing (Ch.07 Desktop Computer Use) in [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) and [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies).

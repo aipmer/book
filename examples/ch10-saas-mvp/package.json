@@ -1,0 +1,30 @@
+{
+  "name": "ch10-saas-mvp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Codex Blue Book Ch.10 companion: subscription AI translator (Next.js 15 + Supabase + Stripe)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "prisma:push": "prisma db push",
+    "stripe:listen": "stripe listen --forward-to localhost:3000/api/webhooks/stripe"
+  },
+  "dependencies": {
+    "@prisma/client": "6.5.0",
+    "@supabase/ssr": "0.6.1",
+    "@supabase/supabase-js": "2.49.4",
+    "next": "15.5.23",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "stripe": "18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.14.0",
+    "@types/react": "19.1.0",
+    "@types/react-dom": "19.1.0",
+    "prisma": "6.5.0",
+    "typescript": "5.8.3"
+  }
+}

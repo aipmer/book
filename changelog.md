@@ -14,6 +14,15 @@
   3. **CLI 0.14x 决定性变更**：`--full-auto` 移除（改用 `--sandbox workspace-write`）、Hooks 引擎转正、Agent Plugins 与插件市场、子智能体并行编排、Guardian 自动审批（`--approve-for-me`）、MCP 2026-07-28 协议。
   4. **安全能力独立成军**：Daybreak Blue/Red 双层访问体系与 Codex Security 插件/CLI。
 - **目录与构建同步**：更新 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 双语目录（新增第五部分）、[compile_collection.py](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_collection.py) 章节清单，并重新构建中英文合并书稿与 PDF 电子书。
+- **Ch.10 配套实战工程落地**：新增 [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp) —— 完整可运行的订阅制 AI 翻译 SaaS（TransFlow），技术栈与章节严格一致（Next.js 15.5 + Prisma + Supabase Auth + Stripe Webhook 验签 + OpenAI），自带 CAP 协议 `AGENTS.md` 与 `.env.example`。已通过 `npx prisma validate`、`prisma generate` 与 `next build`（9 个路由零错误）验证。章节（中英双语）已加入源码链接。
+
+### 🐞 遇到问题与解决方案
+- **问题 5：Next.js 15.3.0 存在安全漏洞（CVE-2025-66478）**
+  - **症状**：`npm install` 时提示该版本有安全漏洞，要求升级。
+  - **解决方案**：将 `next` 升级至 15.5.23（15.x 最新修复版）后重新安装并构建通过。
+- **问题 6：`npx prisma validate` 报 P1012（缺少 DATABASE_URL）**
+  - **症状**：无 `.env` 时 Prisma 校验失败。
+  - **解决方案**：生成仅用于本地构建的占位 `.env`（已加入 `.gitignore`，不会入库），校验与生成通过。
 
 ---
 
@@ -93,6 +102,15 @@ This document records the recent updates, technical issues, and solutions for th
   3. **CLI 0.14x breaking changes**: `--full-auto` removed (use `--sandbox workspace-write`), hooks engine stable, Agent Plugins and marketplaces, parallel subagents, Guardian auto-approval (`--approve-for-me`), and the MCP 2026-07-28 protocol.
   4. **Security as a product line**: the Daybreak Blue/Red access tiers and the Codex Security plugin/CLI.
 - **TOC & Build Sync**: Updated the bilingual TOCs in [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) (new Part 5), the chapter list in [compile_collection.py](file:///Users/hunkwu/Desktop/ai/book/scripts/compile_collection.py), and rebuilt the merged manuscripts and PDF ebooks.
+- **Ch.10 Companion Project Shipped**: Added [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp) — a fully runnable subscription AI translation SaaS (TransFlow) matching the chapter stack exactly (Next.js 15.5 + Prisma + Supabase Auth + Stripe webhook signature verification + OpenAI), with its own CAP `AGENTS.md` and `.env.example`. Verified via `npx prisma validate`, `prisma generate`, and `next build` (9 routes, zero errors). Chapter files (bilingual) now link to the source.
+
+### 🐞 Issues & Solutions
+- **Issue 5: Next.js 15.3.0 security vulnerability (CVE-2025-66478)**
+  - **Symptom**: `npm install` warned that the pinned version carries a known vulnerability.
+  - **Solution**: Upgraded `next` to 15.5.23 (latest patched 15.x), reinstalled, and rebuilt successfully.
+- **Issue 6: `npx prisma validate` failed with P1012 (missing DATABASE_URL)**
+  - **Symptom**: Prisma validation failed without an `.env` file.
+  - **Solution**: Created a build-only placeholder `.env` (listed in `.gitignore`, never committed); validation and client generation passed.
 
 ---
 

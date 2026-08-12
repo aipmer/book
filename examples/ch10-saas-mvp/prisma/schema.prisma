@@ -1,0 +1,43 @@
+// File: prisma/schema.prisma
+// Ch.10 §10.1 目标 Specs 的输出结果：User / Subscription / TranslationRecord
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  EXPIRED
+}
+
+model User {
+  id           String              @id @default(uuid())
+  email        String              @unique
+  createdAt    DateTime            @default(now())
+  subscription Subscription?
+  records      TranslationRecord[]
+}
+
+model Subscription {
+  id               String             @id @default(uuid())
+  userId           String             @unique
+  stripeSubId      String             @unique
+  status           SubscriptionStatus
+  priceId          String
+  currentPeriodEnd DateTime
+  user             User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model TranslationRecord {
+  id             String   @id @default(uuid())
+  userId         String
+  sourceText     String
+  translatedText String
+  createdAt      DateTime @default(now())
+  user           User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

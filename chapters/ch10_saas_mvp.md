@@ -8,6 +8,8 @@
 
 本章我们以极客速战速决的风格，教你如何指挥 Codex，在 2 小时内利用 `Next\.js 15 \(App Router\) \+ Supabase \(PostgreSQL\) \+ Stripe` 搓出一个具有完整支付与会员权限闭环的 SaaS MVP。
 
+> 📦 **配套实战源码**：[examples/ch10-saas-mvp](../examples/ch10-saas-mvp) —— 完整可运行的订阅制 AI 翻译工具（TransFlow），自带 CAP 协议 `AGENTS.md`，`npm install && npm run build` 已验证通过。
+
 ---
 
 ## 10.1 初始化骨架与数据库 Schema 设计

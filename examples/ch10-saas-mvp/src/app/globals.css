@@ -1,0 +1,16 @@
+/* File: src/app/globals.css — 极简暗色主题，零依赖 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0a0a0a; color: #ededed; font-family: -apple-system, "PingFang SC", "Segoe UI", sans-serif; }
+main { max-width: 720px; margin: 0 auto; padding: 64px 24px; }
+h1 { font-size: 40px; letter-spacing: -0.02em; margin-bottom: 16px; }
+p.sub { color: #a1a1a1; margin-bottom: 32px; line-height: 1.7; }
+.card { border: 1px solid #262626; border-radius: 12px; padding: 24px; margin-bottom: 24px; background: #111; }
+button, .btn { background: #ededed; color: #0a0a0a; border: none; border-radius: 8px; padding: 12px 24px; font-size: 15px; font-weight: 600; cursor: pointer; }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+input, textarea, select { width: 100%; background: #171717; border: 1px solid #2e2e2e; color: #ededed; border-radius: 8px; padding: 12px; font-size: 15px; margin-bottom: 12px; }
+textarea { min-height: 120px; resize: vertical; }
+label { display: block; font-size: 13px; color: #a1a1a1; margin-bottom: 6px; }
+.result { white-space: pre-wrap; color: #7ee787; margin-top: 16px; }
+.error { color: #f85149; margin-top: 12px; }
+a { color: #58a6ff; }
+.row { display: flex; gap: 12px; align-items: center; }
