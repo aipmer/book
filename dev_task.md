@@ -40,7 +40,7 @@
 - [x] **扩增技术栈规约模板**：新增 Go (Gin/Fiber)、Rust (Axum)、Svelte (SvelteKit) 三份双语 `AGENTS-*.md` 模板（沿用 Anti-Loop 体例与沙盒边界），模板总数达 9 套。(2026年8月12日)
 - [x] **实战工程源码配套**：为 Ch.10 和 Ch.11 建立配套可运行工程，方便读者一键 clone 体验 → [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp)（next build 通过）、[examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile)（expo lint 零错误 + expo-doctor 20/20）。(2026年8月12日)
 - [x] **Watchdog 交互式部署脚本**：为 `codex-watchdog` 完成一键式安装交互向导 `codex-watchdog install`（环境自检 → 能力选择 → 参数收集 → 生成 `watchdog.config.json` 配置回退），降低反向穿透的使用门槛。(2026年8月12日)
-- [ ] **加入多端视频演示**：在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies) 或 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 中嵌入自动化巡检 (Desktop Computer Use) 运行过程的录屏演示。
+- [x] **加入多端视频演示**：已在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 与 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) 嵌入 Ch.07 自动巡检真实录屏（GIF + MP4，本机 Terminal 窗口按帧采集合成）。(2026年8月17日)
 
 ---
 ---
@@ -85,4 +85,4 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **Additional Templates**: Added three bilingual `AGENTS-*.md` templates for Go (Gin/Fiber), Rust (Axum), and Svelte (SvelteKit) following the Anti-Loop format with sandbox boundaries — 9 templates in total. (August 12, 2026)
 - [x] **Hands-On Repositories**: Companion, runnable projects for Ch.10 and Ch.11 → [examples/ch10-saas-mvp](file:///Users/hunkwu/Desktop/ai/book/examples/ch10-saas-mvp) (next build passed) and [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) (expo lint clean + expo-doctor 20/20). (August 12, 2026)
 - [x] **Watchdog Install Script**: Shipped the interactive onboarding wizard `codex-watchdog install` (environment self-check → capability selection → parameter collection → generates `watchdog.config.json` fallback config), lowering the barrier for reverse tunneling. (August 12, 2026)
-- [ ] **Visual Democasting**: Integrate recordings of automated visual testing (Ch.07 Desktop Computer Use) in [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) and [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies).
+- [x] **Visual Democasting**: Embedded a real recording of the Ch.07 automated visual audit (GIF + MP4, captured frame-by-frame from a local Terminal window) in [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) and [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md). (August 17, 2026)

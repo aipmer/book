@@ -6,6 +6,24 @@
 
 ---
 
+## 📅 2026年8月17日
+### 🚀 项目更新
+- **Ch.07 自动巡检演示录屏上线**：在本机真实录制 Codex 完成「landing 页可访问性审查与自动修复」任务的全过程（补 alt、语义化按钮、对比度与焦点样式修复），产出 [GIF](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.gif) 与 [MP4](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.mp4) 双格式（18 秒），嵌入 [case-studies/README.md](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 与根 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md)（双语区块）。至此 dev_task 全部 backlog 清零。
+- **录制方案**：`screencapture -l<CGWindowID>` 按窗口每 3 秒采帧（36 帧），ffmpeg 合成（mp4: libx264 1280px；gif: palette 640px），全程后台执行不占用用户鼠标键盘。
+
+### 🐞 遇到问题与解决方案
+- **问题 10：`codex exec` 在非 git 目录拒绝运行**
+  - **症状**：演示脚本报 `Not inside a trusted directory and --skip-git-repo-check was not specified`。
+  - **解决方案**：演示目录先 `git init` 并提交种子文件；同时配合 Ch.13 的 CLI 新规则使用 `--sandbox workspace-write`。
+- **问题 11：账号默认模型 `gpt-5.6-sol` 要求更新版 CLI**
+  - **症状**：`codex exec` 报 `The 'gpt-5.6-sol' model requires a newer version of Codex`。
+  - **解决方案**：显式指定 `-m gpt-5.5` 运行，录制顺利完成；也印证了 Ch.13「模型代号是技术债」的论断。
+- **问题 12：`sips` 压缩 GIF 导致动画静态化**
+  - **症状**：用 `sips -Z` 缩放 gif 后只剩首帧。
+  - **解决方案**：GIF 缩放必须走 ffmpeg palette 管线；从完好的 MP4 重新生成 640px 动图。
+
+---
+
 ## 📅 2026年8月12日
 ### 🚀 项目更新
 - **Ch.11 配套实战工程落地**：新增 [examples/ch11-expo-mobile](file:///Users/hunkwu/Desktop/ai/book/examples/ch11-expo-mobile) —— 基于 `create-expo-app` 的 Expo SDK 57 工程，按章节 Specs 配齐 Expo Router（`src/app` 文件路由）、NativeWind（tailwind.config / metro / babel / global.css 指令全套）与 `eas.json` 三档打包 profile，首页内置 NativeWind className 渲染演示。自带 CAP 协议 `AGENTS.md`。章节（中英双语）已加入源码链接。
@@ -114,6 +132,24 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 August 17, 2026
+### 🚀 Project Updates
+- **Ch.07 Visual Audit Democast Live**: Recorded a real on-device session of Codex completing a "landing-page accessibility review and auto-fix" task (adding alt text, semantic buttons, contrast and focus-style fixes). Produced both [GIF](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.gif) and [MP4](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.mp4) (18 seconds), embedded in [case-studies/README.md](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) and the root [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md) (bilingual sections). All dev_task backlog items are now cleared.
+- **Recording Pipeline**: `screencapture -l<CGWindowID>` captured the demo window every 3s (36 frames); ffmpeg composed the outputs (mp4: libx264 1280px; gif: palette 640px) — fully in the background without touching the user's mouse or keyboard.
+
+### 🐞 Issues & Solutions
+- **Issue 10: `codex exec` refused to run outside a git directory**
+  - **Symptom**: The demo script failed with `Not inside a trusted directory and --skip-git-repo-check was not specified`.
+  - **Solution**: `git init` the demo directory with a seed commit, and use `--sandbox workspace-write` per Ch.13's new CLI rules.
+- **Issue 11: Account default model `gpt-5.6-sol` required a newer CLI**
+  - **Symptom**: `codex exec` errored with `The 'gpt-5.6-sol' model requires a newer version of Codex`.
+  - **Solution**: Pinned `-m gpt-5.5` explicitly; recording succeeded — a live confirmation of Ch.13's "model codenames are technical debt" thesis.
+- **Issue 12: `sips` flattened the animated GIF to a static frame**
+  - **Symptom**: Resizing the GIF with `sips -Z` kept only the first frame.
+  - **Solution**: GIF resizing must go through the ffmpeg palette pipeline; regenerated the 640px animation from the intact MP4.
 
 ---
 

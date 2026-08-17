@@ -74,6 +74,16 @@
 
 ---
 
+## 🎬 演示录屏 (Democast)
+
+Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访问性问题）的真实终端录制：
+
+![Codex 视觉巡检演示](./case-studies/recordings/ch07-codex-visual-audit-demo.gif)
+
+*更多演示与复现命令见 [case-studies](./case-studies/README.md)。*
+
+---
+
 ## 📈 项目迭代与进度追踪
 
 - [📝 更新日志 (Changelog)](./changelog.md)：记录近一周及后续所有的功能迭代、CI 问题与解决方案。
@@ -181,6 +191,16 @@ To quickly deploy the **Codex Collaboration Protocol (CAP)** in your own tech st
 [scripts/codex-watchdog](./scripts/codex-watchdog/README.md) is a lightweight companion utility designed for:
 1. **Reverse Tunneling**: Bridges local development databases/services with the cloud sandbox (Ch.03).
 2. **Sentinel Gateway**: Authorizes high-risk agent operations remotely from WeChat/Feishu on mobile devices (Ch.08).
+
+---
+
+## 🎬 Democast
+
+A real terminal recording of Codex autonomously completing the Ch.07 visual audit task (reviewing and fixing landing-page accessibility issues):
+
+![Codex Visual Audit Demo](./case-studies/recordings/ch07-codex-visual-audit-demo.gif)
+
+*More demos and reproduction commands in [case-studies](./case-studies/README.md).*
 
 ---
 

@@ -6,6 +6,20 @@
 
 ---
 
+## 🎬 官方演示录屏
+
+### Ch.07 视觉闭环巡检演示（2026-08-17 录制）
+
+Codex 自主审查一张「问题 landing 页」并直接修复：补全 `alt`、把 `div onclick` 伪按钮换成语义化 `<button>`、修复对比度、补齐 label 与焦点样式——全程无人干预。
+
+![Ch.07 Codex 视觉巡检演示](./recordings/ch07-codex-visual-audit-demo.gif)
+
+- 📹 高清 MP4：[recordings/ch07-codex-visual-audit-demo.mp4](./recordings/ch07-codex-visual-audit-demo.mp4)（18 秒，1280px）
+- 🛠️ 复现方式：`codex exec -m gpt-5.5 --sandbox workspace-write "审查 index.html：找出可访问性与视觉对比度问题，直接修复并总结改动点"`
+- 📖 对应章节：[Ch.07 视觉闭环](../chapters/ch07_desktop_computer_use.md)
+
+---
+
 ## 🧭 投稿指引
 
 如果你有以下实操收获，欢迎向我们投稿：
