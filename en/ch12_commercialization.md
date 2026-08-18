@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
+[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
 
 # Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS
 
@@ -129,4 +129,4 @@ Now, configure your `AGENTS.md` in your project root, run your first `codex` com
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
+[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)

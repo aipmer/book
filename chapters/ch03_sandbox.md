@@ -70,7 +70,7 @@ ngrok tcp 5432
 
 
 
-将该动态地址配置到你的 [AGENTS.md](./AGENTS.md) 或是 Codex Cloud 的环境变量中：
+将该动态地址配置到你的 [AGENTS.md](../AGENTS.md) 或是 Codex Cloud 的环境变量中：
 
 ```Bash
 export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
@@ -86,7 +86,7 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 
 ### 1. 密钥文件的安全同步规则
 
-千万不要让 Codex 自动把 `\.env` 文件同步到公共云端。我们必须在本地的 `\.gitignore` 中加入 `\.env`，并在项目的 [AGENTS.md](./AGENTS.md) 中添加硬约束：
+千万不要让 Codex 自动把 `\.env` 文件同步到公共云端。我们必须在本地的 `\.gitignore` 中加入 `\.env`，并在项目的 [AGENTS.md](../AGENTS.md) 中添加硬约束：
 
 ```Markdown
 ## 🛑 Hard Constraints
@@ -96,7 +96,7 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 
 ### 2. 沙盒临时缓存清理
 
-为了避免沙盒缓存导致的“灵异 Bug”（比如旧的依赖包未清除），我们可以让 Codex 在每次启动测试前自动运行清理命令。在 [AGENTS.md](./AGENTS.md) 的开发指令中写入：
+为了避免沙盒缓存导致的“灵异 Bug”（比如旧的依赖包未清除），我们可以让 Codex 在每次启动测试前自动运行清理命令。在 [AGENTS.md](../AGENTS.md) 的开发指令中写入：
 
 ```Markdown
 ## 💻 Developer Commands

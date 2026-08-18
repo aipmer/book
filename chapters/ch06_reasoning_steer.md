@@ -127,7 +127,7 @@ git checkout -- src/lib/redis.ts
 
 
 
-然后在 [AGENTS.md](./AGENTS.md) 中追加：
+然后在 [AGENTS.md](../AGENTS.md) 中追加：
 
 ```Markdown
 - 禁止为任何简单的网络超时问题引入外部重试依赖库。

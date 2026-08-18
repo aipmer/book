@@ -6,6 +6,12 @@
 
 ---
 
+## 📅 2026年8月18日
+### 🚀 项目更新
+- **全书终检通过（v1.1.0 发布候选）**：按 AGENTS.md 验证标准对 48 个 Markdown 文件执行死链扫描与代码块语言标签校验，修复 28 处死链（`en/` 章节失效的 `README_EN.md` 导航链接统一指向双语 `README.md`；ch03/ch06 的 AGENTS.md 相对路径修正），复扫 **0 错误**。重新构建中英文合并书稿与 PDF 电子书。
+
+---
+
 ## 📅 2026年8月17日
 ### 🚀 项目更新
 - **Ch.07 自动巡检演示录屏上线**：在本机真实录制 Codex 完成「landing 页可访问性审查与自动修复」任务的全过程（补 alt、语义化按钮、对比度与焦点样式修复），产出 [GIF](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.gif) 与 [MP4](file:///Users/hunkwu/Desktop/ai/book/case-studies/recordings/ch07-codex-visual-audit-demo.mp4) 双格式（18 秒），嵌入 [case-studies/README.md](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 与根 [README.md](file:///Users/hunkwu/Desktop/ai/book/README.md)（双语区块）。至此 dev_task 全部 backlog 清零。
@@ -132,6 +138,12 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 August 18, 2026
+### 🚀 Project Updates
+- **Full-Book Final QA Passed (v1.1.0 Release Candidate)**: Ran the AGENTS.md verification spec across 48 Markdown files — dead-link scan plus code-fence language-tag checks. Fixed 28 dead links (`en/` chapters' stale `README_EN.md` nav links now point to the bilingual `README.md`; corrected AGENTS.md relative paths in ch03/ch06). Re-scan reports **0 errors**. Rebuilt the merged manuscripts and PDF ebooks.
 
 ---
 

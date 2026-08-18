@@ -1,4 +1,4 @@
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
+[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
 
 # Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging
 
@@ -122,4 +122,4 @@ Ultimately, EAS will return a QR code. You only need to scan it with your phone 
 
 ---
 
-[ 🏠 Index ](../README_EN.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
+[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
