@@ -45,3 +45,4 @@ watchdog.config.json
 # Multi-agent teamwork artifacts
 .agents/
 TEST_READY.md
+.vercel
