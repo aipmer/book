@@ -43,5 +43,22 @@
     "web": "expo start --web",
     "lint": "expo lint"
   },
-  "private": true
+  "private": true,
+  "expo": {
+    "install": {
+      "exclude": [
+        "@expo/ui",
+        "expo",
+        "expo-constants",
+        "expo-font",
+        "expo-image",
+        "expo-linking",
+        "expo-router",
+        "expo-splash-screen",
+        "expo-system-ui",
+        "react-native",
+        "eslint-config-expo"
+      ]
+    }
+  }
 }
