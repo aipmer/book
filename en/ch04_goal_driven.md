@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)
 
 # Ch.04 Goal-Driven Engineering: Taming Reasoning Agents with Boundaries and Assertions
+
+> 🎯 **The Real Problem**: Overly verbose prompts micromanage models like dictating every cut to a chef, while vague prompts invite hallucinations and regression bugs.  
+> 💡 **Tangible Output & Takeaway**: Standard goal-driven specification template (Goal + Preconditions + Output Assertions + Prohibited Actions) and real benchmark comparisons.  
+> ⚡ **Viral Screenshot Quote**: *"Micromanaging a chef burns the dinner. Define strict input-output assertions and let the agent engineer the solution."*
 
 In the era of Codex, powered by reasoning models like GPT-5.5, traditional prompt engineering is becoming obsolete. Reasoning models possess immense internal planning space; over-specifying execution steps only limits their efficiency.
 
@@ -89,4 +93,4 @@ You will notice that Codex automatically handles edge cases, such as Redis conne
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.03) ](./ch03_sandbox.md) | [ ➡️ Next (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 中文版 ](../chapters/ch04_goal_driven.md)

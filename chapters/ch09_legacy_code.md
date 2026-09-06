@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ 下一章 (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 English ](../en/ch09_legacy_code.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ 下一章 (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 English ](../en/ch09_legacy_code.md)
 
 # Ch.09 架构复苏：混乱遗留系统的全景解析与渐进式解耦
+
+> 🎯 **具体工程麻烦**：接手几万行无文档、无测试的屎山系统，改一行崩三处，重构不敢碰，盲目重写又交不了差。  
+> 💡 **可运行实战代码与落地收益**：全景逆向拓扑生成 Prompt（提取 ER 图与路由）；接口行为快照基准测试（Golden Master）；微创解耦三步法。  
+> ⚡ **社交传播 / 截图金句**：“面对几十万行没文档的遗留系统，别冲动推倒重来。先让 AI 画出地图、补上防崩测试，再做微创手术。”
 
 在独立开发或承接外包项目时，接手前人留下、无文档且无单测的「屎山」系统，远比从零构建更令人棘手，任何微小改动都伴随着潜在风险。
 
@@ -96,4 +100,4 @@ Codex 会自动解析表之间的关系，并生成直观的拓扑图，这比�
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ 下一章 (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 English ](../en/ch09_legacy_code.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ 下一章 (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 English ](../en/ch09_legacy_code.md)

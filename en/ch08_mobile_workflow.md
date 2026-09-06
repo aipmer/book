@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
 
 # Ch.08 Mobile Sentinel Workflows: 24/7 Remote Development and Orchestration
+
+> 🎯 **The Real Problem**: Engineers tied to desks watching terminal build logs; unattended CI failures or blocked deployments halting team momentum.  
+> 💡 **Tangible Output & Takeaway**: GitHub Actions failure dispatch workflows, Feishu interactive alert card JSON, and one-tap mobile remote approval pipelines.  
+> ⚡ **Viral Screenshot Quote**: *"Step away from your desk while builds run. Get instant Feishu alerts on your phone and approve production deployments on the subway."*
 
 As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." Sitting in front of a computer screen watching rolling compile logs is far from efficient.
 
@@ -136,9 +140,9 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-## 8.4 Official Reference Implementation: Codex Feishu Sentinel
+## 8.4 Official Reference Implementation: Feishu Assistant (Codex Feishu Sentinel)
 
-To eliminate the need for developers to manually assemble webhook gateways and polling logic, this book provides an out-of-the-box official companion repository: **[plugins-codex-feishu (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**.
+To eliminate the need for developers to manually assemble webhook gateways and polling logic, this book provides an out-of-the-box official companion repository: **[plugins-codex-feishu (Feishu Assistant)](https://github.com/aipmer/plugins-codex-feishu)**.
 
 It productizes this entire workflow into three primary capabilities:
 
@@ -165,5 +169,5 @@ By delegating validation assertions to GitHub Actions, forwarding exceptions via
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
 

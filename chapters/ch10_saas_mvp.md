@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ 下一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch10_saas_mvp.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ 下一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch10_saas_mvp.md)
 
 # Ch.10 商业实战：2小时跑通 Next.js + Stripe 商业级 MVP
+
+> 🎯 **具体工程麻烦**：想做独立付费产品，在登录鉴权、数据库模型、Stripe Webhook 验签和部署上折腾两周，热情耗尽还没上线。  
+> 💡 **可运行实战代码与落地收益**：完整可运行代码库 `examples/ch10-saas-mvp`（Next.js 15 + Supabase + Stripe 订阅）；Stripe CLI 本地支付闭环调试命令。  
+> ⚡ **社交传播 / 截图金句**：“独立开发最核心的里程碑不是架构多完美，而是收到第一笔付款。2 小时搞定全套付费闭环。”
 
 作为独立开发者（Indie Hacker）或微型创业团队，你最核心的里程碑不是“完美架构”，应该是“收到第一笔付款”。很多人把时间浪费在了反复配置脚手架上，迟迟无法上线。
 
@@ -8,7 +12,7 @@
 
 本章我们以极客速战速决的风格，教你如何指挥 Codex，在 2 小时内利用 `Next\.js 15 \(App Router\) \+ Supabase \(PostgreSQL\) \+ Stripe` 搓出一个具有完整支付与会员权限闭环的 SaaS MVP。
 
-> 📦 **配套实战源码**：[examples/ch10-saas-mvp](../examples/ch10-saas-mvp) —— 完整可运行的订阅制 AI 翻译工具（TransFlow），自带 CAP 协议 `AGENTS.md`，`npm install && npm run build` 已验证通过。
+> 📦 **配套实战源码**：[examples/ch10-saas-mvp](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp) —— 完整可运行的订阅制 AI 翻译工具（TransFlow），自带 CAP 协议 `AGENTS.md`，`npm install && npm run build` 已验证通过。
 
 ---
 
@@ -184,4 +188,4 @@ Stripe 在本地调试需要使用 Stripe CLI 进行 Webhook 转发。我们可�
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ 下一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch10_saas_mvp.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ 下一章 (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 English ](../en/ch10_saas_mvp.md)

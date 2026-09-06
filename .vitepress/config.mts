@@ -17,7 +17,9 @@ export default defineConfig({
     'dev_task.md',
     'changelog.md',
     'codex_blue_book_zh.md',
-    'codex_blue_book_en.md'
+    'codex_blue_book_en.md',
+    'PROJECT.md',
+    'TEST_*.md'
   ],
 
   locales: {
@@ -25,7 +27,7 @@ export default defineConfig({
       label: '简体中文',
       lang: 'zh-CN',
       title: 'Codex 蓝皮书',
-      description: '基于 OpenAI Codex 智能体的高效自动化开发、沙盒穿透与工程实战指南',
+      description: '基于 OpenAI Codex 智能体的高效自动化开发、终端自测与工程实战指南',
       themeConfig: {
         nav: [
           { text: '首页', link: '/' },
@@ -33,7 +35,7 @@ export default defineConfig({
           { text: '规约生成器', link: '/generator' },
           { text: '规约模版', link: 'https://github.com/aipmer/book/tree/main/templates' },
           { text: '实战样例', link: 'https://github.com/aipmer/book/tree/main/examples' },
-          { text: '看护助理', link: 'https://github.com/aipmer/plugins-codex-feishu' },
+          { text: '飞书助理', link: 'https://github.com/aipmer/plugins-codex-feishu' },
           {
             text: '下载 PDF',
             items: [
@@ -45,46 +47,46 @@ export default defineConfig({
         ],
         sidebar: [
           {
-            text: '第一部分：心智与基建',
+            text: '第一部分：心智与基建（从打字员到指挥官）',
             collapsed: false,
             items: [
-              { text: 'Ch.01 AI 原生心智：从代码补全到自主智能体', link: '/chapters/ch01_mindset' },
-              { text: 'Ch.02 环境搭建与基建：打造沙盒穿透与调试环境', link: '/chapters/ch02_setup' },
-              { text: 'Ch.03 沙盒边界与执行：安全防护与受限提权', link: '/chapters/ch03_sandbox' },
+              { text: 'Ch.01 AI 原生心智：把 AI 当全栈团队，甩掉打字机包袱', link: '/chapters/ch01_mindset' },
+              { text: 'Ch.02 多端指挥舱：CLI、桌面端与手机协同配置避坑', link: '/chapters/ch02_setup' },
+              { text: 'Ch.03 本地环境与端口打通：让云端 AI 顺畅访问本地数据库', link: '/chapters/ch03_sandbox' },
             ]
           },
           {
-            text: '第二部分：规范与认知编排',
+            text: '第二部分：规范与认知编排（立规矩、防失控）',
             collapsed: false,
             items: [
-              { text: 'Ch.04 目标驱动式编程：从模糊意图到可执行规范', link: '/chapters/ch04_goal_driven' },
-              { text: 'Ch.05 智能体协作协议：AGENTS.md 实操与 Anti-Loop 护栏', link: '/chapters/ch05_agents_protocol' },
-              { text: 'Ch.06 思考链控制：干预与引导智能体推理路径', link: '/chapters/ch06_reasoning_steer' },
+              { text: 'Ch.04 目标驱动编程：别教大厨切菜，用验收断言锁死边界', link: '/chapters/ch04_goal_driven' },
+              { text: 'Ch.05 打造项目专属规则：让 AI 听话、防破坏与防死循环', link: '/chapters/ch05_agents_protocol' },
+              { text: 'Ch.06 透视 AI 思考过程：像技术总监一样随时纠偏与打断', link: '/chapters/ch06_reasoning_steer' },
             ]
           },
           {
-            text: '第三部分：跨端自动化与全天候值班',
+            text: '第三部分：跨端自动化与全天候值班（解放双手与工位）',
             collapsed: false,
             items: [
-              { text: 'Ch.07 桌面端自动化与 Computer Use：跨越命令行鸿沟', link: '/chapters/ch07_desktop_computer_use' },
-              { text: 'Ch.08 移动看护工作流：全天候离线编排实战', link: '/chapters/ch08_mobile_workflow' },
+              { text: 'Ch.07 真实接管桌面与浏览器：UI 自动走查与像素级还原', link: '/chapters/ch07_desktop_computer_use' },
+              { text: 'Ch.08 飞书助理值班：人在路上，用手机随时监控与审批', link: '/chapters/ch08_mobile_workflow' },
             ]
           },
           {
-            text: '第四部分：工程重构与闭环交付',
+            text: '第四部分：工程重构与闭环交付（真实硬核落地）',
             collapsed: false,
             items: [
-              { text: 'Ch.09 遗留代码重构：外科手术式改造与反退化测试', link: '/chapters/ch09_legacy_code' },
-              { text: 'Ch.10 从 0 到 1 商业级 SaaS MVP：闭环交付全解', link: '/chapters/ch10_saas_mvp' },
-              { text: 'Ch.11 跨端移动应用：Expo/React Native 极速商业化', link: '/chapters/ch11_expo_mobile' },
+              { text: 'Ch.09 改造混乱老代码：逆向工程、防崩测试与微创重构', link: '/chapters/ch09_legacy_code' },
+              { text: 'Ch.10 商业化实战：2 小时跑通 Next.js + Stripe 付费 SaaS', link: '/chapters/ch10_saas_mvp' },
+              { text: 'Ch.11 跨端原生 App：告别环境地狱，用 Expo 极速上架双端', link: '/chapters/ch11_expo_mobile' },
             ]
           },
           {
-            text: '第五部分：商业化与前沿瞭望',
+            text: '第五部分：商业化与前沿瞭望（一人公司与生态升级）',
             collapsed: false,
             items: [
-              { text: 'Ch.12 独立开发者的商业化与交付自动化', link: '/chapters/ch12_commercialization' },
-              { text: 'Ch.13 2026 生态前沿与全景升级指南', link: '/chapters/ch13_2026_frontier' },
+              { text: 'Ch.12 一人公司增长飞轮：自动化营销、日常运营与变现路径', link: '/chapters/ch12_commercialization' },
+              { text: 'Ch.13 2026 前沿作战地图：大版本迁移、新特性接管与避坑速查', link: '/chapters/ch13_2026_frontier' },
             ]
           },
           {
@@ -116,7 +118,7 @@ export default defineConfig({
       lang: 'en-US',
       link: '/en/',
       title: 'Codex Blue Book',
-      description: 'A Pragmatic Guide to Autonomous Agent Orchestration, Sandbox Penetration & Commercial Delivery',
+      description: 'A Pragmatic Guide to Autonomous Agent Orchestration, Direct Execution & Commercial Delivery',
       themeConfig: {
         nav: [
           { text: 'Home', link: '/en/' },
@@ -124,7 +126,7 @@ export default defineConfig({
           { text: 'Protocol Generator', link: '/en/generator' },
           { text: 'Templates', link: 'https://github.com/aipmer/book/tree/main/templates' },
           { text: 'Examples', link: 'https://github.com/aipmer/book/tree/main/examples' },
-          { text: 'Sentinel', link: 'https://github.com/aipmer/plugins-codex-feishu' },
+          { text: 'Feishu Assistant', link: 'https://github.com/aipmer/plugins-codex-feishu' },
           {
             text: 'Download PDF',
             items: [
@@ -136,46 +138,46 @@ export default defineConfig({
         ],
         sidebar: [
           {
-            text: 'Part 1: Mindset & Infrastructure',
+            text: 'Part 1: Mindset & Infrastructure (From Typist to Architect)',
             collapsed: false,
             items: [
-              { text: 'Ch.01 The AI-Native Mindset', link: '/en/ch01_mindset' },
-              { text: 'Ch.02 Environment Setup & Infrastructure', link: '/en/ch02_setup' },
-              { text: 'Ch.03 Sandbox Boundaries and Execution', link: '/en/ch03_sandbox' },
+              { text: 'Ch.01 AI-Native Mindset: Treat AI as a Full-Stack Team', link: '/en/ch01_mindset' },
+              { text: 'Ch.02 Multi-Surface Setup: Pitfalls & Setup for CLI, Desktop & Mobile', link: '/en/ch02_setup' },
+              { text: 'Ch.03 Connect Local Environments & Ports: Access Local DB from Cloud AI', link: '/en/ch03_sandbox' },
             ]
           },
           {
-            text: 'Part 2: Specifications & Cognitive Steering',
+            text: 'Part 2: Specifications & Cognitive Steering (Rules & Safety Boundaries)',
             collapsed: false,
             items: [
-              { text: 'Ch.04 Goal-Driven Programming', link: '/en/ch04_goal_driven' },
-              { text: 'Ch.05 Agent Collaboration Protocol & Anti-Loop', link: '/en/ch05_agents_protocol' },
-              { text: 'Ch.06 Steering Chain-of-Thought', link: '/en/ch06_reasoning_steer' },
+              { text: 'Ch.04 Goal-Driven Programming: Assert Boundaries Instead of Micromanaging', link: '/en/ch04_goal_driven' },
+              { text: 'Ch.05 Custom Project Rules: Tame Agents, Prevent Loops & Breakages', link: '/en/ch05_agents_protocol' },
+              { text: 'Ch.06 Steering AI Reasoning: Inspect & Correct Thinking Like a Lead Architect', link: '/en/ch06_reasoning_steer' },
             ]
           },
           {
-            text: 'Part 3: Cross-Device & 24/7 Watchdog',
+            text: 'Part 3: Cross-Device Automation & 24/7 Feishu Sentinel',
             collapsed: false,
             items: [
-              { text: 'Ch.07 Desktop Automation & Computer Use', link: '/en/ch07_desktop_computer_use' },
-              { text: 'Ch.08 Mobile Watchdog: 24/7 Offline Orchestration', link: '/en/ch08_mobile_workflow' },
+              { text: 'Ch.07 Direct Desktop & Browser Control: Automated UI Testing & Pixel Review', link: '/en/ch07_desktop_computer_use' },
+              { text: 'Ch.08 Feishu Assistant: 24/7 Mobile Telemetry & Remote Approvals', link: '/en/ch08_mobile_workflow' },
             ]
           },
           {
-            text: 'Part 4: Refactoring & Commercial Delivery',
+            text: 'Part 4: Refactoring & Commercial Delivery (Real Code, Zero Fluff)',
             collapsed: false,
             items: [
-              { text: 'Ch.09 Refactoring Legacy Code', link: '/en/ch09_legacy_code' },
-              { text: 'Ch.10 From Zero to Commercial SaaS MVP', link: '/en/ch10_saas_mvp' },
-              { text: 'Ch.11 Cross-Platform Mobile Apps with Expo', link: '/en/ch11_expo_mobile' },
+              { text: 'Ch.09 Refactoring Legacy Code: Reverse Engineering & Non-Breaking Tests', link: '/en/ch09_legacy_code' },
+              { text: 'Ch.10 Commercial SaaS MVP: Shipping Stripe Monetization in 2 Hours', link: '/en/ch10_saas_mvp' },
+              { text: 'Ch.11 Cross-Platform Mobile Apps: Ship Native iOS & Android with Expo', link: '/en/ch11_expo_mobile' },
             ]
           },
           {
-            text: 'Part 5: Commercialization & Frontier',
+            text: 'Part 5: Commercialization & Frontier (One-Person SaaS & 2026 Upgrades)',
             collapsed: false,
             items: [
-              { text: 'Ch.12 Indie Hacker Commercialization', link: '/en/ch12_commercialization' },
-              { text: 'Ch.13 2026 Ecosystem Frontier & Landscape', link: '/en/ch13_2026_frontier' },
+              { text: 'Ch.12 One-Person SaaS Growth Flywheel: Automated Marketing & Ops', link: '/en/ch12_commercialization' },
+              { text: 'Ch.13 2026 Ecosystem Battle Map: Migrations, New Features & Breaking Changes', link: '/en/ch13_2026_frontier' },
             ]
           },
           {

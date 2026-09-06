@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)
 
 # Ch.02 Cross-Device Control: Building Your Codex Multi-Surface Productivity Matrix
+
+> 🎯 **The Real Problem**: Developers rush to converse with AI while local Node/Rust dependencies and OS permissions fail, causing endless terminal errors and burning tokens.  
+> 💡 **Tangible Output & Takeaway**: Zero-dependency npm CLI installation workflow, macOS screen/accessibility permission verification scripts, and multi-surface debugging checklist.  
+> ⚡ **Viral Screenshot Quote**: *"First stabilize your cockpit before asking AI to code. Don't let local setup errors burn your precious token budget."*
 
 To do a good job, one must first sharpen one's tools. In "Real-World Product Talk", I often emphasize a core principle: **The first step of AI-Native development is configuring your "cockpit" to be sufficiently stable.** Many beginners rush into prompting or writing code with AI, only to end up with AI screaming errors in the terminal and wasting tokens because of local environment mismatches or incorrect permission settings.
 
@@ -88,4 +92,4 @@ When you are enjoying a cup of coffee at a café, and the local Codex runs up to
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.01) ](./ch01_mindset.md) | [ ➡️ Next (Ch.03) ](./ch03_sandbox.md) | [ 🌐 中文版 ](../chapters/ch02_setup.md)

@@ -1,12 +1,16 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)
 
 # Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours
+
+> 🎯 **The Real Problem**: Spending two weeks wrestling with authentication, database schemas, Stripe Webhook signature verification, and cloud hosting before shipping anything.  
+> 💡 **Tangible Output & Takeaway**: Fully runnable production repo `examples/ch10-saas-mvp` (Next.js 15 + Supabase + Stripe subscriptions) and local Stripe CLI test loops.  
+> ⚡ **Viral Screenshot Quote**: *"The ultimate milestone for indie developers isn't architectural perfection—it's receiving the first customer payment. Ship monetization in 2 hours."*
 
 As an independent developer (Indie Hacker) or micro-startup, your core milestone is not building a "perfect architecture"—it is **"receiving your first payment."** Many developers waste time repeatedly configuring boilerplate templates, delaying their actual launch.
 
 In this chapter, in a fast-paced hacker style, we will teach you how to direct Codex to ship a SaaS MVP with a complete payment and subscription access control loop in under 2 hours using `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe`.
 
-> 📦 **Companion Source Code**: [examples/ch10-saas-mvp](../examples/ch10-saas-mvp) — a fully runnable subscription-based AI translator (TransFlow) with its own CAP `AGENTS.md`. Verified with `npm install && npm run build`.
+> 📦 **Companion Source Code**: [examples/ch10-saas-mvp](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp) — a fully runnable subscription-based AI translator (TransFlow) with its own CAP `AGENTS.md`. Verified with `npm install && npm run build`.
 
 ---
 
@@ -178,4 +182,4 @@ By following this loop (Spec Definition -> AI Coding -> Sandbox Validation -> Re
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)

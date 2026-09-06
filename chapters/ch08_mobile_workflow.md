@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)
 
 # Ch.08 移动看护工作流：全天候离线编排实战
+
+> 🎯 **具体工程麻烦**：开发者被困在工位看滚动编译日志；离开工位后 CI 挂了或高危发布卡住，整个团队进度中断。  
+> 💡 **可运行实战代码与落地收益**：GitHub Actions 失败推送工作流；飞书 Webhook 告警卡片 JSON；手机远程一键审批部署交互流。  
+> ⚡ **社交传播 / 截图金句**：“下班不盯屏幕，任务照常推进。CI 报错手机秒收飞书卡片，人在地铁上一键完成上线审批。”
 
 独立开发者与产品经理的核心追求除了高效率，还有工作的自由度。盯在电脑前查看智能体编译滚动日志的方式并不高效。
 
@@ -142,9 +146,9 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-## 8.4 官方参考实现：飞书里的 Codex 值班助理 (Codex Feishu Sentinel)
+## 8.4 官方参考实现：飞书助理 (Codex Feishu Sentinel)
 
-为了避免开发者重复手写 Webhook 网关与长连接轮询逻辑，本项目配套开源了开箱即用的官方参考工程：**[plugins-codex-feishu（飞书里的 Codex 值班助理）](https://github.com/aipmer/plugins-codex-feishu)**。
+为了避免开发者重复手写 Webhook 网关与长连接轮询逻辑，本项目配套开源了开箱即用的官方参考工程：**[plugins-codex-feishu（飞书助理）](https://github.com/aipmer/plugins-codex-feishu)**。
 
 它将上述架构全面产品化，具备三大核心形态：
 
@@ -171,5 +175,5 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ 下一章 (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 English ](../en/ch08_mobile_workflow.md)
 

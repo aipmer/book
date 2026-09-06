@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)
 
 # Ch.05 制定 CAP 协议：构建项目专属的 AGENTS.md 规则层
+
+> 🎯 **具体工程麻烦**：AI 修好 1 个 Bug 带出 3 个新 Bug；在同一报错上连续重试 10 次烧钱自旋；擅自安装杂乱外部包或手写假 TODO。  
+> 💡 **可运行实战代码与落地收益**：生产级 `AGENTS.md` 规则层模板；失败 2 次强制熔断机制；禁止假代码占位与依赖失控红线。  
+> ⚡ **社交传播 / 截图金句**：“没有规则约束的 AI 就是脱缰野马。一份 AGENTS.md，让智能体像十年老架构师一样遵守工程规范。”
 
 在实际做产品的过程中，最怕遇到的一种开发情况是：修好了一个 Bug，却顺手带出了三个新 Bug；或者新写了一个功能，结果把团队约定的代码风格破坏得一塌糊涂。
 
@@ -125,4 +129,4 @@ project_root_markers = [".git"]
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.04) ](./ch04_goal_driven.md) | [ ➡️ 下一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ 🌐 English ](../en/ch05_agents_protocol.md)

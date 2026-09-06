@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
 
 # Ch.12 The Final Frontier: Building an Automated Growth Flywheel for a One-Person SaaS
+
+> 🎯 **The Real Problem**: Spending 99% of effort writing code and 1% acquiring users, launching to crickets because a solo creator cannot balance engineering and growth.  
+> 💡 **Tangible Output & Takeaway**: Event-triggered automated marketing scripts, daily executive telemetry digest bots, and one-person SaaS growth workflows.  
+> ⚡ **Viral Screenshot Quote**: *"Flawless code with zero users is useless. Let AI not only build your product, but also drive your automated distribution flywheel."*
 
 On my WeChat public account "Real-World Product Talk" and pmer.cn, I have written numerous articles about "independent development and side hustles." I have observed that the most common trap developers fall into is: **spending 99% of their energy optimizing code, but only 1% of their energy finding users and their actual needs.**
 
@@ -129,4 +133,4 @@ Now, configure your `AGENTS.md` in your project root, run your first `codex` com
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch12_commercialization.md)

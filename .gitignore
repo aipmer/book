@@ -41,3 +41,7 @@ watchdog.config.json
 .vitepress/cache
 
 
+
+# Multi-agent teamwork artifacts
+.agents/
+TEST_READY.md

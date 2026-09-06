@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)
 
 # Ch.04 目标驱动：用“边界与断言”驾驭推理型智能体
+
+> 🎯 **具体工程麻烦**：写太长 Prompt 像教大厨切土豆丝导致模型受限；一句话太模糊又导致 AI 胡编乱造改出 10 个 Bug。  
+> 💡 **可运行实战代码与落地收益**：目标驱动 Specs 标准模板（目标 + 前提 + 验收断言 + 禁区红线）；传统 Prompt 与 Specs 真实测试对比。  
+> ⚡ **社交传播 / 截图金句**：“教大厨切土豆丝只会把菜炒糊。给 AI 下指令，定死输入输出与验收断言才是专业做法。”
 
 在以 GPT-5.5 等强推理模型为核心的 Codex 时代，传统的过程式 Prompt 工程已不再适用。推理模型具备内生规划（Internal Planning）空间，过细的执行步骤会限制其规划效率。
 
@@ -107,4 +111,4 @@ graph TD
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.03) ](./ch03_sandbox.md) | [ ➡️ 下一章 (Ch.05) ](./ch05_agents_protocol.md) | [ 🌐 English ](../en/ch04_goal_driven.md)

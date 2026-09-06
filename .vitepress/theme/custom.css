@@ -1,29 +1,84 @@
 /* Professional High-Tech Aesthetic Styling */
 
+/* ==========================================================================
+   Codex Blue Book - High-Tech Ambient & Book Cover Lighting (Requirement R1)
+   ========================================================================== */
+
 :root {
-  --vp-home-hero-image-filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.22));
+  /* Light Mode - Book Cover Aesthetics */
+  --book-cover-shadow:
+    0 10px 30px -4px rgba(15, 23, 42, 0.12),
+    0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  --book-cover-shadow-hover:
+    0 22px 48px -8px rgba(15, 23, 42, 0.16),
+    0 0 28px 2px rgba(52, 81, 178, 0.14),
+    0 0 50px 8px rgba(86, 114, 205, 0.08);
+  --book-cover-border: rgba(0, 0, 0, 0.08);
+  --book-cover-border-hover: rgba(52, 81, 178, 0.35);
+  --book-cover-filter: contrast(1) brightness(1);
+  --book-cover-filter-hover: contrast(1.025) brightness(1.02);
+
+  /* Light Mode - Ambient Backlight Aura */
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(52, 81, 178, 0.14) 0%,
+    rgba(86, 114, 205, 0.06) 45%,
+    transparent 70%
+  );
+  --vp-home-hero-image-filter: blur(50px);
 }
 
 .dark {
-  --vp-home-hero-image-filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.65));
+  /* Dark Mode - Book Cover Aesthetics */
+  --book-cover-shadow:
+    0 16px 40px -8px rgba(0, 0, 0, 0.65),
+    0 0 20px 1px rgba(52, 81, 178, 0.15);
+  --book-cover-shadow-hover:
+    0 24px 54px -6px rgba(0, 0, 0, 0.8),
+    0 0 32px 3px rgba(92, 115, 231, 0.35),
+    0 0 64px 8px rgba(52, 81, 178, 0.22);
+  --book-cover-border: rgba(255, 255, 255, 0.1);
+  --book-cover-border-hover: rgba(142, 168, 255, 0.45);
+  --book-cover-filter: contrast(1) brightness(1);
+  --book-cover-filter-hover: contrast(1.03) brightness(1.03);
+
+  /* Dark Mode - Ambient Backlight Aura */
+  --vp-home-hero-image-background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(92, 115, 231, 0.22) 0%,
+    rgba(52, 81, 178, 0.12) 50%,
+    transparent 75%
+  );
+  --vp-home-hero-image-filter: blur(54px);
 }
 
-/* Home Hero Cover Image */
+/* Home Hero Cover Image - Pure Optical Hover, No Displacement */
 .VPHero .image-src {
   border-radius: 10px;
-  border: 1px solid var(--vp-c-divider);
-  box-shadow: var(--vp-home-hero-image-filter);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--book-cover-border);
+  box-shadow: var(--book-cover-shadow);
+  filter: var(--book-cover-filter);
+  transition:
+    box-shadow 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   max-width: 380px;
   width: 100%;
   height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  will-change: box-shadow, filter, border-color;
+  backface-visibility: hidden;
 }
 
+/* Hover State: Pure Smooth Soft Glow Diffusion & Micro-Contrast Enhancement */
+/* DO NOT set transform here - preserves absolute centering and completely eliminates jumping */
 .VPHero .image-src:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+  box-shadow: var(--book-cover-shadow-hover);
+  border-color: var(--book-cover-border-hover);
+  filter: var(--book-cover-filter-hover);
 }
+
 
 /* Features Engineering Icons */
 .VPFeature .icon {

@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)
 
 # Ch.02 跨端掌控：Codex 多端生产力矩阵搭建
+
+> 🎯 **具体工程麻烦**：新手急着和 AI 对话写代码，本地 Node/Rust 依赖错乱、权限没开对，导致终端疯狂报错、白白烧掉几万 Token。  
+> 💡 **可运行实战代码与落地收益**：提供无需安装 Rust 的 npm CLI 零踩坑安装脚本，macOS 辅助功能与屏幕录制权限核验命令，三端联调 checklist。  
+> ⚡ **社交传播 / 截图金句**：“AI 编程第一步，先配稳你的指挥舱。别让本地依赖报错吃光你的宝贵 Token。”
 
 工欲善其事，必先利其器。在“实战产品说”中，我常强调一个原则：**AI Native 开发的第一步，是把你的“指挥舱”配置得足够稳定。** 很多新手急着去跟 AI 聊天写代码，结果因为本地环境不匹配、权限没开对，导致 AI 在终端疯狂报错、浪费 Token。
 
@@ -151,4 +155,4 @@ Computer Use 的安全边界由 macOS 系统层 + Codex App 内的 GUI 白名单
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.01) ](./ch01_mindset.md) | [ ➡️ 下一章 (Ch.03) ](./ch03_sandbox.md) | [ 🌐 English ](../en/ch02_setup.md)

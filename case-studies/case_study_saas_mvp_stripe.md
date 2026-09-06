@@ -1,6 +1,6 @@
 # 📄 案例 01：Next.js 15 + Stripe 商业 MVP 闭环实录
 
-> 本案例来自《Codex 蓝皮书》Ch.10 商业实战配套工程 [examples/ch10-saas-mvp](../examples/ch10-saas-mvp/README.md) 的从零孵化全过程。
+> 本案例来自《Codex 蓝皮书》Ch.10 商业实战配套工程 [examples/ch10-saas-mvp](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp) 的从零孵化全过程。
 
 ---
 
@@ -56,4 +56,4 @@ npm run test
 
 ## 👤 作者信息 (Author Info)
 - **作者**：Hunk Wu (实战产品说)
-- **开源代码**：[examples/ch10-saas-mvp](../examples/ch10-saas-mvp/README.md)
+- **开源代码**：[examples/ch10-saas-mvp](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp)

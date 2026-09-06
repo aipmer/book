@@ -119,7 +119,7 @@ def build_zh():
     combined.append("[ 🌐 English PDF Version ](./codex_blue_book_en.pdf) | [ 🌐 English Online Version ](./en/ch01_mindset.md)\n")
     combined.append(toc_zh.strip() + "\n\n---\n")
     combined.append("## 🔌 关联开源项目\n")
-    combined.append("*   **[Codex 飞书插件](https://github.com/hunkwu/plugins-codex-feishu)**：将 Codex 强大的智能体自动化开发与重构能力无缝接入飞书多维表格与机器人工作流，实现日常办公任务的自动化编排与高效数据流转。\n\n---\n")
+    combined.append("*   **[飞书助理 (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**：蓝皮书 Ch.08 官方参考工程。专为 Codex 开发者打造的飞书助理，支持日报自动汇总推送、CI 熔断移动端警报与手机端一键审批。\n\n---\n")
     
     for filename in chapter_files:
         zh_path = os.path.join(chapters_dir, filename)
@@ -141,7 +141,7 @@ def build_en():
     combined.append("[ 🌐 中文 PDF 版 ](./codex_blue_book_zh.pdf) | [ 🌐 中文在线版 ](./chapters/ch01_mindset.md)\n")
     combined.append(toc_en.strip() + "\n\n---\n")
     combined.append("## 🔌 Related Projects\n")
-    combined.append("*   **[Codex Feishu Plugin](https://github.com/hunkwu/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows, enabling automated daily office task orchestration and high-efficiency data flows.\n\n---\n")
+    combined.append("*   **[Feishu Assistant (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**: The official companion repository for Ch.08. An intelligent duty assistant in Feishu for Codex developers, featuring automated daily git digest pushes, CI mobile alarms, and one-tap remote approvals.\n\n---\n")
     
     for filename in chapter_files:
         en_path = os.path.join(en_dir, filename)

@@ -31,10 +31,10 @@
 ## 🚀 已完成任务 (Completed Tasks)
 
 ### 4. 在线阅读与分发体验
-- [x] **上线 VitePress 双语沉浸阅读站 (2026年9月6日)**：搭建基于 VitePress 1.6 的双语在线阅读站，支持全文字段本地检索、暗黑模式切换、代码一键复制，并通过 GitHub Actions 自动部署至 GitHub Pages；完成与「飞书 Codex 值班助理」Ch.08 的双向链接对齐。
+- [x] **上线 VitePress 双语沉浸阅读站 (2026年9月6日)**：搭建基于 VitePress 1.6 的双语在线阅读站，支持全文字段本地检索、暗黑模式切换、代码一键复制，并通过 GitHub Actions 自动部署至 GitHub Pages；完成与「飞书助理」Ch.08 的双向链接对齐。
 - [x] **上线 AGENTS.md 交互式生成器 (2026年9月6日)**：在静态阅读站双语内嵌基于 Vue 3 的交互式规约生成器，支持 10 套主流技术栈（Next.js/Vue3/FastAPI/Django/Spring/Expo/Go/Rust/Svelte/Chrome MV3）、沙盒等级与 Anti-Loop 护栏一键配置与复制。
 - [x] **扩增 Chrome 扩展沙盒实战样例 (2026年9月6日)**：完成 `examples/ch06-chrome-extension` (Codex Web Copilot)，纯原生 Manifest V3 编写，遵循严格 CSP 与防死锁机制，并纳入 Examples CI 自动化守卫。
-- [x] **完善社区案例库与 Contributors 机制 (2026年9月6日)**：沉淀入库首批真实典型实战 Case（SaaS Stripe 商业闭环与飞书移动值班助理），并上线 GitHub Issue 案例/模版在线投稿模版。
+- [x] **完善社区案例库与 Contributors 机制 (2026年9月6日)**：沉淀入库首批真实典型实战 Case（SaaS Stripe 商业闭环与飞书助理），并上线 GitHub Issue 案例/模版在线投稿模版。
 
 ---
 

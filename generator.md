@@ -1,17 +1,17 @@
 ---
 title: AGENTS.md 交互式规约生成器
-description: 在线定制符合 Codex 蓝皮书 CAP 规范的项目规约文件
+description: 30 秒为你的项目生成专属 AI 防御规约
 ---
 
 # AGENTS.md 交互式规约生成器
 
-> 根据你的实际工程技术栈与团队安全等级，在线定制符合 **Codex 协作协议 (CAP)** 的 `AGENTS.md` 规约。配置完成后可一键复制直接放置于项目根目录下。
+> 防止 AI 破坏既有架构、胡乱安装依赖、陷入死循环盲猜或虚构假代码。根据技术栈一键生成专属 AGENTS.md 防御规约，直接复制至项目根目录即刻生效。
 
 <ClientOnly>
 <div class="generator-app">
   <div class="form-grid">
     <div class="form-group">
-      <label class="label">1. 选择技术栈 / 框架：</label>
+      <label class="label">1. 选择你的项目技术栈（对号入座，锁定技术规范）：</label>
       <select v-model="selectedStack" class="select-input">
         <option value="nextjs">Next.js 14/15 (React 全栈)</option>
         <option value="vue3">Vue 3 + Vite + TypeScript</option>
@@ -32,32 +32,32 @@ description: 在线定制符合 Codex 蓝皮书 CAP 规范的项目规约文件
     </div>
 
     <div class="form-group">
-      <label class="label">3. 沙盒执行与提权策略：</label>
+      <label class="label">3. 运行环境与权限边界（防危险操作与数据泄漏）：</label>
       <select v-model="sandboxLevel" class="select-input">
-        <option value="standard">标准受限沙盒（允许构建与测试，禁止外部网络提权）</option>
-        <option value="strict">严格隔离沙盒（只读代码树，全部变更必须走 PR）</option>
-        <option value="tunnel">反向穿透沙盒（允许 Watchdog 网关联调本地数据库）</option>
+        <option value="standard">标准开发防御（允许安装依赖、跑测试与编译构建；禁止越权访问生产凭证与外网密钥）</option>
+        <option value="strict">严格只读保护（AI 仅分析代码与输出修改方案，禁止私自执行终端命令，全部变更必须走人工 PR 审查）</option>
+        <option value="tunnel">本地联调模式（允许打通本地端口访问 Docker 数据库与外部 API，配合飞书助理远程审批高危操作）</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label class="label">4. 激活安全护栏与 Anti-Loop 策略：</label>
+      <label class="label">4. 激活核心安全护栏（防御常见工程失控事故）：</label>
       <div class="checkbox-group">
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.antiLoop" />
-          <span>Anti-Loop 护栏：单次任务连续报错 3 次立即熔断，禁止自旋盲猜</span>
+          <span>🛑 防自旋死循环：同一编译或测试报错连续修复 2 次不通过立即暂停，输出排错思考链，严禁无脑烧 Token 乱试</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.noPlaceholder" />
-          <span>严禁占位符：禁止写入 TODO、mock 数据或空函数占位</span>
+          <span>🚫 防虚假伪造：严禁提交含有 // TODO、假 mock 数据或未实现的空函数，所有交付代码必须真实可编译</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.noExternalDeps" />
-          <span>依赖守卫：禁止为简单逻辑擅自安装未知第三方 npm/pip 包</span>
+          <span>📦 防滥装依赖：常规逻辑优先使用原生标准库与内置 API，严禁未经确认私自安装体积庞大的非必要外部包</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.enforceValidation" />
-          <span>交付闭环：每次代码提交前必须显式跑通 Validation Specs 验证命令</span>
+          <span>✅ 交付必带测试：阶段性修改完成后必须由智能体自动跑通测试与生产构建，退出码为 0 才算完成交付</span>
         </label>
       </div>
     </div>
@@ -189,36 +189,36 @@ const stackConfigs = {
 }
 
 const sandboxText = {
-  standard: '- 标准受限沙盒：允许在项目内执行依赖安装、测试与代码构建。严禁任何生产部署、外部密钥读写等高危行为。',
-  strict: '- 严格隔离沙盒：智能体仅具备文件读写权限。所有命令执行必须由人类在终端显式审查确认后运行。',
-  tunnel: '- 反向穿透沙盒：允许结合 Codex Watchdog CLI (Ch.03/Ch.08) 打通本地端口穿透与远程移动看护。'
+  standard: '- 标准开发防御：允许在项目内执行依赖安装、测试与代码构建。严禁任何生产部署、外部密钥读写等越权高危行为。',
+  strict: '- 严格只读保护：智能体仅具备文件阅读与方案输出权限，禁止私自执行终端命令。所有变更必须由人类在终端显式审查后走 PR 合并。',
+  tunnel: '- 本地联调模式：允许打通本地端口访问 Docker 数据库与外部 API，配合飞书助理移动端随时接收告警与审批高危操作。'
 }
 
 const generatedContent = computed(() => {
   const stack = stackConfigs[selectedStack.value]
   const pName = projectName.value || 'my-project'
   
-  let md = `# 🤖 Codex 协作协议 (Codex Collaboration Protocol - CAP)\n\n`
+  let md = `# 🤖 项目专属 AI 协作防御规约 (AGENTS.md)\n\n`
   md += `## 📌 项目指纹\n`
   md += `- **项目名称**：${pName}\n`
   md += `- **目标架构**：${stack.name}\n`
-  md += `- **协作模式**：基于《Codex 蓝皮书》CAP 协议自主迭代开发\n\n`
+  md += `- **协作模式**：遵循生产级防自旋死循环、防虚假代码与自动化测试防线\n\n`
 
-  md += `## 🛑 沙盒边界与提权策略\n`
+  md += `## 🛑 运行环境与权限边界\n`
   md += `${sandboxText[sandboxLevel.value]}\n\n`
 
-  md += `## 🛡️ Anti-Loop 护栏与工程红线\n`
+  md += `## 🛡️ 核心工程防御护栏 (Anti-Loop)\n`
   if (rules.value.antiLoop) {
-    md += `1. **AI 循环防范 (Anti-Loop)**：如果同一编译或测试错误在修改后重试 2 次仍未解决，必须立即暂停推理，向开发者输出当前的完整排错思考链 (CoT)，严禁陷入自旋死循环。\n`
+    md += `1. **🛑 防自旋死循环 (Anti-Loop)**：如果同一编译或测试错误在修改后重试 2 次仍未解决，必须立即强制暂停，向开发者输出排错思考链 (CoT)，严禁陷入自旋死循环。\n`
   }
   if (rules.value.noPlaceholder) {
-    md += `2. **拒绝代码占位**：严禁提交含有 \`// TODO: 实现此逻辑\`、\`pass\`、或虚构假数据的未完成函数。所有代码必须真实可编译。\n`
+    md += `2. **🚫 防虚假伪造 (严禁占位符)**：严禁提交含有 \`// TODO: 实现此逻辑\`、\`pass\`、或虚构假数据的未完成函数，所有代码必须真实可编译。\n`
   }
   if (rules.value.noExternalDeps) {
-    md += `3. **依赖管控**：严禁未经批准为常规功能安装体积庞大的非必要外部第三方库，优先采用标准库与原生 API。\n`
+    md += `3. **📦 防滥装依赖 (依赖守卫)**：常规逻辑优先使用原生标准库与内置 API，严禁未经确认私自安装体积庞大的未知第三方包。\n`
   }
   stack.specificRules.forEach((rule, idx) => {
-    md += `${idx + 4}. **技术栈专有**：${rule}\n`
+    md += `${idx + 4}. **技术栈专有防御**：${rule}\n`
   })
   md += `\n`
 

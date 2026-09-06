@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)
 
 # Ch.03 Breaking the Cloud Island: Sandbox Debugging and Deep Local Environment Tunneling
+
+> 🎯 **The Real Problem**: Agent running in an isolated sandbox cannot reach local Docker databases (PostgreSQL/Redis), repeatedly failing with `Connection refused`.  
+> 💡 **Tangible Output & Takeaway**: SSH / Ngrok reverse tunneling scripts, `host.docker.internal` network configuration, and a 3-step connectivity diagnostic checklist.  
+> ⚡ **Viral Screenshot Quote**: *"Can't connect to localhost from sandbox? It's not a code bug—you simply forgot to bridge the network tunnel."*
 
 In the background of my WeChat public account "Real-World Product Talk", I often receive questions from readers:
 "Hunk, why does Codex always throw `Connection refused to localhost:5432` when I ask it to run database tests? I clearly have PostgreSQL running in Docker on my local machine!"
@@ -93,4 +97,4 @@ By applying these settings, the cloud sandbox is no longer an isolated island. I
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.02) ](./ch02_setup.md) | [ ➡️ Next (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 中文版 ](../chapters/ch03_sandbox.md)

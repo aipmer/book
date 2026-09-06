@@ -1,8 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)
+[ 🏠 Index ](/en/) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)
 
 # Ch.01 Saying Goodbye to Handwritten Code: Product Mindset in the Era of Vibe Coding
 
-> 🚀 **"Humans should no longer manually write boilerplate code. Your hands belong on the steering wheel, not the pushcart."**
+> 🎯 **The Real Problem**: Developers treat AI as just a fancy auto-complete, grinding through repetitive boilerplate, or letting agents run wild without architecture guardrails.  
+> 💡 **Tangible Output & Takeaway**: A 3-stage mental model for AI-native orchestration and a runnable PRD boundary assertion template to eliminate boilerplate typing.  
+> ⚡ **Viral Screenshot Quote**: *"Humans should no longer manually write boilerplate code. Your hands belong on the steering wheel, not the pushcart."*
 
 When chatting with readers of "实战产品说" (Real-World Product Talk), I often notice a common pitfall: developers pushing themselves to memorize AI coding commands and shortcuts as if they were cramming for an API manual.
 
@@ -62,4 +64,4 @@ As shared on pmer.cn: **Your value lies in defining business boundaries and empa
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)
+[ 🏠 Index ](/en/) | [ ➡️ Next (Ch.02) ](./ch02_setup.md) | [ 🌐 中文版 ](../chapters/ch01_mindset.md)

@@ -10,8 +10,8 @@
 
 | 案例编号 | 标题与业务场景 | 核心技术栈 | 交付收益 | 对应工程 / 章节 |
 | :--- | :--- | :--- | :--- | :--- |
-| **01** | [Next.js 15 + Stripe 商业 MVP 闭环实录](./case_study_saas_mvp_stripe.md) | Next.js 15, Prisma, Supabase, Stripe Webhook | 1小时45分完成支付签名与会员权益闭环 | [Ch.10 SaaS MVP](../examples/ch10-saas-mvp/README.md) |
-| **02** | [从手动测试到全天候「飞书 Codex 值班助理」实战](./case_study_mobile_sentinel.md) | Node.js, 飞书长连接 SDK, GitHub Actions | 告别终端人肉守候，手机 5 秒远程审批 | [Ch.08 移动看护](https://github.com/aipmer/plugins-codex-feishu) |
+| **01** | [Next.js 15 + Stripe 商业 MVP 闭环实录](./case_study_saas_mvp_stripe.md) | Next.js 15, Prisma, Supabase, Stripe Webhook | 1小时45分完成支付签名与会员权益闭环 | [Ch.10 SaaS MVP](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp) |
+| **02** | [从手动测试到全天候「飞书助理」实战](./case_study_mobile_sentinel.md) | Node.js, 飞书长连接 SDK, GitHub Actions | 告别终端人肉守候，手机 5 秒远程审批 | [Ch.08 飞书助理](https://github.com/aipmer/plugins-codex-feishu) |
 
 ---
 
@@ -35,7 +35,7 @@ Codex 自主审查一张「问题 landing 页」并直接修复：补全 `alt`�
 
 1. **极速上线变现**：利用目标驱动（Goal-Driven）心智，在数小时内快速搓出 SaaS MVP 并拿到第一笔付费订阅。
 2. **架构重构与避坑**：接手零测试、无文档的混乱老旧系统，利用 Codex 成功进行渐进式解耦并记录避坑 CoT。
-3. **多端离线看护**：搭建独特的移动端审批与云端沙盒调试闭环，解放自己的开发精力。
+3. **多端移动看护**：搭建独特的移动端审批与云端沙盒调试闭环，解放自己的开发精力。
 
 ### 🚀 投稿渠道（二选一）：
 - **方式 A（一键通过 Issue 提交）**：直接在 GitHub 打开 [Issue: 投稿实战案例](https://github.com/aipmer/book/issues/new?template=case_study_submission.yml)，按表单填写即可！

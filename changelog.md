@@ -19,17 +19,27 @@
   - 新增 [examples/ch06-chrome-extension](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/README.md) (Codex Web Copilot)，纯原生 Manifest V3 编写，零构建依赖，读者在 Chrome 开启开发者模式即可 1 分钟开箱体验。
   - 严格践行 MV3 CSP 护栏（禁止内联脚本与 `eval()`），编写配套 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/AGENTS.md)，并纳入 [.github/workflows/examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) 自动化 CI 守卫。
 - **建立开源社区案例库与 Contributors 机制**：
-  - 在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 中沉淀入库首批 2 套真实标杆案例：[Next.js + Stripe 商业 MVP 闭环实录](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_saas_mvp_stripe.md) 与 [从手动测试到全天候「飞书 Codex 值班助理」实战](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_mobile_sentinel.md)。
+  - 在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 中沉淀入库首批 2 套真实标杆案例：[Next.js + Stripe 商业 MVP 闭环实录](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_saas_mvp_stripe.md) 与 [从手动测试到全天候「飞书助理」实战](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_mobile_sentinel.md)。
   - 新增 GitHub Issue 表单模板：[.github/ISSUE_TEMPLATE/case_study_submission.yml](file:///Users/hunkwu/Desktop/ai/book/.github/ISSUE_TEMPLATE/case_study_submission.yml) 与 [.github/ISSUE_TEMPLATE/agents_template_submission.yml](file:///Users/hunkwu/Desktop/ai/book/.github/ISSUE_TEMPLATE/agents_template_submission.yml)，为外部贡献者提供零门槛投稿路径。
-- **与「飞书 Codex 值班助理」双向深度对齐**：
+- **与「飞书助理」双向深度对齐**：
   - Ch.08（中英双语）新增 8.4 节将 [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) 确立为全天候离线编排的官方参考实现。
-  - 同步重构飞书插件定位为「飞书里的 Codex 值班助理」，新增顶部流程架构图，并提供 `feishu_app_manifest.json` 一键清单导入。
+  - 同步重构飞书插件定位为「飞书助理 (Codex Feishu Sentinel)」，新增顶部流程架构图，并提供 `feishu_app_manifest.json` 一键清单导入。
 - **在线阅读站视觉重构与硬核工程风（去 Emoji 化）**：
   - 全面剔除首页 Hero 按钮、Features 卡片、导航栏与侧边栏附录中的彩色 Emoji，改用精准的专业动词与单色技术 SVG 图标。
   - 规范归档静态资产至 `public/images/`，新增 `.vitepress/theme/` 自定义主题样式，为封面增加深浅主题自适应边框与立体微光投影，彻底修复 GitHub Pages 子路径下的 404 裂图问题。
+- **封面微光交互动效重构 (0px 位移、0 CLS)**：
+  - 优化首页书籍封面 `:hover` 动态样式，移除原先导致边缘震颤的 `translateY` 物理跳动，改用深浅模式自适应的景深微光扩散（呼吸质感）与微对比度平滑过渡（`contrast(1.03) brightness(1.03)`），兼顾沉静工程感与高级微交互。
+- **全站文案大白话通俗化与传播力升级**：
+  - **首页重塑**：彻底打破生涩学术黑话，4 大特性卡片重构为「痛点直击 + 落地收益」（“让 AI 听话防死循环”、“真实接管本地终端与自动化测试”、“人下班 AI 值班，手机飞书实时巡检”、“一人公司 2 小时跑通全栈商业化”）。
+  - **26 章节导读全量重构**：中英文双语全量 26 个章节注入场景化导读 Callout，明确「解决什么具体工程麻烦 + 带走什么实战代码 + 社交截图金句」，极具传播力与阅读获得感。
+  - **规约生成器与模板库场景化**：将抽象选项转化为具体防御场景（防危险脚本、强制带测试、防死循环、Next.js 14 App Router 范式）。
+- **统一全站规范命名为「飞书助理」**：
+  - 全域排查替换所有「离线看护助理」或孤立「看护助理」为「飞书助理」，全库检索目标词清零（0 matches），修复案例库历史死链。
 - **PDF 电子书全量重编与双轨分发**：
   - 基于最新中英文全量 26 章节同步重新编译输出 `codex_blue_book_zh.pdf` (2.7MB) 与 `codex_blue_book_en.pdf` (1.5MB)。
   - 实施双轨分发策略：在阅读站内通过 `/downloads/` 目录提供免跳出直接下载；同时发布 GitHub 正式 `v1.2.0` Release 挂载 PDF 资产附件，解决 Releases 空白问题。
+- **支持 Vercel 静态托管部署**：
+  - 新增 `vercel.json` 针对 VitePress 产物 `.vitepress/dist` 的自动化构建配置，支持无缝部署至 Vercel 生产网络。
 
 ---
 
@@ -182,11 +192,11 @@ This document records the recent updates, technical issues, and solutions for th
   - Shipped [examples/ch06-chrome-extension](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/README.md) (Codex Web Copilot) built with vanilla Manifest V3 and zero build dependencies for 1-minute load-and-test in Chrome Developer Mode.
   - Enforced strict CSP and Anti-Loop guardrails in [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/AGENTS.md) and hooked into [.github/workflows/examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml).
 - **Established Community Case Studies & Contributor Mechanisms**:
-  - Curated initial landmark cases in [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md): Next.js Stripe SaaS MVP and Feishu Codex Sentinel watchdog.
+  - Curated initial landmark cases in [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md): Next.js Stripe SaaS MVP and Feishu Assistant (Feishu Sentinel) watchdog.
   - Published structured GitHub Issue submission forms for case studies and new AGENTS templates.
-- **Bidirectional Alignment with Feishu Sentinel**:
+- **Bidirectional Alignment with Feishu Assistant (Feishu Sentinel)**:
   - Added section 8.4 to Ch.08 declaring [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) as the official companion implementation.
-  - Upgraded companion repo branding to "Codex Feishu Sentinel", added top-level architecture flowchart, and provided `feishu_app_manifest.json` for one-click setup.
+  - Upgraded companion repo branding to "Feishu Assistant (Codex Feishu Sentinel)", added top-level architecture flowchart, and provided `feishu_app_manifest.json` for one-click setup.
 
 ---
 

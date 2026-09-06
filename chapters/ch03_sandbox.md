@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)
 
 # Ch.03 破局云端孤岛：沙盒调试与本地环境深度穿透
+
+> 🎯 **具体工程麻烦**：AI 在隔离沙盒跑测试时连不上本地 Docker 的 PostgreSQL/Redis，报错 `Connection refused`，智能体抓瞎。  
+> 💡 **可运行实战代码与落地收益**：提供 SSH / Ngrok 端口反向映射脚本、`host.docker.internal` 端口配置、3 步网络连通性排查流程。  
+> ⚡ **社交传播 / 截图金句**：“AI 报错连不上 localhost？不是代码写错了，是你没给隔离沙盒开网络通道。”
 
 使用 Codex 运行数据库测试时，常见问题之一是智能体报错 `Connection refused to ``localhost:5432`，即便本地已通过 Docker 启动了 PostgreSQL 服务。
 
@@ -109,4 +113,4 @@ export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.02) ](./ch02_setup.md) | [ ➡️ 下一章 (Ch.04) ](./ch04_goal_driven.md) | [ 🌐 English ](../en/ch03_sandbox.md)

@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)
 
 # Ch.07 视觉闭环：Desktop Computer Use 自动巡检与设计还原
+
+> 🎯 **具体工程麻烦**：传统前端 UI 还原依赖肉眼查像素，响应式漏看弹窗遮挡；纯命令行测试无法覆盖真实浏览器渲染与点击。  
+> 💡 **可运行实战代码与落地收益**：安全限制操作框配置；Figma 设计稿与本地网页自动截图比对走查流程；UI 视觉巡检真实录屏复现。  
+> ⚡ **社交传播 / 截图金句**：“写完前端还在肉眼查像素？让 AI 自己打开浏览器量尺寸、点按钮，截图标注哪里不合规。”
 
 在传统的 UI 还原度走查中，最耗费产品经理和前端时间的是“像素眼”校对：
 
@@ -126,4 +130,4 @@ Compare and align browser rendering with figma_login_mockup.png.
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ 下一章 (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 English ](../en/ch07_desktop_computer_use.md)

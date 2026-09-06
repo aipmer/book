@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
 
 # Ch.06 Correcting Course: Supervising the CoT Reasoning Chain Like a Tech Lead
+
+> 🎯 **The Real Problem**: Waiting passively for heavy reasoning models while an incorrect initial assumption snowballs into deep codebase corruption.  
+> 💡 **Tangible Output & Takeaway**: Real-time CoT thought streaming inspection, 3 infinite-loop signature heuristics, and companion Chrome extension code (`examples/ch06-chrome-extension`).  
+> ⚡ **Viral Screenshot Quote**: *"Don't let AI run blind for 20 minutes before discovering it derailed. Catch flawed assumptions on step one."*
 
 In traditional software development, when hiring a junior programmer, your biggest fear is not that they won't write code. Rather, it is that they will secretly work in isolation and ultimately hand you a pile of code that completely deviates from the business requirements, or worse, crashes the system.
 
@@ -97,7 +101,7 @@ Then append this to [AGENTS.md](../AGENTS.md):
 
 To help readers practice steering reasoning paths and enforcing Anti-Loop safeguards during browser extension development, this repository provides a runnable companion project:
 
-👉 **Companion Sandbox**: [examples/ch06-chrome-extension](../examples/ch06-chrome-extension/README.md)
+👉 **Companion Sandbox**: [examples/ch06-chrome-extension](https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension)
 
 ### Key Highlights:
 1. **Pure Native Manifest V3**: Zero build dependencies. Load directly in Chrome under Developer Mode in under 1 minute.
@@ -106,5 +110,5 @@ To help readers practice steering reasoning paths and enforcing Anti-Loop safegu
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
 

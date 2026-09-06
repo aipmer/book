@@ -1,6 +1,10 @@
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch13_2026_frontier.md)
+
 # Ch.13 Frontier Watch: The 2026 Codex Ecosystem Overhaul
 
-> 🚀 **"Tools get a blood transfusion every quarter; your mental models are the only moat. This chapter is not a news digest — it's a migration battle map: which old commands are dead, and which new capabilities must take over your workflow today."**
+> 🎯 **The Real Problem**: Rapid tool churn, deprecated commands (Codex desktop merging into ChatGPT code mode), model evolutions (GPT-5.6), and unexpected CLI breaking changes.  
+> 💡 **Tangible Output & Takeaway**: 2026 migration command battle map (winget/brew setups, CLI 0.14x configurations, Plugins ecosystem integration), and compatibility test scripts.  
+> ⚡ **Viral Screenshot Quote**: *"Tools retool every quarter, but mental models remain your moat. Zero fluff—only an actionable battle map of what deprecated and what to adopt."*
 
 The first twelve chapters built a version-independent orchestration methodology. But methodology must land on real tooling. In 2026, the Codex ecosystem went through four structural shifts: **the desktop merger, the model transition, the maturing plugin economy, and security becoming its own product line**. This chapter breaks down each shift with concrete migration commands and configurations.
 
@@ -200,3 +204,7 @@ codex plugin install codex-security
 The tooling lesson is singular: **every version number, CLI flag, and model codename hard-coded into scripts is technical debt**. Centralize them in `config.toml` and `AGENTS.md`, so migration cost collapses to "edit one line."
 
 And the three principles that outlive every release cycle are exactly what this book keeps hammering: drive by goals, not steps; set boundaries before granting trust; divide labor between human and AI — never let the AI lead the human. Tools change blood; your mindset compounds.
+
+---
+
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch13_2026_frontier.md)

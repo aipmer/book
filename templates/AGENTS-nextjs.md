@@ -62,6 +62,16 @@
   - 严禁提交或同步任何含有明文 API Key/Token 的 `.env` 文件。
   - 在宣布任务完成前，必须先运行 `npm run lint` 和 `npm run test`。如有报错，必须立即回滚代码并报告错误堆栈。
 
+## 🧪 验证标准 (Validation Specs)
+在声明任务完成前，必须在沙箱或本地执行以下命令并确保退出码为 0：
+```bash
+# 1. 静态检查与单元测试
+npm run lint && npm test
+
+# 2. 生产构建验证
+npm run build
+```
+
 ---
 
 ## 🌐 English Version
@@ -129,3 +139,13 @@
 - **Pre-flight & Security Check**:
   - Do not commit `.env` files containing raw API keys or tokens.
   - Before declaring a task complete, run `npm run lint` and `npm run test` in the sandbox. If errors occur, rollback edits and report the stack trace.
+
+## 🧪 Validation Specs
+Before marking any task as complete, execute the following commands in the sandbox and ensure a zero exit code:
+```bash
+# 1. Lint & Unit Tests
+npm run lint && npm test
+
+# 2. Production Build Verification
+npm run build
+```

@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)
 
 # Ch.07 Closing the Visual Loop: Automated Auditing and Design Verification with Desktop Computer Use
+
+> 🎯 **The Real Problem**: Manual visual pixel-peeping for responsive designs, missing hidden popup modals, and headless CLI tests unable to verify real browser rendering.  
+> 💡 **Tangible Output & Takeaway**: Sandboxed coordinate-safe execution boundaries, automated Figma-to-DOM screenshot visual diff workflows, and UI telemetry recordings.  
+> ⚡ **Viral Screenshot Quote**: *"Still squinting to verify responsive UI? Let AI open the browser, measure element coordinates, and highlight design mismatches."*
 
 In traditional UI fidelity reviews, the most time-consuming task for product managers and front-end developers is "pixel-eye" alignment verification:
 “This button seems shifted 4 pixels to the left.”
@@ -109,4 +113,4 @@ Through this closed-loop process, solo developers no longer need to resize brows
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)

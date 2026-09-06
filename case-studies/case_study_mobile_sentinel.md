@@ -1,11 +1,11 @@
-# 📄 案例 02：从手动测试到全天候「飞书 Codex 值班助理」实战
+# 📄 案例 02：从手动测试到全天候「飞书助理」实战
 
 > 本案例来自《Codex 蓝皮书》Ch.08 移动看护工作流与官方参考工程 [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) 的实战演进。
 
 ---
 
 ## 📌 项目基本指纹 (Project Fingerprint)
-- **项目名称**：Codex Feishu Sentinel (值班助理)
+- **项目名称**：Codex Feishu Sentinel (飞书助理)
 - **项目类型**：全天候无人值守开发编排与移动看护网关
 - **核心技术栈**：Node.js, 飞书开放平台 SDK (WebSocket 长连接), GitHub Actions
 - **应用场景**：夜间/户外自动化重构与 CI 异常移动端警报
@@ -17,7 +17,7 @@
 ### 1. 传统痛点：活成了“人体测试机”
 独立开发者经常把大量时间花在“等待智能体跑测试”上。每当重构百万行老旧模块时，人必须坐在电脑前守着终端滚动日志，极其疲惫。
 
-### 2. 解决方案：飞书里的 Codex 值班助理
+### 2. 解决方案：飞书助理 (Codex Feishu Sentinel)
 通过引入长连接 Bot 与 Webhook 管道，将 Codex 的编排结果沉淀到飞书：
 - 每天下班前自动发送 Git 提交提炼出的图文日报；
 - CI 测试挂掉或触发生产部署提权时，手机飞书立刻弹出富文本告警卡片；

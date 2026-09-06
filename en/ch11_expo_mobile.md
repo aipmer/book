@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
 
 # Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging
+
+> 🎯 **The Real Problem**: Web developers stuck in Xcode certificate signing, Android Gradle builds, and CocoaPods dependency hell when trying to ship mobile apps.  
+> 💡 **Tangible Output & Takeaway**: Complete companion project `examples/ch11-expo-mobile` (Expo SDK 57 + Expo Router + NativeWind) and zero-local-setup `eas build` cloud pipelines.  
+> ⚡ **Viral Screenshot Quote**: *"Skip local Xcode and Android Studio configuration hell. Build and publish native iOS and Android apps autonomously with Expo cloud pipelines."*
 
 As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." However, in traditional mobile development (React Native or Flutter), the most time-consuming part is often the complex local environment setup: iOS certificate management, Android Gradle errors, Cocoapods version conflicts. This local environment hell often deters developers.
 
@@ -8,7 +12,7 @@ I firmly believe that **"cloud compilation and packaging (EAS) is the only viabl
 
 This chapter teaches you how to direct Codex to handle all of this autonomously.
 
-> 📦 **Companion Source Code**: [examples/ch11-expo-mobile](../examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
+> 📦 **Companion Source Code**: [examples/ch11-expo-mobile](https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
 
 ---
 
@@ -122,4 +126,4 @@ Ultimately, EAS will return a QR code. You only need to scan it with your phone 
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ Next (Ch.12) ](./ch12_commercialization.md) | [ 🌐 中文版 ](../chapters/ch11_expo_mobile.md)

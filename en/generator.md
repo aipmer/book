@@ -1,11 +1,11 @@
 ---
 title: AGENTS.md Interactive Generator
-description: Online configuration tool for CAP-compliant project protocols
+description: Generate tailored AI defense rules for your project in 30 seconds
 ---
 
 # AGENTS.md Interactive Generator
 
-> Customize your project's `AGENTS.md` protocol online based on your tech stack and safety requirements. Once generated, click copy and place it directly in your project root.
+> Prevent AI from breaking established architectures, installing unvetted packages, hallucinating fake code, or spinning in infinite error loops. Generate custom AGENTS.md defense rules tailored to your tech stack in 30 seconds.
 
 <ClientOnly>
 <div class="generator-app">
@@ -32,32 +32,32 @@ description: Online configuration tool for CAP-compliant project protocols
     </div>
 
     <div class="form-group">
-      <label class="label">3. Sandbox Policy:</label>
+      <label class="label">3. Execution Environment & Permissions (Defense Boundaries):</label>
       <select v-model="sandboxLevel" class="select-input">
-        <option value="standard">Standard Restricted (Install, test, build allowed; no prod escalation)</option>
-        <option value="strict">Strict Isolated (Read-only trees, changes via reviewed PRs)</option>
-        <option value="tunnel">Reverse Tunnel (Watchdog reverse-tunnel with local databases)</option>
+        <option value="standard">Standard Development Defense (Install, test, build allowed; no credential leakage)</option>
+        <option value="strict">Strict Read-Only Protection (AI only proposes diffs, terminal execution banned, changes via PR)</option>
+        <option value="tunnel">Local Debugging Mode (Bridge local Docker DB and APIs, with Feishu Assistant remote approvals)</option>
       </select>
     </div>
 
     <div class="form-group">
-      <label class="label">4. Safety Guardrails & Anti-Loop Policies:</label>
+      <label class="label">4. Core Safety Guardrails (Defense Scenarios):</label>
       <div class="checkbox-group">
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.antiLoop" />
-          <span>Anti-Loop: Abort immediately on 3 repeated failures without spinning</span>
+          <span>🛑 Stop Infinite Loops (Prevent Loop): Abort on 2 consecutive test/build failures and emit CoT logs, preventing endless spinning</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.noPlaceholder" />
-          <span>No Placeholders: Prohibit TODOs, mock data, or blank stub functions</span>
+          <span>🚫 Ban Fake Stubs (No Placeholders): Strictly forbid TODOs, mock stubs, or empty functions; all delivered code must be runnable</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.noExternalDeps" />
-          <span>Dependency Guard: Disallow installing unvetted third-party packages</span>
+          <span>📦 Dependency Guard: Prefer standard libraries and built-in APIs; forbid unapproved heavy third-party packages</span>
         </label>
         <label class="checkbox-item">
           <input type="checkbox" v-model="rules.enforceValidation" />
-          <span>Validation Specs: Enforce clean test & build checks before commit</span>
+          <span>✅ Deliver with Tests (Verification Specs): Must run automated test suites and production build checks with exit code 0 before delivery</span>
         </label>
       </div>
     </div>
@@ -189,9 +189,9 @@ const stackConfigs: Record<string, any> = {
 }
 
 const sandboxText: Record<string, string> = {
-  standard: '- Standard Restricted: Package installation, testing, and building are allowed. Dangerous production writes or secret leaks are banned.',
-  strict: '- Strict Isolated: Agent operates read-only on code. All commands must be explicitly approved and reviewed by human operators.',
-  tunnel: '- Reverse Tunnel: Reverse proxy connections via Codex Watchdog CLI (Ch.03/Ch.08) to link local databases and phone alerts.'
+  standard: '- Standard Development Defense: Package installation, testing, and building are allowed. Production writes and credential leakage are strictly forbidden.',
+  strict: '- Strict Read-Only Protection: Agent operates read-only. Terminal commands are forbidden and all changes require human review via Pull Requests.',
+  tunnel: '- Local Debugging Mode: Allow port bridging to local Docker databases and APIs, paired with Feishu Assistant for mobile alerts and remote approvals.'
 }
 
 const generatedContent = computed(() => {
@@ -204,25 +204,25 @@ const generatedContent = computed(() => {
   md += `- **Target Architecture**: ${stack.name}\n`
   md += `- **Collaboration Framework**: Codex Blue Book CAP Protocol\n\n`
 
-  md += `## 🛑 Sandbox Boundaries\n`
+  md += `## 🛑 Defense Scenarios & Sandbox Boundaries\n`
   md += `${sandboxText[sandboxLevel.value]}\n\n`
 
-  md += `## 🛡️ Anti-Loop Safeguards & Hard Constraints\n`
+  md += `## 🛡️ Core Engineering Guardrails (Anti-Loop)\n`
   if (rules.value.antiLoop) {
-    md += `1. **AI Anti-Loop Safeguards**: If a compilation or test failure persists after 2 retries, pause and emit the full Chain-of-Thought (CoT) reasoning. Never spin in guess-loops.\n`
+    md += `1. **🛑 Stop Infinite Loops (Prevent Loop)**: If compilation or test fails twice in a row, halt immediately, log the full error context, and switch to single-module diagnostic mode. Continuous guessing loops are strictly forbidden.\n`
   }
   if (rules.value.noPlaceholder) {
-    md += `2. **No Placeholders**: Never commit stubs like \`// TODO: implement\`, \`pass\`, or fabricated mock data. All code must be runnable.\n`
+    md += `2. **🚫 Ban Fake Stubs (No Placeholders)**: No stubs like \`// TODO: implement\`, \`pass\`, or fabricated mock data. All code must be runnable.\n`
   }
   if (rules.value.noExternalDeps) {
-    md += `3. **Dependency Control**: Do not install heavy third-party packages without prior approval. Prefer standard libraries.\n`
+    md += `3. **📦 Dependency Guard**: Never introduce heavyweight dependencies or third-party wrappers without explicit review. Prefer standard library solutions.\n`
   }
   stack.specificRules.forEach((rule: string, idx: number) => {
     md += `${idx + 4}. **Stack-Specific**: ${rule}\n`
   })
   md += `\n`
 
-  md += `## 🧪 Validation Specs\n`
+  md += `## 🧪 Deliver with Tests (Verification Specs)\n`
   md += `Before marking any task as complete, execute the following commands to ensure a zero exit code:\n\n`
   md += `\`\`\`bash\n`
   md += `# 1. Lint & Unit Tests\n`

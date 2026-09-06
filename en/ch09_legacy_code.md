@@ -1,6 +1,10 @@
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)
 
 # Ch.09 Codebase Revitalization: Reverse Engineering and Progressive Decoupling of Legacy Systems
+
+> 🎯 **The Real Problem**: Inheriting 100k lines of undocumented legacy spaghetti code with zero tests, where editing one line breaks three unexpected modules.  
+> 💡 **Tangible Output & Takeaway**: Panoramic reverse-engineering prompts (extracting ER diagrams and route graphs), Golden Master snapshot baseline tests, and 3-step micro-decoupling.  
+> ⚡ **Viral Screenshot Quote**: *"Don't impulsively rewrite massive legacy codebases. Map the architecture, lock down non-breaking snapshot tests, then perform microsurgery."*
 
 When working on solo projects or inheriting outsourced contracts, the biggest headache is not building from scratch. It is inheriting a legacy "spaghetti code" system left behind by previous developers, complete with zero documentation and zero unit tests. Every minor code modification feels like dancing in a minefield.
 
@@ -87,4 +91,4 @@ Using this minimally invasive refactoring cycle (Extract Logic -> Run Tests -> R
 
 ---
 
-[ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)
+[ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.08) ](./ch08_mobile_workflow.md) | [ ➡️ Next (Ch.10) ](./ch10_saas_mvp.md) | [ 🌐 中文版 ](../chapters/ch09_legacy_code.md)

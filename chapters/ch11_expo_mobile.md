@@ -1,6 +1,10 @@
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
 
 # Ch.11 触角延伸：Expo 跨端原生 App 开发与云端打包
+
+> 🎯 **具体工程麻烦**：做完 Web 想做 App，但 Xcode 证书、Android Gradle、Cocoapods 依赖地狱让人崩溃，环境配三天打不出包。  
+> 💡 **可运行实战代码与落地收益**：完整可运行代码库 `examples/ch11-expo-mobile`（Expo SDK 57 + Expo Router + NativeWind）；零本地配置云端打包 `eas build`。  
+> ⚡ **社交传播 / 截图金句**：“不用配本地 Xcode 和 Android Studio，借助云端打包与 AI 报错自愈，一个人也能轻松交付双端原生应用。”
 
 做完网页版 SaaS 后，很多独立开发者希望能将触角延伸到移动端。但在传统的移动端开发（React Native / Flutter）中，最耗费时间的往往是复杂的本地开发环境配置：iOS 证书管理、Android Gradle 报错、Cocoapods 冲突，这些环境地狱常常让人望而却步。
 
@@ -12,7 +16,7 @@
 
 本章教你如何让 Codex 自主搞定这一切。
 
-> 📦 **配套实战源码**：[examples/ch11-expo-mobile](../examples/ch11-expo-mobile) —— 完整可运行的 Expo SDK 57 工程（Expo Router `src/app` 路由 + NativeWind + EAS 三档打包配置），自带 CAP 协议 `AGENTS.md`，已通过 `npx expo lint`（零错误）与 `npx expo-doctor`（20/20）验证。
+> 📦 **配套实战源码**：[examples/ch11-expo-mobile](https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile) —— 完整可运行的 Expo SDK 57 工程（Expo Router `src/app` 路由 + NativeWind + EAS 三档打包配置），自带 CAP 协议 `AGENTS.md`，已通过 `npx expo lint`（零错误）与 `npx expo-doctor`（20/20）验证。
 
 ---
 
@@ -143,4 +147,4 @@ codex exec "分析 eas-build.log，定位失败原因，并给出修复方案。
 
 ---
 
-[ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
+[ 🏠 主目录 ](/) | [ ⬅️ 上一章 (Ch.10) ](./ch10_saas_mvp.md) | [ ➡️ 下一章 (Ch.12) ](./ch12_commercialization.md) | [ 🌐 English ](../en/ch11_expo_mobile.md)
