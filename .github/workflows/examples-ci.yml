@@ -72,3 +72,19 @@ jobs:
       - run: npx --yes expo-doctor
         env:
           CI: 1
+
+  ch06-chrome-extension:
+    name: Ch.06 Chrome Extension (MV3 validation)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: examples/ch06-chrome-extension
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: npm test
+

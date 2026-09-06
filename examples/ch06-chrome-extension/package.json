@@ -1,0 +1,9 @@
+{
+  "name": "codex-web-copilot",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Companion Chrome Extension sample for Codex Blue Book Ch.06",
+  "scripts": {
+    "test": "node scripts/validate.js"
+  }
+}

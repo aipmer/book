@@ -1,0 +1,13 @@
+{
+  "name": "codex-blue-book",
+  "version": "1.0.0",
+  "description": "Codex 蓝皮书 - 基于 OpenAI Codex 智能体的高效自动化开发、沙盒穿透与工程实战指南",
+  "scripts": {
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}

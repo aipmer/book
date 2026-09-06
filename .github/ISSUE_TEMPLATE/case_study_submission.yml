@@ -1,0 +1,60 @@
+name: 🚀 投稿实战案例 (Submit Case Study)
+description: 分享你使用 Codex 蓝皮书心智、CAP 规约落地项目或商业变现的实战经验
+title: "[Case Study]: 项目名称 - 简短一句话描述"
+labels: ["case-study", "community"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢向《Codex 蓝皮书》社区分享你的实战案例！
+        请尽可能提供真实、具体的实战经验与规则沉淀，避免空泛的文字。
+  - type: input
+    id: project_name
+    attributes:
+      label: 项目名称与地址
+      description: 你的项目名称，以及在线访问网址或 GitHub 仓库地址
+      placeholder: 例如: Aurora Translate (https://...)
+    validations:
+      required: true
+  - type: input
+    id: tech_stack
+    attributes:
+      label: 核心技术栈
+      description: 项目主要采用的技术栈与框架版本
+      placeholder: 例如: Next.js 15, FastAPI, Tailwind CSS, Supabase
+    validations:
+      required: true
+  - type: textarea
+    id: agents_rules
+    attributes:
+      label: 核心 AGENTS.md 规约与 Anti-Loop 规则
+      description: 你在项目中为智能体定制的最有价值的 1~3 条核心护栏或防腐规则
+      placeholder: |
+        - 严禁未经审查直接修改 database/schema...
+        - 单个接口重试失败超过 2 次必须暂停...
+    validations:
+      required: true
+  - type: textarea
+    id: cot_troubleshooting
+    attributes:
+      label: 避坑实录与 CoT 纠偏经验
+      description: 智能体在开发过程中遇到过什么坑或死循环？你是如何利用思考链引导将其纠偏回正轨的？
+      placeholder: 详细描述遇到问题现象、报错原因以及你的纠偏 Prompt 或命令...
+    validations:
+      required: true
+  - type: textarea
+    id: results
+    attributes:
+      label: 商业 / 效率结果
+      description: 交付周期缩短了多少？是否跑通了商业变现或首笔付费？
+      placeholder: 例如: 原本需要 3 天的模块在 2 小时内跑通闭环，首周获得 10 位付费用户...
+    validations:
+      required: true
+  - type: input
+    id: author_info
+    attributes:
+      label: 作者社交账号 / 署名
+      description: 你的 GitHub 用户名、X (Twitter)、公众号或博客链接
+      placeholder: 例如: @your_handle / 实战产品说
+    validations:
+      required: false

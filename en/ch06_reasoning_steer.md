@@ -93,4 +93,18 @@ Then append this to [AGENTS.md](../AGENTS.md):
 
 ---
 
+## 6.5 Companion Hands-on Sandbox: Codex Web Copilot (Chrome Extension)
+
+To help readers practice steering reasoning paths and enforcing Anti-Loop safeguards during browser extension development, this repository provides a runnable companion project:
+
+👉 **Companion Sandbox**: [examples/ch06-chrome-extension](../examples/ch06-chrome-extension/README.md)
+
+### Key Highlights:
+1. **Pure Native Manifest V3**: Zero build dependencies. Load directly in Chrome under Developer Mode in under 1 minute.
+2. **Strict CSP Guardrails**: Enforces zero inline scripts and bans `eval()` via `AGENTS.md`, proving how AI agents can operate safely within browser sandboxes.
+3. **Automated CI Validation**: Run `npm test` to automatically verify MV3 manifest structure and script syntax.
+
+---
+
 [ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ Next (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 中文版 ](../chapters/ch06_reasoning_steer.md)
+

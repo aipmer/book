@@ -135,4 +135,18 @@ git checkout -- src/lib/redis.ts
 
 ---
 
+## 6.5 章节实操配套：Codex Web Copilot (Chrome 扩展沙盒样例)
+
+为了让读者直观体验如何使用 Codex 思考链引导与 Anti-Loop 护栏进行浏览器插件开发，本项目配套提供了开箱即用的轻量开源样例：
+
+👉 **源码沙盒目录**：[examples/ch06-chrome-extension](../examples/ch06-chrome-extension/README.md)
+
+### 核心亮点：
+1. **纯原生 Manifest V3**：零打包依赖，直接在 Chrome 浏览器中「加载已解压的扩展程序」即可 1 分钟开箱体验；
+2. **严格 CSP 护栏**：在 `AGENTS.md` 中严禁内联脚本与 `eval()`，展示 AI 智能体如何在最严苛的浏览器安全沙盒下编写高可用代码；
+3. **自动化测试守卫**：执行 `npm test` 自动验证 MV3 规范与脚本语法。
+
+---
+
 [ 🏠 主目录 ](../README.md) | [ ⬅️ 上一章 (Ch.05) ](./ch05_agents_protocol.md) | [ ➡️ 下一章 (Ch.07) ](./ch07_desktop_computer_use.md) | [ 🌐 English ](../en/ch06_reasoning_steer.md)
+

@@ -136,7 +136,26 @@ app.listen(8080, () => console.log('Mobile gateway listening on port 8080'));
 
 ---
 
-## 8.4 Founder's Mantra: Reclaiming Your Freedom
+## 8.4 Official Reference Implementation: Codex Feishu Sentinel
+
+To eliminate the need for developers to manually assemble webhook gateways and polling logic, this book provides an out-of-the-box official companion repository: **[plugins-codex-feishu (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**.
+
+It productizes this entire workflow into three primary capabilities:
+
+1. **Daily Inspection & Sentinel Reports (Quick Start)**:
+   - Automatically summarizes local Git commits and workspace status into rich notification cards sent directly to your personal Feishu chat.
+   - Takes less than 3 minutes to verify with zero cognitive overhead.
+2. **Mobile Alerts & Two-Way Approval (Offline Orchestration)**:
+   - Vibrates your phone immediately whenever cloud/local Codex runs into testing failures or requests high-risk deployment authorization.
+   - Reply directly on mobile to "Approve" or "Abort & Rollback".
+3. **Knowledge Base Persistence (Team Collaboration)**:
+   - Write project status into Feishu Docx documents and sync project metadata with Bitable multidimensional tables.
+
+> 💡 **3-Minute Quick Setup**: The project provides `feishu_app_manifest.json`, allowing you to create the complete Feishu app with pre-configured scopes and websocket events via a single JSON import in the Feishu Open Platform.
+
+---
+
+## 8.5 Founder's Mantra: Reclaiming Your Freedom
 
 Many tech practitioners using AI tools end up behaving like "manual testing monkeys" and "human git commit triggers." AI edits code, the human refreshes the tab; AI returns an error, the human copies the trace and pastes it back to the chat.
 
@@ -147,3 +166,4 @@ By delegating validation assertions to GitHub Actions, forwarding exceptions via
 ---
 
 [ 🏠 Index ](../README.md) | [ ⬅️ Prev (Ch.07) ](./ch07_desktop_computer_use.md) | [ ➡️ Next (Ch.09) ](./ch09_legacy_code.md) | [ 🌐 中文版 ](../chapters/ch08_mobile_workflow.md)
+

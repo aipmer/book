@@ -2,7 +2,7 @@
 
 ![Codex 实战蓝皮书](./images/cover.jpg)
 
-[ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
+[ 🌐 在线沉浸阅读站 (VitePress) ](https://aipmer.github.io/book/) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南**
 > 
@@ -93,7 +93,7 @@ Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访�
 
 ## 🔌 关联开源项目
 
-*   **[Codex 飞书插件](https://github.com/aipmer/plugins-codex-feishu)**：将 Codex 强大的智能体自动化开发与重构能力无缝接入飞书多维表格与机器人工作流，实现日常办公任务的自动化编排与高效数据流转。
+*   **[飞书里的 Codex 值班助理 (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**：蓝皮书 Ch.08 官方参考工程。专为 Codex 开发者打造的飞书智能值班助理，支持日报自动汇总推送、CI 熔断移动端警报与手机端一键审批。
 
 ---
 
@@ -213,7 +213,7 @@ A real terminal recording of Codex autonomously completing the Ch.07 visual audi
 
 ## 🔌 Related Projects
 
-*   **[Codex Feishu Plugin](https://github.com/aipmer/plugins-codex-feishu)**: Integrates Codex's autonomous agent development and refactoring capabilities directly into Feishu (Lark) multidimensional tables and robot workflows.
+*   **[Codex Feishu Sentinel](https://github.com/aipmer/plugins-codex-feishu)**: The official companion repository for Ch.08. An intelligent duty assistant in Feishu for Codex developers, featuring automated daily git digest pushes, CI mobile alarms, and one-tap remote approvals.
 
 ---
 

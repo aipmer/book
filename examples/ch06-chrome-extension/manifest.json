@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Codex Web Copilot",
+  "version": "1.0.0",
+  "description": "遵循蓝皮书 CAP 规范编写的轻量 AI 网页阅读与伴侣扩展 (实战沙盒样例)",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Codex Web Copilot"
+  },
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}

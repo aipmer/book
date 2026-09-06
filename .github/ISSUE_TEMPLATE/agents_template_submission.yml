@@ -1,0 +1,40 @@
+name: 🛠️ 贡献新框架 AGENTS.md 规约模版
+description: 为社区贡献针对特定技术栈、企业环境或微服务框架的 AGENTS 协作规约模版
+title: "[Template]: 为 [框架/技术栈] 贡献 AGENTS 规约"
+labels: ["template", "contributions"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢为《Codex 蓝皮书》贡献技术栈规约模版！
+        提交的模版必须遵循 Anti-Loop 护栏、沙盒边界以及严禁占位符的核心准则。
+  - type: input
+    id: framework_name
+    attributes:
+      label: 技术栈 / 框架名称
+      description: 该模版适用的语言、框架及推荐版本
+      placeholder: 例如: Flutter 3.x / NestJS / Elixir Phoenix
+    validations:
+      required: true
+  - type: textarea
+    id: template_content
+    attributes:
+      label: AGENTS-[framework].md 模版全文
+      description: 完整的 Markdown 内容，包含项目指纹、沙盒边界、Anti-Loop 规则及 Validation Specs
+      placeholder: |
+        # 🤖 Codex 协作协议 (CAP) - [框架名]
+
+        ## 📌 项目指纹
+        ...
+    validations:
+      required: true
+  - type: textarea
+    id: validation_commands
+    attributes:
+      label: 验证命令与测试方法
+      description: 智能体在每次阶段性工作完成后必须执行的测试与构建命令
+      placeholder: |
+        npm test
+        npm run build
+    validations:
+      required: true

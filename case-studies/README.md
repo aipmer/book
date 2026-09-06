@@ -6,6 +6,15 @@
 
 ---
 
+## 📚 标杆实战案例精选
+
+| 案例编号 | 标题与业务场景 | 核心技术栈 | 交付收益 | 对应工程 / 章节 |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | [Next.js 15 + Stripe 商业 MVP 闭环实录](./case_study_saas_mvp_stripe.md) | Next.js 15, Prisma, Supabase, Stripe Webhook | 1小时45分完成支付签名与会员权益闭环 | [Ch.10 SaaS MVP](../examples/ch10-saas-mvp/README.md) |
+| **02** | [从手动测试到全天候「飞书 Codex 值班助理」实战](./case_study_mobile_sentinel.md) | Node.js, 飞书长连接 SDK, GitHub Actions | 告别终端人肉守候，手机 5 秒远程审批 | [Ch.08 移动看护](https://github.com/aipmer/plugins-codex-feishu) |
+
+---
+
 ## 🎬 官方演示录屏
 
 ### Ch.07 视觉闭环巡检演示（2026-08-17 录制）
@@ -20,19 +29,17 @@ Codex 自主审查一张「问题 landing 页」并直接修复：补全 `alt`�
 
 ---
 
-## 🧭 投稿指引
+## 🧭 投稿指引与 Contributors 机制
 
-如果你有以下实操收获，欢迎向我们投稿：
+如果你有以下实操收获，欢迎向我们投稿你的真实案例或新框架 AGENTS 模版：
 
-1.  **极速上线变现**：利用目标驱动（Goal-Driven）心智，在数小时内快速搓出 SaaS MVP 并拿到第一笔付费订阅。
-2.  **屎山架构复苏**：接手零测试、无文档的混乱老旧系统，利用 Codex 成功进行渐进式重构解耦。
-3.  **多端看护体验**：搭建了独特的移动端审批与云端沙盒调试闭环，解放了自己的开发精力。
+1. **极速上线变现**：利用目标驱动（Goal-Driven）心智，在数小时内快速搓出 SaaS MVP 并拿到第一笔付费订阅。
+2. **架构重构与避坑**：接手零测试、无文档的混乱老旧系统，利用 Codex 成功进行渐进式解耦并记录避坑 CoT。
+3. **多端离线看护**：搭建独特的移动端审批与云端沙盒调试闭环，解放自己的开发精力。
 
----
+### 🚀 投稿渠道（二选一）：
+- **方式 A（一键通过 Issue 提交）**：直接在 GitHub 打开 [Issue: 投稿实战案例](https://github.com/aipmer/book/issues/new?template=case_study_submission.yml)，按表单填写即可！
+- **方式 B（提交 Pull Request）**：参考 [case_study_template.md](./case_study_template.md)，在 `case-studies/` 下新建 `case_study_你的项目名.md` 并发起 PR。
 
-## 🚀 投稿步骤
+被合入的案例将在官网 [book.pmer.cn](https://aipmer.github.io/book/) 专栏、PDF 电子书附录以及公众号 **“实战产品说”** 进行联合推广。
 
-1.  在根目录下参考 [case_study_template.md](./case_study_template.md) 模板。
-2.  在 `/case-studies` 文件夹下新建一个 Markdown 文件，命名格式为 `case_study_你的项目名.md`（英文/拼音）。
-3.  按模板要求完整填写内容，严禁使用占位符，且需附带真实的 `AGENTS.md` 规则截图或文本。
-4.  提交 Pull Request。被合入的案例将会在官网 [pmer.cn](https://pmer.cn) 及微信公众号 **“实战产品说”** 中进行联合推广。

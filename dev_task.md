@@ -28,11 +28,20 @@
 - [x] **统一飞书插件克隆地址 (2026年5月27日)**：将 `plugins-codex-feishu` 仓库内所有克隆和引用链接统一规范为官方组织库 `https://github.com/aipmer/plugins-codex-feishu.git`，避免混淆。
 - [x] **新增 Ch.13 前沿瞭望章节 (2026年8月11日)**：基于官方 Changelog 与 codexguide.ai，完成 2026 生态全景升级章节（中英双语），涵盖桌面端合并、GPT-5.6 模型换代、CLI 0.14x 变更、插件生态与 Codex Security，并同步 README 目录、构建脚本与 PDF。
 
+## 🚀 已完成任务 (Completed Tasks)
+
+### 4. 在线阅读与分发体验
+- [x] **上线 VitePress 双语沉浸阅读站 (2026年9月6日)**：搭建基于 VitePress 1.6 的双语在线阅读站，支持全文字段本地检索、暗黑模式切换、代码一键复制，并通过 GitHub Actions 自动部署至 GitHub Pages；完成与「飞书 Codex 值班助理」Ch.08 的双向链接对齐。
+- [x] **上线 AGENTS.md 交互式生成器 (2026年9月6日)**：在静态阅读站双语内嵌基于 Vue 3 的交互式规约生成器，支持 10 套主流技术栈（Next.js/Vue3/FastAPI/Django/Spring/Expo/Go/Rust/Svelte/Chrome MV3）、沙盒等级与 Anti-Loop 护栏一键配置与复制。
+- [x] **扩增 Chrome 扩展沙盒实战样例 (2026年9月6日)**：完成 `examples/ch06-chrome-extension` (Codex Web Copilot)，纯原生 Manifest V3 编写，遵循严格 CSP 与防死锁机制，并纳入 Examples CI 自动化守卫。
+- [x] **完善社区案例库与 Contributors 机制 (2026年9月6日)**：沉淀入库首批真实典型实战 Case（SaaS Stripe 商业闭环与飞书移动值班助理），并上线 GitHub Issue 案例/模版在线投稿模版。
+
 ---
 
 ## 🔄 进行中任务 (Ongoing Tasks)
-- [/] **发布与分发管线对齐**：打通在线文档站点 `pmer.cn` 的自动同步流程，实现 GitHub commit 自动触发站点热更新。
-- [/] **社区案例收集与校对**：运营 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies) 实战案例库，开始收集和审阅读者的优秀投稿。
+- [/] **社区投稿持续审阅**：持续审阅和校对读者通过 GitHub Issue 表单提交的社区新 Case。
+
+
 
 ---
 
@@ -73,11 +82,18 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **Unify Feishu Plugin Repository Clone URLs (May 27, 2026)**: Unified all repository clone and reference URLs in `plugins-codex-feishu` repository to the official organization repository `https://github.com/aipmer/plugins-codex-feishu.git`.
 - [x] **New Chapter Ch.13 Frontier Watch (August 11, 2026)**: Based on the official changelog and codexguide.ai, completed the 2026 ecosystem overhaul chapter (bilingual) covering the desktop merger, GPT-5.6 model transition, CLI 0.14x changes, the plugin economy, and Codex Security; synced README TOCs, the build script, and PDFs.
 
+### 4. Online Reading & Distribution Experience
+- [x] **Launch VitePress Bilingual Reader Site (September 6, 2026)**: Deployed online reader powered by VitePress 1.6 with client-side full-text search, dark/light toggle, and code-copy, automated via GitHub Actions to GitHub Pages; synchronized bidirectional links with Ch.08 and Codex Feishu Sentinel.
+- [x] **Launch Interactive AGENTS.md Generator (September 6, 2026)**: Built an interactive Vue 3-powered protocol generator embedded within the bilingual reader site, supporting 10 frameworks (Next.js, Vue 3, FastAPI, Django, Spring, Expo, Go, Rust, Svelte, Chrome MV3), configurable sandbox tiers, and Anti-Loop guardrails with one-click copy.
+- [x] **Expand Sandbox Repositories with Chrome Extension (September 6, 2026)**: Added `examples/ch06-chrome-extension` (Codex Web Copilot), built natively on Manifest V3 with strict CSP and zero build black-box, guarded by Examples CI.
+- [x] **Establish Case Studies & Contributor Mechanisms (September 6, 2026)**: Curated the first 2 real-world landmark cases (SaaS Stripe closed-loop and Feishu Sentinel watchdog) and published GitHub Issue submission forms for community templates and case studies.
+
 ---
 
 ## 🔄 Ongoing Tasks
-- [/] **Sync Publishing Pipelines**: Standardize content deployment to the online reader site `pmer.cn` upon commits.
-- [/] **Manage Case Studies**: Curate case reports under the [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies) section.
+- [/] **Curate Community Submissions**: Continuously review incoming user cases and framework templates submitted via GitHub Issue forms.
+
+
 
 ---
 

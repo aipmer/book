@@ -6,9 +6,31 @@
 
 ---
 
+## 📅 2026年9月6日
+### 🚀 项目更新
+- **上线 VitePress 双语沉浸式在线阅读站**：
+  - 基于 VitePress 1.6 搭建专有静态阅读站，采用零冗余架构直接挂载中英文共 26 个章节、主页与附录，保持全局单一数据源。
+  - 集成极客风深浅色主题自适应、代码一键复制与本地客户端 full-text 全文字段检索 (`provider: 'local'`)。
+  - 新增 GitHub Actions 自动构建部署流水线 [.github/workflows/deploy-docs.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/deploy-docs.yml)，推送到 main 分支自动编译并发布至 GitHub Pages（可无缝映射自定义域名 `book.pmer.cn`）。
+- **静态站内嵌「AGENTS.md 交互式生成器」**：
+  - 在阅读站中上线 [generator.md](file:///Users/hunkwu/Desktop/ai/book/generator.md) 与 [en/generator.md](file:///Users/hunkwu/Desktop/ai/book/en/generator.md) 交互工具，基于 Vue 3 提供响应式定制面板。
+  - 支持 10 大主流框架（Next.js、Vue 3、FastAPI、Django、Spring Boot、Expo、Go、Rust、SvelteKit、Chrome 扩展），支持自由选择沙盒隔离等级与 Anti-Loop 护栏组合，实时生成规范 Markdown 并支持一键复制。
+- **新增 Chrome 扩展实战沙盒工程**：
+  - 新增 [examples/ch06-chrome-extension](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/README.md) (Codex Web Copilot)，纯原生 Manifest V3 编写，零构建依赖，读者在 Chrome 开启开发者模式即可 1 分钟开箱体验。
+  - 严格践行 MV3 CSP 护栏（禁止内联脚本与 `eval()`），编写配套 [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/AGENTS.md)，并纳入 [.github/workflows/examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml) 自动化 CI 守卫。
+- **建立开源社区案例库与 Contributors 机制**：
+  - 在 [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md) 中沉淀入库首批 2 套真实标杆案例：[Next.js + Stripe 商业 MVP 闭环实录](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_saas_mvp_stripe.md) 与 [从手动测试到全天候「飞书 Codex 值班助理」实战](file:///Users/hunkwu/Desktop/ai/book/case-studies/case_study_mobile_sentinel.md)。
+  - 新增 GitHub Issue 表单模板：[.github/ISSUE_TEMPLATE/case_study_submission.yml](file:///Users/hunkwu/Desktop/ai/book/.github/ISSUE_TEMPLATE/case_study_submission.yml) 与 [.github/ISSUE_TEMPLATE/agents_template_submission.yml](file:///Users/hunkwu/Desktop/ai/book/.github/ISSUE_TEMPLATE/agents_template_submission.yml)，为外部贡献者提供零门槛投稿路径。
+- **与「飞书 Codex 值班助理」双向深度对齐**：
+  - Ch.08（中英双语）新增 8.4 节将 [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) 确立为全天候离线编排的官方参考实现。
+  - 同步重构飞书插件定位为「飞书里的 Codex 值班助理」，新增顶部流程架构图，并提供 `feishu_app_manifest.json` 一键清单导入。
+
+---
+
 ## 📅 2026年8月18日
 ### 🚀 项目更新
 - **全书终检通过（v1.1.0 发布候选）**：按 AGENTS.md 验证标准对 48 个 Markdown 文件执行死链扫描与代码块语言标签校验，修复 28 处死链（`en/` 章节失效的 `README_EN.md` 导航链接统一指向双语 `README.md`；ch03/ch06 的 AGENTS.md 相对路径修正），复扫 **0 错误**。重新构建中英文合并书稿与 PDF 电子书。
+
 
 ---
 
@@ -141,9 +163,31 @@ This document records the recent updates, technical issues, and solutions for th
 
 ---
 
+## 📅 September 6, 2026
+### 🚀 Project Updates
+- **Launched VitePress Bilingual Online Reader Site**:
+  - Deployed dedicated online documentation site powered by VitePress 1.6, directly reading all 26 chapters across Chinese and English with zero content duplication.
+  - Enabled dark/light theme switching, code-copy, and client-side full-text search (`provider: 'local'`).
+  - Added automated GitHub Actions deployment workflow [.github/workflows/deploy-docs.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/deploy-docs.yml) to build and deploy to GitHub Pages upon push to `main` (ready for custom domain `book.pmer.cn`).
+- **Embedded Interactive AGENTS.md Generator**:
+  - Shipped bilingual interactive tool pages [generator.md](file:///Users/hunkwu/Desktop/ai/book/generator.md) and [en/generator.md](file:///Users/hunkwu/Desktop/ai/book/en/generator.md) built with Vue 3.
+  - Covers 10 technology stacks (Next.js, Vue 3, FastAPI, Django, Spring Boot, Expo, Go, Rust, SvelteKit, Chrome Extension MV3), configurable sandbox tiers, and Anti-Loop safeguards with instant copy.
+- **Added Chrome Extension Companion Sandbox**:
+  - Shipped [examples/ch06-chrome-extension](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/README.md) (Codex Web Copilot) built with vanilla Manifest V3 and zero build dependencies for 1-minute load-and-test in Chrome Developer Mode.
+  - Enforced strict CSP and Anti-Loop guardrails in [AGENTS.md](file:///Users/hunkwu/Desktop/ai/book/examples/ch06-chrome-extension/AGENTS.md) and hooked into [.github/workflows/examples-ci.yml](file:///Users/hunkwu/Desktop/ai/book/.github/workflows/examples-ci.yml).
+- **Established Community Case Studies & Contributor Mechanisms**:
+  - Curated initial landmark cases in [case-studies/](file:///Users/hunkwu/Desktop/ai/book/case-studies/README.md): Next.js Stripe SaaS MVP and Feishu Codex Sentinel watchdog.
+  - Published structured GitHub Issue submission forms for case studies and new AGENTS templates.
+- **Bidirectional Alignment with Feishu Sentinel**:
+  - Added section 8.4 to Ch.08 declaring [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) as the official companion implementation.
+  - Upgraded companion repo branding to "Codex Feishu Sentinel", added top-level architecture flowchart, and provided `feishu_app_manifest.json` for one-click setup.
+
+---
+
 ## 📅 August 18, 2026
 ### 🚀 Project Updates
 - **Full-Book Final QA Passed (v1.1.0 Release Candidate)**: Ran the AGENTS.md verification spec across 48 Markdown files — dead-link scan plus code-fence language-tag checks. Fixed 28 dead links (`en/` chapters' stale `README_EN.md` nav links now point to the bilingual `README.md`; corrected AGENTS.md relative paths in ch03/ch06). Re-scan reports **0 errors**. Rebuilt the merged manuscripts and PDF ebooks.
+
 
 ---
 
