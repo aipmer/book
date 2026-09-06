@@ -24,6 +24,12 @@
 - **与「飞书 Codex 值班助理」双向深度对齐**：
   - Ch.08（中英双语）新增 8.4 节将 [plugins-codex-feishu](https://github.com/aipmer/plugins-codex-feishu) 确立为全天候离线编排的官方参考实现。
   - 同步重构飞书插件定位为「飞书里的 Codex 值班助理」，新增顶部流程架构图，并提供 `feishu_app_manifest.json` 一键清单导入。
+- **在线阅读站视觉重构与硬核工程风（去 Emoji 化）**：
+  - 全面剔除首页 Hero 按钮、Features 卡片、导航栏与侧边栏附录中的彩色 Emoji，改用精准的专业动词与单色技术 SVG 图标。
+  - 规范归档静态资产至 `public/images/`，新增 `.vitepress/theme/` 自定义主题样式，为封面增加深浅主题自适应边框与立体微光投影，彻底修复 GitHub Pages 子路径下的 404 裂图问题。
+- **PDF 电子书全量重编与双轨分发**：
+  - 基于最新中英文全量 26 章节同步重新编译输出 `codex_blue_book_zh.pdf` (2.7MB) 与 `codex_blue_book_en.pdf` (1.5MB)。
+  - 实施双轨分发策略：在阅读站内通过 `/downloads/` 目录提供免跳出直接下载；同时发布 GitHub 正式 `v1.2.0` Release 挂载 PDF 资产附件，解决 Releases 空白问题。
 
 ---
 

@@ -3,7 +3,7 @@ title: AGENTS.md Interactive Generator
 description: Online configuration tool for CAP-compliant project protocols
 ---
 
-# 🛠️ AGENTS.md Interactive Generator
+# AGENTS.md Interactive Generator
 
 > Customize your project's `AGENTS.md` protocol online based on your tech stack and safety requirements. Once generated, click copy and place it directly in your project root.
 

@@ -1,0 +1,58 @@
+/* Professional High-Tech Aesthetic Styling */
+
+:root {
+  --vp-home-hero-image-filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.22));
+}
+
+.dark {
+  --vp-home-hero-image-filter: drop-shadow(0 20px 48px rgba(0, 0, 0, 0.65));
+}
+
+/* Home Hero Cover Image */
+.VPHero .image-src {
+  border-radius: 10px;
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: var(--vp-home-hero-image-filter);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 380px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.VPHero .image-src:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.35);
+}
+
+/* Features Engineering Icons */
+.VPFeature .icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.VPFeature .icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--vp-c-brand-1);
+  stroke-width: 2;
+}
+
+/* Hero Actions refinement */
+.VPHero .actions .VPButton {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Code styling */
+.vp-doc code {
+  font-size: 0.875em;
+  font-family: var(--vp-font-family-mono);
+}

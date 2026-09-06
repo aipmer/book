@@ -3,7 +3,7 @@ title: AGENTS.md 交互式规约生成器
 description: 在线定制符合 Codex 蓝皮书 CAP 规范的项目规约文件
 ---
 
-# 🛠️ AGENTS.md 交互式规约生成器
+# AGENTS.md 交互式规约生成器
 
 > 根据你的实际工程技术栈与团队安全等级，在线定制符合 **Codex 协作协议 (CAP)** 的 `AGENTS.md` 规约。配置完成后可一键复制直接放置于项目根目录下。
 

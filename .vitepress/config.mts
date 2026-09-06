@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: 'Codex 蓝皮书',
   description: '基于 OpenAI Codex 智能体的高效自动化开发、沙盒穿透与工程实战指南',
-  base: process.env.VITEPRESS_BASE || '/',
+  base: (process.env.VITEPRESS_BASE || '/').replace(/\/?$/, '/'),
   cleanUrls: true,
   ignoreDeadLinks: true,
   srcExclude: [
@@ -30,11 +30,18 @@ export default defineConfig({
         nav: [
           { text: '首页', link: '/' },
           { text: '章节阅读', link: '/chapters/ch01_mindset' },
-          { text: '🛠️ 规约生成器', link: '/generator' },
-          { text: '规约模版 (9套)', link: 'https://github.com/aipmer/book/tree/main/templates' },
+          { text: '规约生成器', link: '/generator' },
+          { text: '规约模版', link: 'https://github.com/aipmer/book/tree/main/templates' },
           { text: '实战样例', link: 'https://github.com/aipmer/book/tree/main/examples' },
-          { text: '飞书值班助理', link: 'https://github.com/aipmer/plugins-codex-feishu' },
-          { text: 'PDF 下载', link: 'https://github.com/aipmer/book/releases' }
+          { text: '看护助理', link: 'https://github.com/aipmer/plugins-codex-feishu' },
+          {
+            text: '下载 PDF',
+            items: [
+              { text: '中文版 PDF (直链下载)', link: '/downloads/codex_blue_book_zh.pdf' },
+              { text: '英文版 PDF (Direct Download)', link: '/downloads/codex_blue_book_en.pdf' },
+              { text: 'GitHub Release (v1.2.0)', link: 'https://github.com/aipmer/book/releases/tag/v1.2.0' }
+            ]
+          }
         ],
         sidebar: [
           {
@@ -84,10 +91,10 @@ export default defineConfig({
             text: '附录：生态工具与沙盒样例',
             collapsed: false,
             items: [
-              { text: '🛠️ AGENTS.md 交互式生成器', link: '/generator' },
-              { text: '🧩 Chrome 扩展沙盒样例 (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
-              { text: '💻 Next.js 全栈 SaaS 样例 (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
-              { text: '📱 Expo 移动端 App 样例 (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
+              { text: 'AGENTS.md 规约生成器', link: '/generator' },
+              { text: 'Chrome 扩展沙盒样例 (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
+              { text: 'Next.js 全栈 SaaS 样例 (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
+              { text: 'Expo 移动端 App 样例 (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
             ]
           }
         ],
@@ -114,11 +121,18 @@ export default defineConfig({
         nav: [
           { text: 'Home', link: '/en/' },
           { text: 'Chapters', link: '/en/ch01_mindset' },
-          { text: '🛠️ Generator', link: '/en/generator' },
-          { text: 'Templates (9)', link: 'https://github.com/aipmer/book/tree/main/templates' },
+          { text: 'Protocol Generator', link: '/en/generator' },
+          { text: 'Templates', link: 'https://github.com/aipmer/book/tree/main/templates' },
           { text: 'Examples', link: 'https://github.com/aipmer/book/tree/main/examples' },
-          { text: 'Feishu Sentinel', link: 'https://github.com/aipmer/plugins-codex-feishu' },
-          { text: 'PDF Releases', link: 'https://github.com/aipmer/book/releases' }
+          { text: 'Sentinel', link: 'https://github.com/aipmer/plugins-codex-feishu' },
+          {
+            text: 'Download PDF',
+            items: [
+              { text: 'English Edition (Direct Download)', link: '/downloads/codex_blue_book_en.pdf' },
+              { text: 'Chinese Edition (中文版直链)', link: '/downloads/codex_blue_book_zh.pdf' },
+              { text: 'GitHub Release (v1.2.0)', link: 'https://github.com/aipmer/book/releases/tag/v1.2.0' }
+            ]
+          }
         ],
         sidebar: [
           {
@@ -168,10 +182,10 @@ export default defineConfig({
             text: 'Appendix: Tools & Sandboxes',
             collapsed: false,
             items: [
-              { text: '🛠️ AGENTS.md Generator', link: '/en/generator' },
-              { text: '🧩 Chrome Extension Sample (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
-              { text: '💻 Next.js SaaS MVP Sample (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
-              { text: '📱 Expo Mobile App Sample (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
+              { text: 'AGENTS.md Protocol Generator', link: '/en/generator' },
+              { text: 'Chrome Extension Sample (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
+              { text: 'Next.js SaaS MVP Sample (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
+              { text: 'Expo Mobile App Sample (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
             ]
           }
         ],
