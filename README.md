@@ -86,7 +86,7 @@ Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访�
 
 ## 📈 项目迭代与进度追踪
 
-- [📝 更新日志 (Changelog)](./changelog.md)：记录近一周及后续所有的功能迭代、CI 问题与解决方案。
+- [📝 更新日志 (Changelog)](./docs/Changelog.md)：记录近一周及后续所有的功能迭代、CI 问题与解决方案。
 - [📋 开发任务板 (Task Board)](./dev_task.md)：追踪当前开发进度、进行中的任务以及后续的 Roadmap。
 
 ---
@@ -206,7 +206,7 @@ A real terminal recording of Codex autonomously completing the Ch.07 visual audi
 
 ## 📈 Project Metrics & Tracking
 
-- [📝 Changelog](./changelog.md): Chronological updates, CI issue resolutions, and features from the past week.
+- [📝 Changelog](./docs/Changelog.md): Chronological updates, CI issue resolutions, and features from the past week.
 - [📋 Development Task Board](./dev_task.md): Tracks current progress, active items, and future Roadmap.
 
 ---
