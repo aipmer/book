@@ -61,6 +61,6 @@ Every feature from the Survey phase is mapped to a milestone below:
 - Exclusive File Ownership:
   - M1: `.vitepress/theme/custom.css`
   - M2: `index.md`, `en/index.md`, `.vitepress/config.mts`, `chapters/*.md`, `en/*.md`, `generator.md`, `en/generator.md`, `templates/AGENTS-*.md`
-  - M3: Cross-cutting terminology sweep and dead link resolution in `case-studies/`, `README.md`, `docs/Changelog.md`, `dev_task.md`
+  - M3: Cross-cutting terminology sweep and dead link resolution in `case-studies/`, `README.md`, `docs/Changelog.md`, `docs/Dev_Task.md`
   - M4: `scripts/compile_collection.py`, `scripts/compile_pdf.js`, `public/downloads/*.pdf`, `package.json`
   - E2E Testing Track: `tests/e2e/`, `TEST_INFRA.md`, `TEST_READY.md`
