@@ -19,6 +19,9 @@ hero:
       text: Feishu Assistant
       link: https://github.com/aipmer/plugins-codex-feishu
     - theme: alt
+      text: Codex Switch
+      link: https://github.com/aipmer/codex-switch
+    - theme: alt
       text: Sandbox Examples
       link: https://github.com/aipmer/book/tree/main/examples
     - theme: alt

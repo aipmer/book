@@ -36,6 +36,14 @@
 - [x] **扩增 Chrome 扩展沙盒实战样例 (2026年9月6日)**：完成 `examples/ch06-chrome-extension` (Codex Web Copilot)，纯原生 Manifest V3 编写，遵循严格 CSP 与防死锁机制，并纳入 Examples CI 自动化守卫。
 - [x] **完善社区案例库与 Contributors 机制 (2026年9月6日)**：沉淀入库首批真实典型实战 Case（SaaS Stripe 商业闭环与飞书助理），并上线 GitHub Issue 案例/模版在线投稿模版。
 
+### 5. 2026 最新生态模型、跨界 3D 联动与全书通俗化重塑 (v1.3.0 正式发布 - 2026年9月18日)
+- [x] **正式发布 v1.3.0 版本**：版本号升级至 `v1.3.0`，全量更新中英文全书大合集、双语 PDF 电子书与在线阅读站，全面拥抱 2026 最新模型生态与跨界工作流。
+- [x] **全书同步最新模型与桌面/CLI功能体系**：全面引入 2026 年 9 月发布的最新前沿旗舰 **GPT-6 Astra**（原生支持 Computer Use 与 105 万上下文）与 **GPT-5.6 阶梯矩阵**（Sol/Terra/Luna）选型决策表；完整梳理 2026 OpenAI 模型上新与退役下架路线图（Deprecation & Sunset Schedule）；覆盖 ChatGPT Desktop Code Mode 体验与 Computer Use 视觉循环；CLI 0.14x 彻底弃用 `--full-auto` 迁移至 `--sandbox workspace-write`、引入 Guardian `--approve-for-me` 及 Plugins/Hooks 生态。
+- [x] **推荐配套开源利器 Codex Switch**：在全书首页、README、Ch.02 与 Ch.13 正式收录并推荐主理人开源项目 **[Codex Switch](https://github.com/aipmer/codex-switch)**，提供 macOS Codex 多供应商（OpenAI / DeepSeek / Kimi Code）一键切换与跨供应商会话无缝续聊能力，解决单模型限流与配额瓶颈。
+- [x] **GPT-6 Astra 3D 空间智能与跨界生态（Blender + Tripo3D 实战）**：在 Ch.07 与 Ch.13 深度补充 2026 年 9 月 OpenAI 实机演示、BenchCAD 95.9% 几何重建基准以及 Tripo3D 专属提示词工程中心的联动落地；提供完整的 3D 提示词提纯、Blender 无头 Python 脚本（`bpy`）自动化管线与 React Three Fiber 前端交付闭环。
+- [x] **全书大白话通俗化与新手友好度升级 (13章双语)**：为全部 13 个章节标准化注入「🎯 通俗直觉比喻」、「🚀 新手极速上手实操清单」与「🛡️ 避坑与故障速查备忘录」，彻底消除认知盲区与生涩说教。
+- [x] **全自动化测试与工程验证全绿**：修复全书合集构建脚本导航过滤漏洞，测试套件（312 项 Markdown 语法校验、20 项术语规范、99 项死链与资产完整性、96 项四层 E2E 测试）100% 满分通过，VitePress 构建零警告。
+
 ---
 
 ## 🔄 进行中任务 (Ongoing Tasks)
@@ -87,6 +95,14 @@ This board tracks the progress, ongoing actions, and roadmap of the *Codex Blue 
 - [x] **Launch Interactive AGENTS.md Generator (September 6, 2026)**: Built an interactive Vue 3-powered protocol generator embedded within the bilingual reader site, supporting 10 frameworks (Next.js, Vue 3, FastAPI, Django, Spring, Expo, Go, Rust, Svelte, Chrome MV3), configurable sandbox tiers, and Anti-Loop guardrails with one-click copy.
 - [x] **Expand Sandbox Repositories with Chrome Extension (September 6, 2026)**: Added `examples/ch06-chrome-extension` (Codex Web Copilot), built natively on Manifest V3 with strict CSP and zero build black-box, guarded by Examples CI.
 - [x] **Establish Case Studies & Contributor Mechanisms (September 6, 2026)**: Curated the first 2 real-world landmark cases (SaaS Stripe closed-loop and Feishu Sentinel watchdog) and published GitHub Issue submission forms for community templates and case studies.
+
+### 5. 2026 Frontier Ecosystem, Cross-Domain 3D Integration & Accessibility Overhaul (v1.3.0 Official Release - September 18, 2026)
+- [x] **Official v1.3.0 Release**: Bumped version to `v1.3.0`, recompiling full-book markdown collections, regenerating dual-language PDF ebooks, and updating the online reader with 2026 frontier models and 3D spatial workflows.
+- [x] **Full Synchronization with Latest Models & Desktop/CLI Systems**: Integrated the latest frontier flagship **GPT-6 Astra** (launched September 2026 with native Computer Use and 1.05M context) and the **GPT-5.6 tiered hierarchy** (Sol/Terra/Luna) decision matrix; documented the full 2026 OpenAI Model Deprecation & Sunset Schedule; covered ChatGPT Desktop Code Mode workflows and Computer Use visual loops; migrated from deprecated `--full-auto` to `--sandbox workspace-write`, introduced Guardian `--approve-for-me` and Plugins/Hooks ecosystems.
+- [x] **Recommended Open-Source Utility Codex Switch**: Featured and integrated the author's open-source utility **[Codex Switch](https://github.com/aipmer/codex-switch)** across homepage, README, Ch.02, and Ch.13, delivering 1-second provider switching (OpenAI / DeepSeek / Kimi Code) and seamless cross-provider conversation continuation.
+- [x] **GPT-6 Astra 3D Spatial Intelligence & Cross-Domain Ecosystem (Blender + Tripo3D)**: Enriched Ch.07 and Ch.13 with coverage of OpenAI's September 2026 demos, BenchCAD 95.9% CAD geometry benchmark, and Tripo3D prompt engineering hub integration; provided end-to-end walkthroughs for structured 3D prompt refinement, headless Blender `bpy` automation, and React Three Fiber web distribution.
+- [x] **Universal Accessibility & Beginner-Friendly Overhaul (All 13 Chapters Bilingual)**: Standardized Intuitive Metaphors, 3-Step Beginner Quickstart checklists, and 3-Pitfall Troubleshooting cheat sheets across all chapters.
+- [x] **Comprehensive Automation & Engineering Verification**: Resolved collection compiler navigation bar filter bug, passed 100% of the test suites (312 chapter syntax checks, 20 terminology validations, 99 dead-link checks, 96 4-tier E2E tests), with zero-warning VitePress build.
 
 ---
 

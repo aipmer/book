@@ -1,12 +1,12 @@
 [ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.09) ](./ch09_legacy_code.md) | [ ➡️ Next (Ch.11) ](./ch11_expo_mobile.md) | [ 🌐 中文版 ](../chapters/ch10_saas_mvp.md)
 
-# Ch.10 Monetization in Practice: Shipping a Commercial SaaS MVP in 2 Hours
+# Ch.10 Monetization in Practice: Shipping a Commercial Next.js + Stripe SaaS MVP in 2 Hours
 
 > 🎯 **The Real Problem**: Spending two weeks wrestling with authentication, database schemas, Stripe Webhook signature verification, and cloud hosting before shipping anything.  
-> 💡 **Tangible Output & Takeaway**: Fully runnable production repo `examples/ch10-saas-mvp` (Next.js 15 + Supabase + Stripe subscriptions) and local Stripe CLI test loops.  
+> 💡 **Tangible Output & Takeaway**: Fully runnable production repo `examples/ch10-saas-mvp` (Next.js 15 + Supabase + Stripe subscriptions); Stripe CLI local payment test loops.  
 > ⚡ **Viral Screenshot Quote**: *"The ultimate milestone for indie developers isn't architectural perfection—it's receiving the first customer payment. Ship monetization in 2 hours."*
 
-As an independent developer (Indie Hacker) or micro-startup, your core milestone is not building a "perfect architecture"—it is **"receiving your first payment."** Many developers waste time repeatedly configuring boilerplate templates, delaying their actual launch.
+As an independent developer (Indie Hacker) or micro-startup founder, your core milestone is not building a "perfect architecture"—it is **"receiving your first payment."** Many developers waste weeks repeatedly configuring boilerplate setups, draining their momentum before ever launching.
 
 In this chapter, in a fast-paced hacker style, we will teach you how to direct Codex to ship a SaaS MVP with a complete payment and subscription access control loop in under 2 hours using `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe`.
 
@@ -14,11 +14,51 @@ In this chapter, in a fast-paced hacker style, we will teach you how to direct C
 
 ---
 
+## 🎯 Intuitive Metaphor: Launching a Cash-Generating Street Food Cart
+
+Too many founders try to build a 5-star luxury hotel on Day 1:
+
+```Plaintext
+[Daydreaming 5-Star Hotel] ──> Spending 6 months designing an opulent lobby, importing plush carpets,
+                               hiring dozens of waiters (over-engineering),
+                               only to open doors and discover nobody wants to eat there. Bankruptcy.
+[Mobile Street Food Cart]  ──> ✅ You only need 3 essential tools:
+                               1. The Griddle (Next.js core product page: delivers immediate customer value);
+                               2. The Storage Box (Supabase / PostgreSQL: stores user accounts and orders);
+                               3. The QR Payment Code (Stripe subscription: collects real money into your bank).
+```
+
+Once a customer scans the code, pays \$10, and receives a hot meal in their hands, your commercial loop is validated!
+
+---
+
+## 🚀 Beginner Quickstart (3 Easy Steps)
+
+Set up and verify your local Stripe payment loop in 3 simple steps:
+
+1. **Step 1: Obtain Stripe Test Keys and Declare in `.env.local`**  
+   Log into the Stripe Developer Dashboard, copy your test keys, and write them into `.env.local`:
+   ```bash
+   STRIPE_SECRET_KEY="sk_test_..."
+   NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="pk_test_..."
+   ```
+2. **Step 2: Start Stripe CLI Local Webhook Forwarding**  
+   Run the forwarding listener in your terminal to open a local tunnel:
+   ```bash
+   stripe listen --forward-to localhost:3000/api/webhooks/stripe
+   # The terminal will print your signing secret: whsec_...
+   ```
+3. **Step 3: Direct Codex in Sandbox to Validate Webhook Signatures**  
+   Inject `whsec_...` into the environment and instruct Codex: *"Write automated test cases mocking `checkout.session.completed`; it must return 200 OK and update user subscription status to ACTIVE."*
+
+---
+
 ## 10.1 Initialization and Database Schema Design
 
-Our goal is to build a subscription-based AI translation service. First, initialize the project using Next.js 16's `create-next-app`, which **generates AGENTS.md by default**, allowing you to lock down boundary rules from the start. Next, instruct Codex to generate the core database models.
+Our goal is to build a subscription-based AI translation service. First, initialize the project with Next.js 15 and configure core constraints. Next, instruct Codex to generate the database models.
 
 ### 1. Designing the Prisma Schema (Database Entity Modeling)
+
 Dispatch the following goal-driven specs to Codex:
 
 ```markdown
@@ -33,10 +73,9 @@ Write Prisma database models supporting User, Subscription, and TranslationRecor
 - Running `npx prisma validate` must return no syntax or definition errors.
 ```
 
-Codex will automatically output a standard `schema.prisma` file containing foreign key relationships, cascade deletes, and database indexes:
+Codex will automatically output a standard `prisma/schema.prisma` file containing foreign key relationships, cascade deletes, and database indexes:
 
 ```prisma
-// File: prisma/schema.prisma
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
@@ -84,25 +123,25 @@ model TranslationRecord {
 
 ## 10.2 Integrating Stripe Subscriptions and Webhook Handlers
 
-The core of a payment system is **callback security**. When a user successfully checks out, Stripe's servers send a webhook request to your Next.js application. We need Codex to write the verification and subscription state flow logic.
+The core of a payment system is **callback security**. When a user successfully checks out, Stripe's servers send a webhook request to your Next.js application.
 
 ### Practice: Dispatching Webhook Route Specifications to Codex
+
 ```markdown
 # 🎯 Goal
-Implement a Next.js 16 App Router style Stripe Webhook route handler `/api/webhooks/stripe`.
+Implement a Next.js 15 App Router style Stripe Webhook route handler `/api/webhooks/stripe`.
 
 # 🛑 Constraints
 - Verify the signature of incoming webhook requests using `stripe.webhooks.constructEvent` to prevent forgery attacks.
 - Update user subscription status in the database on receiving `checkout.session.completed` or `invoice.payment_succeeded` events.
-- Must use the latest stable Stripe API version (2026-04-22.dahlia at the time of writing).
-- Do not parse the request body as JSON. Stripe verification requires the raw request body string.
+- Strictly avoid JSON parsing on the request body; Stripe verification requires the raw `req.text()` string.
 
 # 🧪 Validation Specs
-- Write automated mock requests verifying that invalid signatures return HTTP 400 Bad Request, while valid sessions return HTTP 200 OK.
-- The actual subscription billing period must be retrieved from the Stripe response, rather than being hardcoded.
+- Write unit tests verifying that invalid signatures return 400, while valid signatures return 200.
+- The actual subscription billing period must be retrieved from the Stripe response, never hardcoded.
 ```
 
-Codex will autonomously search the sandbox for solutions (such as reading the raw body using `request.text()` in Next.js 16) and generate the compliant handler code:
+Codex generates the compliant handler:
 
 ```typescript
 // File: src/app/api/webhooks/stripe/route.ts
@@ -111,8 +150,7 @@ import Stripe from 'stripe';
 import { prisma } from '@/lib/prisma';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  // Use the latest stable API version at the time of writing; check the Stripe Changelog before going live
-  apiVersion: '2026-04-22.dahlia',
+  apiVersion: '2026-04-22.dahlia' as any,
 });
 
 export async function POST(req: Request) {
@@ -131,13 +169,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: `Webhook Error: ${err.message}` }, { status: 400 });
   }
 
-  // Handle state transition
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
     const stripeSubId = session.subscription as string;
     const customerEmail = session.customer_details?.email!;
-    
-    // Production practice: Retrieve the actual subscription object from Stripe to get the accurate current_period_end
+
     const subscription = await stripe.subscriptions.retrieve(stripeSubId);
 
     await prisma.subscription.upsert({
@@ -160,25 +196,34 @@ export async function POST(req: Request) {
 }
 ```
 
-> 💡 **Avoid the Pitfall**: Many tutorials in the past hardcoded `currentPeriodEnd = Date.now() + 30 * 24 * 60 * 60 * 1000`. This will calculate incorrectly in scenarios like annual subscriptions, trial periods, or coupon discounts. Always retrieve the actual timestamp from `stripe.subscriptions.retrieve`.
-
 ---
 
 ## 10.3 Local Debugging: Using Stripe CLI for Payment Integration
 
-Debugging Stripe locally requires the Stripe CLI to forward webhooks. Using the network penetration techniques covered in Ch.03, we can configure our local environment:
+1. Run Stripe forwarding locally:
+   ```bash
+   stripe listen --forward-to localhost:3000/api/webhooks/stripe
+   ```
+2. Trigger a real checkout event:
+   ```bash
+   stripe trigger checkout.session.completed
+   ```
+3. Observe terminal output for `200 OK`, and inspect the database via Prisma Studio:
+   ```bash
+   npx prisma studio
+   ```
 
-1. Run the Stripe webhook forwarding command locally:
+The value of a commercial MVP lies in delivery speed. Enforce strict boundary specs on the AI to achieve the fastest time-to-revenue.
 
-    ```bash
-    stripe listen --forward-to localhost:3000/api/webhooks/stripe
-    ```
+---
 
-2. Add the `whsec\_xxx` webhook signing secret printed by the console to your local `\.env` file and instruct Codex to run the verification tests.
+## 🛡️ Troubleshooting & Pitfall Cheat Sheet
 
-By following this loop (Spec Definition -> AI Coding -> Sandbox Validation -> Real-World Stripe Integration Test), independent developers can compress what normally takes two days of integration struggle down to under 30 minutes.
-
-**The value of a commercial MVP lies in speed. Enforce strict boundaries on the AI to swap for maximum speed-to-market.**
+| Common Pitfall | Root Cause | Rapid Diagnosis & Fix Guide |
+| :--- | :--- | :--- |
+| `Webhook Error: No signatures found matching the expected signature` | Used `await req.json()` to parse body, corrupting raw payload bytes | Use `await req.text()` to get the raw string before passing to `constructEvent` |
+| **Credit card payment succeeds but database has zero new records** | Webhook URL misconfigured or `stripe listen` forwarder not running locally | Run `stripe listen`, confirming listener terminal prints `200 OK [POST /api/webhooks/stripe]` |
+| `DATABASE_URL` cannot connect to Supabase | Forgotten connection pooler (confusing Session vs. Transaction ports) | Verify DB connection string; ensure port 6543 (Transaction mode) is used in Serverless environments |
 
 ---
 

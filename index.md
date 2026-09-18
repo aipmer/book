@@ -19,6 +19,9 @@ hero:
       text: 飞书助理
       link: https://github.com/aipmer/plugins-codex-feishu
     - theme: alt
+      text: 供应商切换器
+      link: https://github.com/aipmer/codex-switch
+    - theme: alt
       text: 实战源码沙盒
       link: https://github.com/aipmer/book/tree/main/examples
     - theme: alt

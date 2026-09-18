@@ -4,11 +4,18 @@
 
 [ 🌐 在线沉浸阅读站 (VitePress) ](https://aipmer.github.io/book/) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
 
-> 💡 **AI 原生时代的产品研发与多端编排实战指南**
+> 💡 **AI 原生时代的产品研发与多端编排实战指南 (v1.3.0 · 2026年9月最新版)**
 > 
 > “做产品，最忌讳的是自嗨；用 AI 写代码，最忌讳的是人被 AI 牵着走。本书不讲花哨的学术理论，只聊怎么帮独立开发者和产品经理，用最新的 Codex 客户端以最快速度搓出能赚钱、能跑通商业闭环的产品。这是实战产品说一贯风格。” —— 主理人 [aipmer](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
 
 ---
+
+### 🌟 v1.3.0 重磅更新亮点 (2026年9月)
+
+*   **全面对齐 2026 最新模型生态与官方退役排期**：深度引入 2026 年 9 月前沿旗舰 **GPT-6 Astra**（原生计算机操作员、1.05M 超大上下文窗口、128k 输出 Token）与 **GPT-5.6 阶梯矩阵**（Sol 顶级架构 / Terra 日常主力 / Luna 轻量极速），并系统梳理 2026 官方模型退役下架路线图（规避生产意外停服事故）。
+*   **打通 GPT-6 Astra 驱动的跨界 3D 空间计算实操**：追踪 OpenAI 官方 BenchCAD 95.9% 空间推理基准，打通「**Tripo3D** 几何材质生成 → **Blender** (`bpy`/MCP) 自动化重拓扑与贴图烘焙 → **WebGL/Three.js** 交互分发」全流程。
+*   **收录官方推荐开源利器：[Codex Switch](https://github.com/aipmer/codex-switch)**：macOS 平台 1 秒秒切 OpenAI / DeepSeek / Kimi Code，首创跨供应商会话无缝续聊，彻底攻克单一供应商用量上限与限流困扰。
+*   **全书 13 章通俗化与新手友好度升级**：标配生活化通俗比喻、3 步开箱即用实操清单与常见避坑速查表，零门槛落地工程实践。
 
 <!--
 ## 🗺️ 多端发布与传播矩阵
@@ -94,6 +101,7 @@ Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访�
 ## 🔌 关联开源项目
 
 *   **[飞书助理 (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**：蓝皮书 Ch.08 官方参考工程。专为 Codex 开发者打造的飞书助理，支持日报自动汇总推送、CI 熔断移动端警报与手机端一键审批。
+*   **[Codex Switch (多供应商无缝切换)](https://github.com/aipmer/codex-switch)**：macOS Codex 多供应商一键切换利器。支持 OpenAI 官方 / DeepSeek / Kimi Code 秒级平滑切换，历史会话跨供应商无缝续聊，彻底解决单模型配额耗尽与 Rate Limit 限流难题。
 
 ---
 
@@ -137,9 +145,18 @@ Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访�
 
 ![Codex Practical Blue Book](./images/cover_en.jpg)
 
-> 💡 **AI-Native Product Development & Multi-Surface Orchestration**
+> 💡 **AI-Native Product Development & Multi-Surface Orchestration (v1.3.0 · September 2026 Edition)**
 >
 > "Product development is never about self-gratification; and in AI coding, the biggest trap is letting the AI lead the human. This book cuts out the fluff. We focus on helping indie hackers and product managers leverage OpenAI Codex to ship monetizable products. This is the hard-boiled style we practice at pmer.cn" —— Main Author [aipmer](https://pmer.cn) (X: [@ai_pmer](https://x.com/ai_pmer))
+
+---
+
+### 🌟 v1.3.0 Major Release Highlights (September 2026)
+
+*   **Full Alignment with 2026 Model Ecosystem & Deprecation Roadmap**: Deep integration with **GPT-6 Astra** (Native Computer Operator, 1.05M context window, 128k output tokens) and the **GPT-5.6 Tiered Matrix** (Sol Architecture / Terra Daily Workhorse / Luna Fast Triage), accompanied by the definitive 2026 OpenAI deprecation & sunset roadmap.
+*   **Cross-Domain 3D Spatial Intelligence with Blender & Tripo3D**: Grounded in OpenAI's official BenchCAD (95.9% mean voxel IoU), delivering runnable end-to-end pipelines: "Tripo3D Geometry Generation -> Blender (`bpy`/MCP) Topology & PBR Baking -> WebGL/Three.js Deployment".
+*   **Featured Open-Source Companion: [Codex Switch](https://github.com/aipmer/codex-switch)**: 1-second provider switching (OpenAI / DeepSeek / Kimi Code) on macOS with continuous cross-provider chat history resume, completely resolving quota exhaustion and rate limit bottlenecks.
+*   **Universal Beginner Accessibility**: Standardized intuitive metaphors, 3-action immediate checklists, and actionable troubleshooting cheat sheets across all 13 bilingual chapters.
 
 ---
 
@@ -214,6 +231,7 @@ A real terminal recording of Codex autonomously completing the Ch.07 visual audi
 ## 🔌 Related Projects
 
 *   **[Feishu Assistant (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**: The official companion repository for Ch.08. An intelligent duty assistant in Feishu for Codex developers, featuring automated daily git digest pushes, CI mobile alarms, and one-tap remote approvals.
+*   **[Codex Switch (Multi-Provider Switcher)](https://github.com/aipmer/codex-switch)**: One-click provider switcher for macOS Codex CLI. Seamlessly switch between official OpenAI, DeepSeek, and Kimi Code in seconds with cross-provider chat history continuation, bypassing quota caps and rate limits.
 
 ---
 

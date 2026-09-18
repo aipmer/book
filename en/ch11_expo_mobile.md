@@ -3,126 +3,144 @@
 # Ch.11 Mobile Extension: Expo Cross-Platform App Development and Cloud Packaging
 
 > 🎯 **The Real Problem**: Web developers stuck in Xcode certificate signing, Android Gradle builds, and CocoaPods dependency hell when trying to ship mobile apps.  
-> 💡 **Tangible Output & Takeaway**: Complete companion project `examples/ch11-expo-mobile` (Expo SDK 57 + Expo Router + NativeWind) and zero-local-setup `eas build` cloud pipelines.  
-> ⚡ **Viral Screenshot Quote**: *"Skip local Xcode and Android Studio configuration hell. Build and publish native iOS and Android apps autonomously with Expo cloud pipelines."*
+> 💡 **Tangible Output & Takeaway**: Complete companion project `examples/ch11-expo-mobile` (Expo SDK 57 + Expo Router + NativeWind); zero-local-setup `eas build` cloud packaging pipelines.  
+> ⚡ **Viral Screenshot Quote**: *"Skip local Xcode and Android Studio configuration hell. Build and publish dual-platform native apps autonomously with cloud pipelines and AI error self-healing."*
 
-As an independent founder and product manager, your primary pursuit besides "high efficiency" is "freedom." However, in traditional mobile development (React Native or Flutter), the most time-consuming part is often the complex local environment setup: iOS certificate management, Android Gradle errors, Cocoapods version conflicts. This local environment hell often deters developers.
+After shipping a web SaaS, many independent developers want to extend their reach to mobile. However, in traditional mobile development (React Native or Flutter), the most grueling friction is local environment setup: iOS certificates, Android Gradle build failures, and CocoaPods version conflicts.
 
-I firmly believe that **"cloud compilation and packaging (EAS) is the only viable path for independent developers to build native mobile apps."** Combined with Codex's automated compilation error diagnostics, you can entirely skip the tedious configurations of local Xcode/Android Studio and directly package a native App ready for submission.
-
-This chapter teaches you how to direct Codex to handle all of this autonomously.
+I firmly believe that **"cloud compilation and packaging (EAS) is the only viable path for independent developers to build native apps."** Combined with Codex's automated diagnostic assistance, you can bypass local Xcode/Android Studio configuration entirely and ship production-ready native apps directly to app stores.
 
 > 📦 **Companion Source Code**: [examples/ch11-expo-mobile](https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
 
 ---
 
-## 11.1 Expo Project Rapid Initialization and Simulator Mapping
+## 🎯 Intuitive Metaphor: Writing the Script and Letting the "Cloud Atelier" Tailor the Costumes
 
-To use EAS (Expo Application Services) for configuration-free cloud packaging, we first initialize a standard Expo project.
+Cross-platform development shouldn't require turning your personal laptop into a heavy manufacturing plant:
+
+```Plaintext
+[Traditional Native Dev] ──> Buying your own smelting furnace (installing 50GB+ Xcode and Android Studio),
+                             configuring loom machinery (fiddling with Gradle and CocoaPods runtimes),
+                             frequently tripping circuit breakers and stalling for days without a working build.
+[Expo + EAS Mode]        ──> ✅ You only focus on the script (writing React Native / TypeScript code):
+                             - Once the script is ready, send it to the "Cloud Custom Atelier" (EAS Build);
+                             - The cloud automatically tailors iOS IPAs and Android APKs;
+                             - Scan the QR code on your phone to slip into the customized outfit instantly!
+```
+
+Codex serves as your script editor in the atelier, automatically aligning versions whenever you miss a dependency or styling quirk.
+
+---
+
+## 🚀 Beginner Quickstart (3 Easy Steps)
+
+See your cross-platform app running on a physical phone in 3 simple steps:
+
+1. **Step 1: Install Expo Go on Your Mobile Device**  
+   Search for and install "Expo Go" from the App Store or Google Play.
+2. **Step 2: Start the Local Development Server**  
+   Navigate to the project directory and run:
+   ```bash
+   npx expo start
+   # The terminal will display a large QR code matrix
+   ```
+3. **Step 3: Scan the QR Code with Your Phone Camera**  
+   Scan the code to load the app immediately. Whenever you or Codex modify page code, the phone screen hot-reloads instantly!
+
+---
+
+## 11.1 Expo Project Rapid Initialization and Standards Setup
+
+To use EAS for zero-configuration cloud packaging, initialize a standard Expo project:
 
 ### 1. Writing App Initialization Specs
-Issue the following specs command to Codex to generate a standard Expo TypeScript project:
+
+Issue the following specs to Codex:
 
 ```markdown
 # 🎯 Goal
 Initialize a React Native Expo project using TypeScript.
 
 # 🛑 Constraints
-- Use the latest stable Expo SDK (currently SDK 56), paired with the latest version of Expo Router to implement file-system-based routing.
-- Integrate NativeWind as the Tailwind CSS styling solution.
-- Use the `src/` prefix for directory conventions (i.e., `src/app/` as the routing root).
+- Use the latest stable Expo SDK 57, paired with Expo Router for file-system-based routing.
+- Integrate NativeWind as the Tailwind-style CSS styling solution.
+- Use the src/ prefix convention (i.e., src/app/ as the routing root).
 
 # 🧪 Validation Specs
 - Running `npx expo lint` must return zero errors.
-- Run `npx expo-doctor` to verify dependency version alignment.
+- Run `npx expo-doctor` to verify dependency version alignment (must pass 20/20).
 ```
 
-Codex will automatically pull the latest Expo template and generate the basic directory structure:
+Directory structure layout:
 
-```text
-+-- src/
-|   +-- app/
-|   |   +-- index.tsx         # App Home Page
-|   |   +-- _layout.tsx       # Global Routing Navigation Layout
-|   +-- components/
-|   +-- hooks/
-+-- app.json                  # Expo Core Configuration File
-+-- package.json
+```Plaintext
+src/
+├── app/
+│   ├── index.tsx         # App Home Page
+│   └── _layout.tsx       # Global Routing Navigation Layout
+├── components/
+└── hooks/
+app.json                  # Expo Core Configuration File
+package.json
 ```
 
 ---
 
 ## 11.2 Resolving Mobile Obstacles: Native Module Conflicts
 
-React Native development most fears upgrading or introducing a third-party library that contains native modules (such as Camera or File System access). This frequently leads to build failures in iOS Podfile or Android build.gradle.
+React Native development must avoid using standard `npm install` for third-party packages containing underlying native code (such as cameras, sensors, or gesture handlers).
 
-Under Vibe Coding, when Codex installs dependencies and encounters native errors, we should guide it to follow the troubleshooting strategy below.
+### Golden Rule: Use `npx expo install` for Version Alignment
 
-### Practice: Guiding Codex to Troubleshoot Podfile Failures
-If Codex fails to compile iOS native modules inside the sandbox, its reasoning summary will display a warning similar to:
-`[Error] [Cocoapods] Auto-linking failed for react-native-reanimated.`
-
-At this point, **directly type and enter the correction instruction in the TUI** (without any special subcommands, as detailed in Ch.06):
+If dependency versions drift, type this correction directly in the TUI:
 
 ```bash
-Please use `npx expo install react-native-reanimated` to reinstall this dependency instead. It will automatically adapt to the current Expo SDK version. In this project, using standard `npm install` to install any third-party packages with native code is strictly prohibited. Please append this rule to AGENTS.md.
+Please use `npx expo install react-native-reanimated` to reinstall this dependency instead. It will automatically adapt to the current Expo SDK version. In this project, using standard `npm install` to install any native package is strictly prohibited. Please append this rule to AGENTS.md.
 ```
 
-> 💡 **Orchestrator's Advice**: The greatest strength of Expo SDK is its built-in dependency alignment mechanism (`npx expo install`). Whenever a native package throws an error, force Codex to use Expo's native package command to install dependencies, which automatically resolves 90% of version conflicts.
+> 💡 **Founder's Mantra**: `npx expo install` is the official certified version lock. Whenever native modules fail, force reinstalling with this command automatically wipes out 90% of dependency issues.
 
 ---
 
 ## 11.3 EAS Build Cloud Packaging and Certificate Automation
 
-In traditional App packaging pipelines, applying for Apple developer certificates and generating Provisioning Profiles can stall beginners for days. Now, using EAS, we only need to provide developer credentials to Codex, and it handles the entire setup on the cloud automatically.
+In traditional app delivery, obtaining Apple developer certificates can stall newcomers for days. With EAS, this entire process is handled in the cloud.
 
-### 1. Configuring `eas.json` (EAS Cloud Build Config)
-Have Codex generate the cloud build environment configurations for production and testing.
-
-`eas\.json` configuration file:
+### 1. Configuring `eas.json`
 
 ```json
 {
   "cli": {
     "version": ">= 9.0.0"
-  },
-  "build": {
-    "development": {
-      "developmentClient": true,
-      "distribution": "internal"
-    },
-    "preview": {
-      "distribution": "internal"
-    },
-    "production": {
-      "ios": {
-        "simulator": false
-      }
-    }
+{{ ... }}
   }
 }
 ```
 
 ### 2. Instructing Codex to Monitor Cloud Build Logs
-Trigger the EAS build task from the local terminal and save the logs to a local file for Codex to analyze:
 
 ```bash
-# Start EAS iOS build task and save the logs to a local file
+# Start EAS iOS build task and stream logs to a local file
 eas build --platform ios --profile production --non-interactive 2>&1 | tee eas-build.log
 ```
 
-Once the build finishes (or fails), feed the logs directly to Codex:
+If the build hits an error, hand the logs directly to Codex for analysis:
 
 ```bash
-# Feed the build logs to Codex for diagnostics
-codex exec "Analyze eas-build.log, locate the failure reason, and provide a fix. If it's a Provisioning Profile mismatch or certificate expiration, tell me exactly what eas credentials commands to run."
+codex exec --sandbox read-only "Analyze eas-build.log, locate failure cause, and provide remediation commands"
 ```
 
-> ⚠️ **Boundary Clarification**: Codex **will not automatically log into your Apple Developer Portal to regenerate certificates on your behalf**—certificate issuance and rotation are handled between EAS (via `eas credentials`) and Apple. What Codex can do is: read and parse EAS error logs, identify typical issues such as expired certificates or mismatched Provisioning Profiles, guide you to run the correct remediation commands, and automatically generate patch scripts.
+Ultimately, EAS returns an installation QR code that you can scan to install the preview app directly on your phone.
 
-Ultimately, EAS will return a QR code. You only need to scan it with your phone to download and install the preview App.
+---
 
-**Native mobile development no longer requires a bulky IDE setup. Move packaging to the cloud with Expo + EAS, and let Codex act as your co-pilot for mobile development.**
+## 🛡️ Troubleshooting & Pitfall Cheat Sheet
+
+| Common Pitfall | Root Cause | Rapid Diagnosis & Fix Guide |
+| :--- | :--- | :--- |
+| **Phone scans QR code and shows "Could not connect to development server"** | Phone and computer are not on the same Wi-Fi LAN, or router firewall blocks local traffic | Run `npx expo start --tunnel` to force public tunnel mode with zero network barriers |
+| `Invariant Violation: "main" has not been registered` | Entry routing file missing or incorrect entry path in `app.json` | Verify `"main": "expo-router/entry"` in `package.json` was not accidentally modified |
+| **Terminal throws red screen error immediately after installing a new package** | Accidental use of `npm install` introducing an incompatible SDK version | Run `npx expo install <package-name>`, or execute `npx expo-doctor` to diagnose and align |
 
 ---
 

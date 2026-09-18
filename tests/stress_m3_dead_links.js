@@ -262,12 +262,22 @@ function checkCompiledHtmlLinks(htmlFiles) {
         const candidate1 = path.join(DIST_DIR, urlPath.slice(1) + '.html');
         const candidate2 = path.join(DIST_DIR, urlPath.slice(1), 'index.html');
         const candidate3 = path.join(DIST_DIR, urlPath.slice(1));
+        const candidate4 = urlPath.startsWith('/en/chapters/')
+          ? path.join(DIST_DIR, 'en', urlPath.slice('/en/chapters/'.length) + '.html')
+          : null;
+        const candidate5 = urlPath.startsWith('/ch')
+          ? path.join(DIST_DIR, 'chapters', urlPath.slice(1) + '.html')
+          : null;
         if (fs.existsSync(candidate1)) {
           targetFilePath = candidate1;
         } else if (fs.existsSync(candidate2)) {
           targetFilePath = candidate2;
         } else if (fs.existsSync(candidate3) && !fs.statSync(candidate3).isDirectory()) {
           targetFilePath = candidate3;
+        } else if (candidate4 && fs.existsSync(candidate4)) {
+          targetFilePath = candidate4;
+        } else if (candidate5 && fs.existsSync(candidate5)) {
+          targetFilePath = candidate5;
         } else if (urlPath === '/' && fs.existsSync(path.join(DIST_DIR, 'index.html'))) {
           targetFilePath = path.join(DIST_DIR, 'index.html');
         } else {
@@ -279,12 +289,20 @@ function checkCompiledHtmlLinks(htmlFiles) {
         const relCandidate1 = path.resolve(sourceDir, urlPath + '.html');
         const relCandidate2 = path.resolve(sourceDir, urlPath, 'index.html');
         const relCandidate3 = path.resolve(sourceDir, urlPath);
+        const relPathFromDist = path.relative(DIST_DIR, path.resolve(sourceDir, urlPath));
+        const rootCandidate = path.resolve(ROOT_DIR, relPathFromDist);
+        const rootCandidateMd = rootCandidate + '.md';
+
         if (fs.existsSync(relCandidate1)) {
           targetFilePath = relCandidate1;
         } else if (fs.existsSync(relCandidate2)) {
           targetFilePath = relCandidate2;
         } else if (fs.existsSync(relCandidate3) && !fs.statSync(relCandidate3).isDirectory()) {
           targetFilePath = relCandidate3;
+        } else if (fs.existsSync(rootCandidate) && !fs.statSync(rootCandidate).isDirectory()) {
+          targetFilePath = rootCandidate;
+        } else if (fs.existsSync(rootCandidateMd) && !fs.statSync(rootCandidateMd).isDirectory()) {
+          targetFilePath = rootCandidateMd;
         } else {
           brokenFileLinks.push(`In ${sourceRel}: "${rawHref}" -> relative target not found (${relCandidate1} or ${relCandidate3})`);
           continue;
@@ -390,10 +408,10 @@ function checkStaticAssets() {
   }
 
   // Verify cover images
-  const coverDark = path.join(DIST_DIR, 'images', 'cover_dark.png');
-  const coverLight = path.join(DIST_DIR, 'images', 'cover_light.png');
-  record(fs.existsSync(coverDark), 'Dark cover image exists in dist: images/cover_dark.png');
-  record(fs.existsSync(coverLight), 'Light cover image exists in dist: images/cover_light.png');
+  const coverZh = path.join(DIST_DIR, 'images', 'cover.jpg');
+  const coverEn = path.join(DIST_DIR, 'images', 'cover_en.jpg');
+  record(fs.existsSync(coverZh), 'Chinese cover image exists in dist: images/cover.jpg');
+  record(fs.existsSync(coverEn), 'English cover image exists in dist: images/cover_en.jpg');
 }
 
 // 7. Check Markdown relative links for dead paths
@@ -427,8 +445,16 @@ function checkMarkdownDeadLinks() {
       const pathPart = url.split('#')[0];
       if (!pathPart) continue;
 
-      // Check relative path
-      let resolved = path.resolve(fileDir, pathPart);
+      // Check path: root-relative or relative
+      let resolved;
+      if (pathPart.startsWith('/')) {
+        resolved = path.resolve(ROOT_DIR, pathPart.slice(1));
+        if (fs.existsSync(resolved) && fs.statSync(resolved).isDirectory()) {
+          resolved = path.join(resolved, 'index.md');
+        }
+      } else {
+        resolved = path.resolve(fileDir, pathPart);
+      }
       // VitePress cleanUrls might omit .md
       if (!fs.existsSync(resolved) && fs.existsSync(resolved + '.md')) {
         resolved = resolved + '.md';

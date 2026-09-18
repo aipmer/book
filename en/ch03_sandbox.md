@@ -3,21 +3,56 @@
 # Ch.03 Breaking the Cloud Island: Sandbox Debugging and Deep Local Environment Tunneling
 
 > 🎯 **The Real Problem**: Agent running in an isolated sandbox cannot reach local Docker databases (PostgreSQL/Redis), repeatedly failing with `Connection refused`.  
-> 💡 **Tangible Output & Takeaway**: SSH / Ngrok reverse tunneling scripts, `host.docker.internal` network configuration, and a 3-step connectivity diagnostic checklist.  
+> 💡 **Tangible Output & Takeaway**: CLI 0.14x sandbox tier analysis, SSH / Ngrok reverse tunneling scripts, and a 3-step connectivity diagnostic checklist.  
 > ⚡ **Viral Screenshot Quote**: *"Can't connect to localhost from sandbox? It's not a code bug—you simply forgot to bridge the network tunnel."*
 
-In the background of my WeChat public account "Real-World Product Talk", I often receive questions from readers:
-"Hunk, why does Codex always throw `Connection refused to localhost:5432` when I ask it to run database tests? I clearly have PostgreSQL running in Docker on my local machine!"
+When running database tests with Codex, the most frequent surprise for beginners is: while PostgreSQL runs perfectly in local Docker, the AI shouts `Connection refused to localhost:5432` in the terminal.
 
-This is a classic barrier brought by **Sandbox Isolation**. To guarantee system security and clean runtimes, Codex executes code inside an isolated, virtualized container in the cloud by default. This means `localhost` to the AI refers to its own virtualized environment, not your host Mac machine.
+This is a classic barrier brought by **Sandbox Isolation**. This chapter teaches you how to pierce through this isolation barrier and bridge a secure pipeline between the sandbox and your host.
 
-In this chapter, we will discuss how to break this barrier and establish a network channel between the cloud sandbox and your local host machine.
+---
+
+## 🎯 Intuitive Metaphor: The Cleanroom Containment and Umbilical Pipeline
+
+Think of Codex's runtime environment as a "high-level sterile containment cleanroom":
+
+```Plaintext
+【Host Mac/PC】       ──> The Outside World: Holding your actual local database, secret keys, personal tools, and files.
+【Codex Sandbox】     ──> The Sterile Cleanroom: Where the AI builds code and runs tests. Even if the code crashes, your host system is untouched.
+【Reverse Tunneling】 ──> Umbilical Feed Pipeline: When the AI in the cleanroom needs to talk to the local host DB, you must bridge a dedicated pipe.
+```
+
+Without this pipe, the AI calling `localhost` inside the cleanroom reaches only bare walls, naturally throwing `Connection refused`.
+
+---
+
+## 🚀 Beginner Quickstart: 3 Steps to Launch
+
+Follow these 3 steps to connect the sandbox with your local database:
+
+1. **Step 1: Confirm Local Service is Actively Listening**  
+   Verify in terminal that Postgres is running locally on 5432:
+   ```bash
+   lsof -i :5432
+   ```
+2. **Step 2: Launch a Quick Port Tunnel (Ngrok or SSH)**  
+   Open a temporary public tunnel for port 5432:
+   ```bash
+   ngrok tcp 5432
+   # Output: tcp://0.tcp.ngrok.io:12345
+   ```
+3. **Step 3: Inject the Tunnel URL into Codex Task**  
+   Pass the tunnel address into the environment and run:
+   ```bash
+   export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
+   codex exec --sandbox workspace-write "npm run test:db"
+   ```
 
 ---
 
 ## 3.1 Sandbox Network Barriers: Why Can't `localhost` Connect?
 
-By default, the cloud sandbox and your local host (Your Mac) are blocked from communicating over the network, as shown below:
+By default, the sandbox and your host machine are network-isolated:
 
 ```text
 +───────────────────────────+                  +───────────────────────────+
@@ -27,73 +62,71 @@ By default, the cloud sandbox and your local host (Your Mac) are blocked from co
 +───────────────────────────+                  +───────────────────────────+
 ```
 
-If we want the code running in the sandbox to read/write our local database or invoke local microservices, we must tunnel a path through this firewall by utilizing **port mapping and reverse tunneling**.
+In CLI 0.14x, sandbox boundaries are explicitly defined:
+- `--sandbox read-only`: Analysis only, zero write permissions.
+- `--sandbox workspace-write`: Recommended default; allows edits within the project workspace while protecting the host OS.
+
+To connect with host databases or microservices, you must establish **port mapping and reverse tunneling**.
 
 ---
 
 ## 3.2 Practice: Setting Up Reverse Tunnels via SSH / Ngrok
 
-Let's look at the most common scenario: **allowing Codex in the cloud sandbox to connect to the PostgreSQL database inside Docker on your local host.**
-
-### Method 1: Using SSH Reverse Port Forwarding (Recommended)
-If you own a public-facing virtual private server (VPS), you can use SSH's built-in port forwarding mechanism to securely mount your local port to the cloud.
-
-Run in your local terminal:
+### Method 1: SSH Reverse Port Forwarding (Recommended for Long Term)
 
 ```bash
-# Forward local port 5432 (Postgres) to port 54320 on your public VPS
+# Forward local port 5432 to port 54320 on your public VPS
 ssh -R 54320:localhost:5432 user@your-public-vps.com -N
 ```
 
-Then configure the environment variable inside the Codex sandbox to directly target the mapped port of the public server:
+Then configure the sandbox:
 
 ```bash
 export DATABASE_URL="postgresql://postgres:password@your-public-vps.com:54320/dev_db"
 ```
 
-### Method 2: Using Ngrok for Port Tunneling (Zero-Config Option)
-If you don't have a public VPS, `ngrok` is the fastest alternative.
+### Method 2: Ngrok for Instant Tunneling (Zero-Server Option)
 
-Run on your host machine:
+Run on host:
 
 ```bash
-# Start a TCP tunnel mapping the local PostgreSQL port
 ngrok tcp 5432
 ```
 
-The terminal will output a tunnel address like:
-`Forwarding tcp://0.tcp.ngrok.io:12345 -> localhost:5432`
-
-Configure this dynamic address in your [AGENTS.md](../AGENTS.md) or temporary environment variables:
-
-```bash
-export DATABASE_URL="postgresql://postgres:password@0.tcp.ngrok.io:12345/dev_db"
-```
+Inject the printed `tcp://0.tcp.ngrok.io:12345` into Codex session.
 
 ---
 
 ## 3.3 Directory Mapping and Env Syncing
 
-In addition to networking, files and credentials also need to flow smoothly and securely.
+### 1. Security Isolation for Secrets
 
-### 1. Security Sync Rules for Secrets
-Never allow Codex to automatically sync `.env` files containing raw credentials to public cloud environments. We must add `.env` to our local `.gitignore` and enforce strict boundaries in [AGENTS.md](../AGENTS.md):
+Never allow AI to commit raw `.env` files. Enforce in `.gitignore` and [AGENTS.md](../AGENTS.md):
 
 ```markdown
 ## 🛑 Hard Constraints
-- Never sync or commit files matching *.env.
-- Use `src/config.ts` as the unified wrapper to fetch environment configurations.
+- Never sync, copy, or commit files matching *.env.
+- Always use `src/config.ts` or environment variables for secret injection.
 ```
 
 ### 2. Sandbox Cache Clearing
-To avoid "phantom bugs" caused by cached sandbox state (such as obsolete dependencies), we can tell Codex to automatically run clean commands before each test suite run. Add this to the developer commands section in [AGENTS.md](../AGENTS.md):
+
+To avoid ghost build bugs, define clean run commands in [AGENTS.md](../AGENTS.md):
 
 ```markdown
 ## 💻 Developer Commands
-- **Clean Run**: `rm -rf node_modules/.cache && npm run test`
+- **Clean Run**: `rm -rf node_modules/.cache .next/cache && npm run test`
 ```
 
-By applying these settings, the cloud sandbox is no longer an isolated island. It functions as a direct extension of your local computer, securely accessing local data and services, bringing the smoothness of Vibe Coding to the next level.
+---
+
+## 🛡️ Troubleshooting & Pitfall Cheat Sheet
+
+| Symptom | Root Cause | Instant Fix |
+| :--- | :--- | :--- |
+| `Connection refused to 127.0.0.1:5432` | Sandbox attempted to query localhost inside cleanroom | Confirm tunnel is active; use the reverse tunnel address instead of `localhost` |
+| `ngrok session expired / reconnecting` | Free ngrok tunnel timed out or changed port | Restart ngrok and copy new address, or use `scripts/codex-watchdog` helper |
+| `EACCES: permission denied` | Agent tried to write to protected system directories | Ensure `--sandbox workspace-write` is used and edits stay within project root |
 
 ---
 

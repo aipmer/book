@@ -1,115 +1,171 @@
 [ 🏠 Index ](/en/) | [ ⬅️ Prev (Ch.06) ](./ch06_reasoning_steer.md) | [ ➡️ Next (Ch.08) ](./ch08_mobile_workflow.md) | [ 🌐 中文版 ](../chapters/ch07_desktop_computer_use.md)
 
-# Ch.07 Closing the Visual Loop: Automated Auditing and Design Verification with Desktop Computer Use
+# Ch.07 Closing the Visual Loop: Automated Inspection and Design Fidelity with Desktop Computer Use
 
-> 🎯 **The Real Problem**: Manual visual pixel-peeping for responsive designs, missing hidden popup modals, and headless CLI tests unable to verify real browser rendering.  
-> 💡 **Tangible Output & Takeaway**: Sandboxed coordinate-safe execution boundaries, automated Figma-to-DOM screenshot visual diff workflows, and UI telemetry recordings.  
-> ⚡ **Viral Screenshot Quote**: *"Still squinting to verify responsive UI? Let AI open the browser, measure element coordinates, and highlight design mismatches."*
+> 🎯 **The Real Problem**: Manual pixel-peeping for UI styling, responsive layouts missing hidden modals, and headless CLI tests incapable of verifying real browser rendering and clicks.  
+> 💡 **Tangible Output & Takeaway**: ChatGPT Desktop Code Mode setup; automated Figma-to-DOM screenshot visual diff workflows; and UI visual telemetry reproductions.  
+> ⚡ **Viral Screenshot Quote**: *"Still squinting at pixels to verify responsive UI? Let AI open the browser, measure dimensions, click buttons, and annotate visual discrepancies."*
 
-In traditional UI fidelity reviews, the most time-consuming task for product managers and front-end developers is "pixel-eye" alignment verification:
-“This button seems shifted 4 pixels to the left.”
-“This modal breaks and covers key text on iPad dimensions.”
+In traditional UI fidelity reviews, the most time-consuming task for product managers and frontend developers is "pixel-eye" alignment verification:
 
-In the OpenAI Codex ecosystem, using **Computer Use** capabilities, the agent can not only write code but also "use eyes and hands" to directly operate your macOS/Windows desktop, launch a browser, interact with DevTools, and run visual audits.
+“This button seems shifted 4 pixels to the left.”  
+“This popup gets obscured by the virtual keyboard on mobile dimensions.”
 
-This chapter teaches you how to configure and utilize Codex Desktop for automated UI visual verification.
+In the 2026 Codex ecosystem, combining **ChatGPT Desktop (Codex Code Mode)** with OpenAI's latest frontier flagship **GPT-6 Astra** (natively engineered as an autonomous computer operator), the agent can not only write code but also "use eyes and hands" to directly operate your macOS desktop: launching browsers, adjusting developer tool resolutions, and performing high-fidelity visual audits.
 
----
-
-## 7.1 Safety First: Sandbox Boundaries and Operation Bounding Boxes
-
-Allowing an AI to operate your screen poses security risks. To prevent Codex from accidentally clicking your messaging apps or deleting system files due to misinterpretations, you must configure a **bounding box** restriction.
-
-### 1. Defining Boundaries in Configuration
-In the project root configuration, restrict Codex to access only a designated virtual display or window region:
-
-```json
-{
-  "computer_use": {
-    "allowed_applications": ["Google Chrome", "Simulator"],
-    "viewport_restriction": {
-      "width": 1280,
-      "height": 800,
-      "allow_system_settings": false
-    }
-  }
-}
-```
-
-### 2. Coordinate Targeting Mechanism
-Codex operates your computer in a closed loop: "screenshot -> OCR/visual analysis -> return target x, y coordinates -> execute click/drag."
-
-```text
-[Screenshot] ──> [Vision Model Analysis] ──> [Fetch Element Coordinates (x:450, y:230)] ──> [Click/Drag]
-```
+This chapter teaches you how to orchestrate Computer Use to automate design-fidelity inspection for frontend UI.
 
 ---
 
-## 7.2 Visual-Driven UI Review in Practice: Figma Mockup Alignment
+## 🎯 Intuitive Metaphor: A 24/7 Tireless "Pixel Quality Inspector"
 
-This is a classic and highly practical "Real-World Product Talk" workflow: **let Codex autonomously compare a Figma mockup screenshot with the rendered page in the browser, and automatically modify CSS to restore the design.**
+Think of Computer Use as hiring a dedicated UI QA inspector sitting right beside your desk:
+
+```Plaintext
+[Manual UI Inspection] ──> Holding Figma mockups in one hand, switching Chrome tabs with the other,
+                           squinting to verify font sizes, resizing windows manually for breakpoints,
+                           and manually refreshing pages after every CSS tweak (slow and exhausting).
+[Computer Use Mode]    ──> You hand the inspector a task card: "Review /auth/login against design mockup."
+                           The inspector puts on blue-light glasses (screenshot analysis),
+                           takes the mouse (simulated clicks), measures a 16px offset,
+                           updates the Tailwind classes in the editor, refreshes the browser,
+                           and captures a clean screenshot to report completion.
+```
+
+You never need to act as a human pixel-comparison machine again, freeing your energy for interaction design and core business logic.
+
+---
+
+## 🚀 Beginner Quickstart (3 Easy Steps)
+
+Run your first AI visual inspection in 3 simple steps:
+
+1. **Step 1: Verify ChatGPT Desktop Permissions**  
+   In macOS **System Settings → Privacy & Security**, ensure that **ChatGPT** is granted **Accessibility** and **Screen Recording** permissions.
+2. **Step 2: Start Your Local Frontend Server**  
+   Start your development server in the terminal (confirming it opens in your browser):
+   ```bash
+   npm run dev
+   # Verify http://localhost:3000 is accessible
+   ```
+3. **Step 3: Summon `@Chrome` in Code Mode with an Inspection Task**  
+   In the ChatGPT Desktop Codex mode prompt, enter:
+   ```markdown
+   @Chrome Open http://localhost:3000/auth/login, capture the main card area, check for horizontal viewport overflow, and adjust padding.
+   ```
+
+---
+
+## 7.1 Safety First: Sandbox Boundaries and Application Whitelisting
+
+Allowing an AI to operate your physical screen requires strict security fencing. To prevent the agent from accidentally clicking personal messaging apps or altering system files due to misrecognition, establish **application-level whitelisting**.
+
+### 1. GUI Permission Whitelist
+
+In the ChatGPT Desktop client:
+- The first time Computer Use interacts with a specific application (e.g., Google Chrome), a system prompt will ask for confirmation;
+- You can choose **“Just this once”** or **“Always allow”**;
+- Strictly avoid whitelisting personal apps (e.g., WeChat, Slack, Mail, or the terminal itself);
+- **Factory Hard Bounds**: Codex cannot operate the terminal, the ChatGPT client itself, or system administrative privilege dialogs (`sudo`), forming an OS-level hard isolation barrier.
+
+### 2. Coordinate Positioning and Visual Perception
+
+Computer Use operates via a robust perceptual feedback loop:
+
+```Plaintext
+[Viewport Screenshot] ──> [GPT-5.6 Vision Analysis] ──> [Compute Pixel Coordinates (x:450, y:230)] ──> [Execute Mouse Click/Drag]
+```
+
+Combined with the 2026 **Appshots** feature (double-tap shortcut), visual snapshots and text contexts of the focused foreground window can be instantly injected into the conversation without manual screenshot uploads.
+
+---
+
+## 7.2 Practical Visual-Driven UI Review: Figma Mockup Alignment
+
+This is the most practical automated scenario: **having Codex autonomously compare design mockups with local web rendering, auto-tuning styles.**
 
 ### 🎯 Goal
-Instruct Codex to compare the local webpage `/auth/login` with the designer's mockup `figma_login_mockup.png`, and automatically adjust the margins and font sizes of the login card on the page.
+Compare local page `/auth/login` with design mockup screenshot `figma_login_mockup.png`, eliminating spacing discrepancies.
 
 ### 🛑 Constraints
-- Only style adjustments through modifying the Tailwind classes in `src/app/login/page.tsx` are allowed.
-- Modifying the DOM structure is prohibited.
+- Only Tailwind utility class adjustments in `src/app/login/page.tsx` are permitted.
+- Modifying existing DOM trees or semantic tags is prohibited.
 
-### 🧪 Execution and Validation Specs
+### 🧪 Automated Execution Specs
+
+Submit this prompt in the ChatGPT Desktop client:
 
 ```markdown
+@Chrome Complete the UI visual inspection following these steps:
+
 # 🎯 Goal
 Compare and align browser rendering with figma_login_mockup.png.
 
 # 🛑 Constraints
 - Only use Tailwind utility classes in src/app/login/page.tsx.
+- Do not change the DOM structure.
 
-# 🚀 Codex Execution Steps
-1. Launch Google Chrome in headless or bounded window mode.
-2. Navigate to http://localhost:3000/auth/login.
-3. Take a screenshot of the login card region.
-4. Perform pixel-diff and layout alignment checks against /assets/figma_login_mockup.png.
-5. Identify spacing discrepancy (Figma shows 32px padding-top, current implementation has 16px).
-6. Edit CSS, reload and verify.
+# 🚀 Execution Steps
+1. Open Google Chrome and navigate to http://localhost:3000/auth/login.
+2. Capture screenshot of the login form container.
+3. Compare against assets/figma_login_mockup.png and identify padding discrepancies.
+4. Update Tailwind classes in src/app/login/page.tsx to match spacing.
+5. Reload page and confirm visual alignment within 2% delta.
 ```
 
 ---
 
-## 7.3 Codex Automated Auditing Console Logs
-
-When you run this task, Codex's Computer Use module generates logs similar to the following:
+## 7.3 Conceptual Execution Flow of Codex Automated Auditing
 
 ```bash
-$ codex run-task compare-ui.task
-[Task Started] Running visual review for /auth/login
-[Step 1] Opening Google Chrome on http://localhost:3000/auth/login...
-[Step 2] Taking screenshot. Saved to /tmp/screenshot_v1.png
-[Step 3] Calling Vision Model (GPT-4o/GPT-5.5) for image comparison.
-    - Analysis: "Login card header text 'Welcome Back' font size is too small (approx 16px), should be 24px (text-2xl) based on figma mockup. Card padding-top is insufficient."
-[Step 4] Modifying src/app/login/page.tsx:
-    - Target: Replace `className="text-base pt-4"` with `className="text-2xl pt-8"`
-[Step 5] Refreshing Chrome...
-[Step 6] Taking validation screenshot. Saved to /tmp/screenshot_v2.png
-[Step 7] Vision model checks: "Layout matches mockup. Visual diff is within 1.5% tolerance."
-[Task Completed Successfully]
+> Running visual review for /auth/login
+> Step 1: Opening Google Chrome on http://localhost:3000/auth/login...
+> Step 2: Taking screenshot. Saved to /tmp/screenshot_v1.png
+> Step 3: Calling vision model for image comparison.
+    Analysis: "Login card padding-top is 16px (pt-4), but mockup requires 32px (pt-8). Font size is text-base, needs text-xl."
+> Step 4: Updating src/app/login/page.tsx via apply_patch...
+> Step 5: Reloading Chrome tab and taking validation screenshot...
+> Step 6: Vision check: "Visual delta is within 1.2% tolerance. Perfectly aligned."
+> Task completed successfully.
 ```
 
 ---
 
-## 7.4 Best Practice: Responsive Multi-Device Inspection
+## 7.4 Advanced: Sites In-Place Preview and Multi-Device Responsive Auditing
 
-Beyond single-resolution comparisons, you can command Codex to resize viewports for breakpoint audits:
+Leveraging the 2026 ChatGPT Desktop **Sites** feature alongside mobile breakpoint audits:
 
 ```markdown
+@Chrome
 # 📱 Mobile Viewport Inspection
-1. Open DevTools in Chrome.
-2. Simulate mobile viewport (iPhone 15 Pro: 393 x 852).
-3. Verify that the login card does not overflow horizontally.
-4. If the submit button falls below the screen fold, adjust padding-bottom to keep it visible.
+1. Open Chrome DevTools.
+2. Toggle Device Toolbar and select iPhone 15 Pro (393 x 852).
+3. Verify the submit button does not drop below the first screen fold.
+4. If obscured, reduce hero section padding to keep the CTA button immediately clickable.
 ```
 
-Through this closed-loop process, solo developers no longer need to resize browsers manually or refresh mobile devices repeatedly after modifying CSS. Codex can handle 90% of page alignment adjustments and cross-device compatibility testing, freeing up your visual energy.
+Solo developers no longer need to resize browser windows back and forth, letting the AI handle 90% of visual inspection heavy lifting.
+
+---
+
+## 7.5 Cross-Domain Extension: From Web Audits to Autonomous 3D Software Control (Blender Integration)
+
+With the arrival of **GPT-6 Astra** in late 2026—bringing native spatial geometric reasoning and a 95.9% mean voxel IoU score on OpenAI's BenchCAD benchmark—Computer Use has expanded well beyond web browsers.
+
+In a desktop environment, agents can autonomously interact with professional 3D creative suites like **Blender**:
+- **Viewport Operations & Shading Checks**: The agent uses Computer Use to toggle viewports between Shading material preview and Rendered modes;
+- **Inspecting Geometry & Shader Artifacts**: The agent takes viewport screenshots to identify inverted surface normals, missing UV maps, or washed-out lighting;
+- **Spatial Pipeline Synergy**: Pairs seamlessly with the **Tripo3D + Blender + Astra** 3D automation pipeline detailed in Ch.13, delivering full automation from generative prompts to render verification.
+
+---
+
+## 🛡️ Troubleshooting & Pitfall Cheat Sheet
+
+| Common Pitfall | Root Cause | Rapid Diagnosis & Fix Guide |
+| :--- | :--- | :--- |
+| `Computer Use is not supported on this platform` | OS is not macOS or user is in an unsupported region | Ensure macOS client is used, or switch to a Headless Puppeteer script approach as an alternative |
+| `Failed to capture window: Permission denied` | macOS Screen Recording permissions missing or needs refresh | Open System Settings, toggle ChatGPT's "Screen Recording" permission off and on, and restart the client |
+| **AI mouse clicks wild coordinates off target** | Browser zoom is not 100% or multi-display DPI scaling mismatch | Reset Chrome zoom to standard 100%, and position the target test window in the center of the primary display |
 
 ---
 

@@ -86,13 +86,13 @@ def clean_and_process_file(filepath, is_en=False):
     cleaned_lines = []
     
     for line in lines:
-        # Skip navigation bars
-        if is_en:
-            if "Index" in line or "Next" in line or "Prev" in line:
-                continue
-        else:
-            if "主目录" in line or "下一章" in line or "上一章" in line or "返回首页" in line:
-                continue
+        # Skip navigation bars (lines starting with '[' containing nav links)
+        stripped = line.strip()
+        if stripped.startswith("[") and (
+            "Index" in stripped or "Next" in stripped or "Prev" in stripped or
+            "主目录" in stripped or "下一章" in stripped or "上一章" in stripped or "返回首页" in stripped
+        ):
+            continue
         cleaned_lines.append(line)
         
     processed_content = "\n".join(cleaned_lines).strip()
@@ -119,7 +119,8 @@ def build_zh():
     combined.append("[ 🌐 English PDF Version ](./codex_blue_book_en.pdf) | [ 🌐 English Online Version ](./en/ch01_mindset.md)\n")
     combined.append(toc_zh.strip() + "\n\n---\n")
     combined.append("## 🔌 关联开源项目\n")
-    combined.append("*   **[飞书助理 (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**：蓝皮书 Ch.08 官方参考工程。专为 Codex 开发者打造的飞书助理，支持日报自动汇总推送、CI 熔断移动端警报与手机端一键审批。\n\n---\n")
+    combined.append("*   **[飞书助理 (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**：蓝皮书 Ch.08 官方参考工程。专为 Codex 开发者打造的飞书助理，支持日报自动汇总推送、CI 熔断移动端警报与手机端一键审批。\n")
+    combined.append("*   **[Codex Switch (多供应商无缝切换)](https://github.com/aipmer/codex-switch)**：macOS Codex 多供应商一键切换利器。支持 OpenAI 官方 / DeepSeek / Kimi Code 秒级平滑切换，历史会话跨供应商无缝续聊，彻底解决单模型配额耗尽与 Rate Limit 限流难题。\n\n---\n")
     
     for filename in chapter_files:
         zh_path = os.path.join(chapters_dir, filename)
@@ -141,7 +142,8 @@ def build_en():
     combined.append("[ 🌐 中文 PDF 版 ](./codex_blue_book_zh.pdf) | [ 🌐 中文在线版 ](./chapters/ch01_mindset.md)\n")
     combined.append(toc_en.strip() + "\n\n---\n")
     combined.append("## 🔌 Related Projects\n")
-    combined.append("*   **[Feishu Assistant (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**: The official companion repository for Ch.08. An intelligent duty assistant in Feishu for Codex developers, featuring automated daily git digest pushes, CI mobile alarms, and one-tap remote approvals.\n\n---\n")
+    combined.append("*   **[Feishu Assistant (Codex Feishu Sentinel)](https://github.com/aipmer/plugins-codex-feishu)**: The official companion repository for Ch.08. An intelligent duty assistant in Feishu for Codex developers, featuring automated daily git digest pushes, CI mobile alarms, and one-tap remote approvals.\n")
+    combined.append("*   **[Codex Switch (Multi-Provider Switcher)](https://github.com/aipmer/codex-switch)**: One-click provider switcher for macOS Codex CLI. Seamlessly switch between official OpenAI, DeepSeek, and Kimi Code in seconds with cross-provider chat history continuation, bypassing quota caps and rate limits.\n\n---\n")
     
     for filename in chapter_files:
         en_path = os.path.join(en_dir, filename)

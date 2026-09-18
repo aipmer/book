@@ -14,26 +14,83 @@ This is our **"agent collaboration constitution" (Codex Collaboration Protocol, 
 
 ---
 
+## 🎯 Intuitive Metaphor: The New Employee Onboarding Handbook & Safety Code
+
+Think of Codex as a brilliant, hyper-energetic new intern on their first day:
+
+```Plaintext
+【Without AGENTS.md】 ──> The intern arrives with no rulebook. To fix a minor frontend alignment bug,
+                          they casually rewrite your 3-year-old core authentication module into an esoteric syntax,
+                          crashing production upon release.
+【With AGENTS.md】    ──> The intern sits at their desk and reads the team's printed handbook:
+                          - "This is Next.js 15 with Tailwind" (Explicit stack)
+                          - "Build with `npm run build`, never alter standard scripts" (Normalized operations)
+                          - "DO NOT touch the auth/ directory under any circumstance" (Absolute red lines)
+                          The intern immediately grasps the boundaries and operates with peak efficiency without breaking a thing.
+```
+
+`AGENTS.md` is that zero-friction onboarding manual for AI agents.
+
+---
+
+## 🚀 Beginner Quickstart: 3 Steps to Launch
+
+Create your project's first compliance rulebook in 3 minutes:
+
+1. **Step 1: Create the File in Your Project Root**  
+   Run in your terminal:
+   ```bash
+   touch AGENTS.md
+   ```
+2. **Step 2: Paste the 4-Section Minimal Scaffold**  
+   Save the following into `AGENTS.md`:
+   ```markdown
+   # 🤖 Codex Collaboration Protocol
+
+   ## 📌 Project Fingerprint
+   - Stack: Next.js 15, TypeScript, Tailwind CSS
+
+   ## 💻 Developer Commands
+   - Build: `npm run build`
+   - Test: `npm run test`
+
+   ## 🛑 Hard Constraints
+   - Never update package.json dependencies without human confirmation.
+   - Never touch files inside `src/legacy/`.
+   - Always run `npm run build` before completing the task.
+   ```
+3. **Step 3: Launch Codex to Verify Protocol Loading**  
+   Run `codex`; the initialization logs will confirm that workspace rules have been loaded.
+
+---
+
 ## 5.1 Why Do We Need `AGENTS.md`?
 
-While many developers in the Claude Code ecosystem use `CLAUDE.md`, in our Codex framework, we name it `AGENTS.md`. Its core value lies in:
-1.  **Immediate Context Restore**: Every time Codex starts, its first action is scanning the `AGENTS.md` file in the root directory. It instantly picks up the project's tech stack, directory structure, and collaboration constraints, eliminating the need for you to repeat instructions in chat.
-2.  **Anti-Corruption Layer**: It explicitly defines which directories and files are "read-only/off-limits," preventing Codex from unilaterally refactoring critical security modules (e.g., authentication, database schema).
-3.  **Command Execution Guardrails**: It specifies permissible test and deployment command options, avoiding the execution of destructive scripts by the AI.
+**`AGENTS.md` is OpenAI Codex's official instruction specification file**. When starting up, Codex scans and merges configurations hierarchically:
+
+1. `~/.codex/AGENTS.override.md` (Highest priority, user overrides)
+2. `~/.codex/AGENTS.md` (Global user instructions)
+3. Project root `AGENTS.md` (Team standard)
+4. Current directory `AGENTS.md` (Specific workspace scope)
+
+Its core value lies in:
+1. **Immediate Context Restore**: Every time Codex starts, its first action is scanning `AGENTS.md`, instantly picking up the project's tech stack, directory structure, and collaboration constraints.
+2. **Anti-Corruption Layer**: It explicitly defines which directories and files are "read-only/off-limits," preventing Codex from unilaterally refactoring critical security modules.
+3. **Command Execution Guardrails**: It specifies permissible test and deployment command options, avoiding destructive shell commands.
 
 ---
 
 ## 5.2 The Four Core Sections of `AGENTS.md`
 
-```markdown
+```Plaintext
 # Project Fingerprint
 - Tells the AI what kind of project this is and its core tech stack.
 
 # Developer Commands
-- Explicitly states the command lines for building, testing, and running database migrations.
+- Explicitly states the command lines for building, testing, and running migrations.
 
 # Styles & Architecture Patterns
-- Dictates where files should be placed, size limits, and design patterns to use.
+- Dictates where files should be placed, size limits, and design patterns.
 
 # Agent Boundary & Hard Rules
 - Defines absolute forbidden paths. If touched, Codex must abort and ask for human verification.
@@ -42,8 +99,6 @@ While many developers in the Claude Code ecosystem use `CLAUDE.md`, in our Codex
 ---
 
 ## 5.3 Practice: A Production-Grade `AGENTS.md` Template
-
-Here is a typical `AGENTS.md` specification for a full-stack SaaS project:
 
 ```markdown
 # 🤖 Project: Aurora SaaS Core (AGENTS.md)
@@ -83,19 +138,35 @@ Here is a typical `AGENTS.md` specification for a full-stack SaaS project:
 
 ---
 
-## 5.4 Founders' Advice: Making Constraints Actually Stick
+## 5.4 Dual Defense: Soft Constraints vs. Hard Enforcements
 
-In Codex, `AGENTS.md` is loaded by default and injected directly into the system context.
+Rules in `AGENTS.md` are natural language directives—models like GPT-5.6 Terra respect them with high fidelity, but they are "soft constraints."
 
-When you (or Codex itself) execute a task that deviates from the rules defined in `AGENTS.md`, Codex's telemetry mechanism will trigger a hard warning, pausing the current step and sending you an interruption confirmation:
+To guarantee physical guardrails that cannot be breached, combine with Codex 0.14x runtime controls:
 
-```bash
-⚠️ [Warning] Codex attempts to edit src/app/api/auth/[...nextauth]/route.ts.
-This path is flagged as READ-ONLY in AGENTS.md.
-Do you want to override this rule? (y/N)
+1. **Sandbox Mode**: Enforce `--sandbox workspace-write` to confine edits within the project workspace at the OS container level.
+2. **Guardian Approvals**: Pass `--approve-for-me` to let Guardian evaluate policy violations automatically.
+3. **Hooks Engine**: Configure `[hooks]` in `~/.codex/config.toml` to execute pre/post test scripts on file writes.
+
+```toml
+# ~/.codex/config.toml
+model = "gpt-5.6-terra"
+
+[hooks]
+stop = "npm run lint --silent"
 ```
 
-With this layer of protection, you can confidently delegate large blocks of business logic implementation to Codex without having to constantly worry about whether it broke the underlying security layers.
+**"AGENTS.md Soft Specs + Sandboxes & Hooks Hard Fences"** creates the ultimate anti-corruption moat.
+
+---
+
+## 🛡️ Troubleshooting & Pitfall Cheat Sheet
+
+| Symptom | Root Cause | Instant Fix |
+| :--- | :--- | :--- |
+| **Agent occasionally breaks rules despite being written** | Rules too long, contradictory, or buried in verbose prose | Keep rules concise and prefer negative constraints ("Never do X"); elevate to Hooks/Sandbox |
+| **AI falls into a 5-attempt self-correction death loop** | Missing Anti-Loop circuit breaker in instructions | Add to AGENTS.md: "Stop immediately after 2 consecutive failed attempts and report root causes" |
+| **Agent installs arbitrary unfamiliar npm packages** | Package managers allowed without gating | Mandate in Hard Rules: "Never run `npm install` for new dependencies without human consent" |
 
 ---
 

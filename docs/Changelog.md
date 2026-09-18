@@ -6,6 +6,36 @@
 
 ---
 
+## 📅 2026年9月18日 (v1.3.0 正式发布)
+### 🚀 项目更新
+- **正式发布 v1.3.0 版本**：版本号升级至 `v1.3.0`，全量更新中英文全书大合集、双语 PDF 电子书与在线阅读站，全面拥抱 2026 最新模型生态与跨界工作流。
+- **全书全面同步 2026 Codex 最新模型与 CLI / 桌面端功能体系**：
+  - **GPT-6 Astra 与 GPT-5.6 阶梯矩阵演化同步**：全面引入 2026 年 9 月 3 日发布的最新前沿旗舰 **GPT-6 Astra**（原生支持 Computer Use、105 万超大上下文窗口与 128k 输出 Token）以及 **GPT-5.6 家族持久化阶梯体系**（Sol 顶级推理/架构、Terra 均衡日常主力、Luna 轻量极速低延迟），并剔除旧版非标准模型代号（Cyber）。
+  - **完整梳理 2026 OpenAI 模型上新与退役下架路线图**：深度整理 2026 年官方生命周期日程表（3月 GPT-4 快照退役、5月 DALL-E 2/3 下架、6月 o3/4.5 界面移除、8月26日老版 Assistants API 下线、8月31日 gpt-5.4/mini 退役、9月3日 GPT-6 Astra 登场、10月23日预览版下线波次、12月图像模型统一整合至 `gpt-image-2`），帮助开发者彻底规避模型停服事故。
+  - **ChatGPT Desktop Code Mode 桌面端合并体验**：覆盖双击激活、沉浸全屏模式、Local Diff 语法树直观审阅与本地多终端会话管理。
+  - **Computer Use 视觉循环自动化**：详述无需 DOM 的像素坐标拾取与交互机制、设计保真度像素级比对与自动修复流程。
+  - **CLI 0.14x 现代化演进**：以 `--sandbox workspace-write` 彻底替代废弃的 `--full-auto` 选项；引入 Guardian `--approve-for-me` 本地智能审批守卫；规范标准化 Plugins 生态结构与 Hooks 驱动生命周期。
+- **推荐配套开源利器：Codex Switch（多供应商一键切换与跨平台无缝续聊）**：
+  - 在首页、README、Ch.02 与 Ch.13 深度收录并推荐主理人开源项目 **[Codex Switch](https://github.com/aipmer/codex-switch)**。
+  - 攻克第三方模型推理字段差异、本地加密校验与 `thread_history.sqlite` 数据库字节偏移等复杂机制，支持在 macOS 上 1 秒切换 OpenAI / DeepSeek / Kimi Code，历史会话跨供应商无缝续聊，彻底解决单模型配额瓶颈。
+- **新增 GPT-6 Astra 驱动的跨界 3D 空间计算工作流（Blender 与 Tripo3D 实战）**：
+  - 深度追踪 OpenAI 官方公布的 BenchCAD 基准（Astra 取得 95.9% mean voxel IoU 顶级空间推理表现）与三方 3D 生成生态联动（以 Tripo3D 模型门户为例）。
+  - 在第 13 章（前沿探索 13.6 节）与第 7 章（桌面自动化 7.5 节）完整落地「提示词工程枢纽 → 3D 网格/PBR 材质生成 → Blender Python (bpy) / Blender MCP 拓扑烘焙 → WebGL / Three.js / React Three Fiber 分发」端到端实操管线，并提供可无头运行的自动化渲染脚本。
+- **全书通俗化与新手友好度全面升级（13 章节双语全量覆盖）**：
+  - **标配「🎯 通俗直觉比喻」**：每一个章节开头均提供通俗生活化比喻（总包施工队、双座战斗机座舱、无尘芯片晶圆厂、米其林三星主厨、入职规约手册、独立监考窗口、像素级质检员、全自动化高科技农场、高速路上给行驶中的卡车换轮胎、移动煎饼果子摊、云端高级定制工坊、自动化水力织布机、超音速喷气客机），极大降低认知负荷。
+  - **标配「🚀 新手极速上手实操清单」**：各章节提供 3 步开箱即用清单，新手零门槛对照执行。
+  - **标配「🛡️ 避坑与故障速查备忘录」**：精选各技术领域最典型的 3 大踩坑点，透视根本原因并提供即刻修复代码。
+- **构建、测试与资产完整性验证全绿通过**：
+  - 修复 `scripts/compile_collection.py` 导航行正则过滤，避免误伤包含 `Next` 关键词的章节标题（如 Ch.10 Next.js），确保双语全书合集完整包含 13 个章节。
+  - 同步更新根目录与 `public/downloads/` 的中英文 PDF 电子书资产。
+  - 312 项 Markdown 语法与 Vue 编译压力测试通过 (`tests/stress_m2_chapters.js`)。
+  - 20 项术语规范性扫描通过 (`tests/stress_m3_terminology.js`)。
+  - 99 项全书死链与静态资产完整性检查通过 (`tests/stress_m3_dead_links.js`)。
+  - 96 项 E2E 四层端到端自动化测试 100% 通过 (`tests/e2e/run_all.js`)。
+  - VitePress 静态文档站点构建成功（耗时 1.68s）。
+
+---
+
 ## 📅 2026年9月6日
 ### 🚀 项目更新
 - **上线 VitePress 双语沉浸式在线阅读站**：
@@ -34,7 +64,7 @@
   - **26 章节导读全量重构**：中英文双语全量 26 个章节注入场景化导读 Callout，明确「解决什么具体工程麻烦 + 带走什么实战代码 + 社交截图金句」，极具传播力与阅读获得感。
   - **规约生成器与模板库场景化**：将抽象选项转化为具体防御场景（防危险脚本、强制带测试、防死循环、Next.js 14 App Router 范式）。
 - **统一全站规范命名为「飞书助理」**：
-  - 全域排查替换所有「离线看护助理」或孤立「看护助理」为「飞书助理」，全库检索目标词清零（0 matches），修复案例库历史死链。
+  - 全域排查替换所有旧版称谓为「飞书助理」，全库检索旧词清零（0 matches），修复案例库历史死链。
 - **PDF 电子书全量重编与双轨分发**：
   - 基于最新中英文全量 26 章节同步重新编译输出 `codex_blue_book_zh.pdf` (2.7MB) 与 `codex_blue_book_en.pdf` (1.5MB)。
   - 实施双轨分发策略：在阅读站内通过 `/downloads/` 目录提供免跳出直接下载；同时发布 GitHub 正式 `v1.2.0` Release 挂载 PDF 资产附件，解决 Releases 空白问题。
@@ -176,6 +206,36 @@
 ## <a name="english-version"></a> 📝 English Version
 
 This document records the recent updates, technical issues, and solutions for the *Codex Blue Book* project.
+
+---
+
+## 📅 September 18, 2026 (v1.3.0 Official Release)
+### 🚀 Project Updates
+- **Official v1.3.0 Release**: Bumped version to `v1.3.0`, recompiling full-book markdown collections, regenerating dual-language PDF ebooks, and updating the online reader with 2026 frontier models and 3D spatial workflows.
+- **Complete Synchronization with 2026 Codex Ecosystem & CLI / Desktop Features**:
+  - **GPT-6 Astra & GPT-5.6 Hierarchy Upgrades**: Fully integrated the frontier flagship **GPT-6 Astra** (launched September 3, 2026 with native Computer Use, 1.05M context window, and 128k output tokens) along with the persistent **GPT-5.6 tiered hierarchy** (Sol for peak reasoning/architecture, Terra for balanced everyday coding, Luna for low-latency triage and Guardian approvals), removing obsolete and non-standard model monikers (Cyber).
+  - **Full 2026 OpenAI Model Deprecation & Sunset Schedule**: Documented the comprehensive 2026 official model lifecycle timeline (March GPT-4 snapshot sunset, May DALL-E 2/3 retirement, June o3/4.5 interface cleanup, August 26 Assistants API shutdown, August 31 gpt-5.4/mini retirement, September 3 GPT-6 Astra launch, October 23 preview batch sunset, December image consolidation onto `gpt-image-2`), safeguarding production systems against unexpected model shutdowns.
+  - **ChatGPT Desktop Code Mode Merger**: Covered dual-click activation, immersive fullscreen mode, local syntax-tree diff inspection, and multi-terminal session orchestration.
+  - **Computer Use Automated Visual Inspection**: Detailed DOM-free pixel coordinate capture, interaction flows, and pixel-level visual fidelity regression testing.
+  - **CLI 0.14x Modernization**: Replaced deprecated `--full-auto` with `--sandbox workspace-write`; incorporated Guardian `--approve-for-me` local intelligent approval guardrails; standardized Plugins structure and Hooks-driven lifecycle.
+- **Recommended Open-Source Companion Utility: Codex Switch (Multi-Provider Switcher)**:
+  - Formally featured and recommended the author's open-source utility **[Codex Switch](https://github.com/aipmer/codex-switch)** across homepage, README, Ch.02, and Ch.13.
+  - Solves reasoning token schema mismatches, local signature validations, and `thread_history.sqlite` byte-offset alignments to enable 1-second provider switching (OpenAI / DeepSeek / Kimi Code) with seamless cross-provider conversation continuation.
+- **Integrated GPT-6 Astra Cross-Domain 3D Spatial Intelligence Workflows (Blender & Tripo3D)**:
+  - Deep integration with OpenAI's official BenchCAD benchmark (Astra achieving 95.9% mean voxel IoU) and leading 3D generative platforms (e.g. Tripo3D model portal integration).
+  - Shipped end-to-end practical pipelines in Ch.13 (Section 13.6) and Ch.07 (Section 7.5): "3D Prompt Architect -> Tripo3D Geometry/PBR Texture Generation -> Blender headless `bpy` / Blender MCP Topology Optimization -> WebGL / Three.js / React Three Fiber Distribution", complete with runnable headless automation scripts.
+- **Universal Accessibility & Beginner-Friendly Overhaul (All 13 Chapters Bilingual)**:
+  - **Standardized Intuitive Metaphors**: Added vivid real-world mental models across all chapters (General Contractor, Fighter Cockpit, Cleanroom, Michelin Chef, Onboarding Manual, Exam Window, Pixel Inspector, Autonomous Farm, Changing Truck Tires on Highway, Mobile Food Cart, Cloud Tailor Atelier, Waterwheel, Supersonic Jet).
+  - **Standardized Beginner Quickstart Checklists**: Embedded step-by-step 3-action immediate walkthroughs for frictionless onboarding.
+  - **Standardized Troubleshooting & Pitfall Cheat Sheets**: Highlighted the 3 most common beginner traps per chapter, revealing root causes and instant one-line remedies.
+- **Full Verification and E2E Test Parity**:
+  - Fixed `scripts/compile_collection.py` navigation bar parsing bug to prevent skipping headings containing `Next` (e.g. Ch.10 Next.js), achieving full 13-chapter collection parity.
+  - Synchronized Chinese and English PDF downloads in `public/downloads/`.
+  - 312 chapter syntax and Vue parse stress tests passed (`tests/stress_m2_chapters.js`).
+  - 20 terminology adherence tests passed (`tests/stress_m3_terminology.js`).
+  - 99 dead-link and asset integrity tests passed (`tests/stress_m3_dead_links.js`).
+  - 96/96 4-tier E2E tests passed cleanly (`tests/e2e/run_all.js`).
+  - VitePress documentation static site built cleanly in 1.68s.
 
 ---
 
