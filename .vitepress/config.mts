@@ -96,9 +96,9 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'AGENTS.md 规约生成器', link: '/generator' },
-              { text: 'Chrome 扩展沙盒样例 (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
-              { text: 'Next.js 全栈 SaaS 样例 (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
-              { text: 'Expo 移动端 App 样例 (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
+              { text: 'Chrome 扩展沙盒样例 (Ch.06)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch06-chrome-extension' },
+              { text: 'Next.js 全栈 SaaS 样例 (Ch.10)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch10-saas-mvp' },
+              { text: 'Expo 移动端 App 样例 (Ch.11)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch11-expo-mobile' },
             ]
           }
         ],
@@ -187,9 +187,9 @@ export default defineConfig({
             collapsed: false,
             items: [
               { text: 'AGENTS.md Protocol Generator', link: '/en/generator' },
-              { text: 'Chrome Extension Sample (Ch.06)', link: 'https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension' },
-              { text: 'Next.js SaaS MVP Sample (Ch.10)', link: 'https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp' },
-              { text: 'Expo Mobile App Sample (Ch.11)', link: 'https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile' },
+              { text: 'Chrome Extension Sample (Ch.06)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch06-chrome-extension' },
+              { text: 'Next.js SaaS MVP Sample (Ch.10)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch10-saas-mvp' },
+              { text: 'Expo Mobile App Sample (Ch.11)', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples/ch11-expo-mobile' },
             ]
           }
         ],
