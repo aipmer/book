@@ -2,7 +2,7 @@
 
 ![Codex 实战蓝皮书](./images/cover.jpg)
 
-[ 🌐 在线沉浸阅读站 (VitePress) ](https://aipmer.github.io/codex-blue-book/) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
+[ 🌐 在线沉浸阅读站 (VitePress) ](https://book.pmer.cn) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南 (v1.3.0 · 2026年9月最新版)**
 > 
@@ -139,7 +139,7 @@ Codex 自主完成 Ch.07 视觉巡检任务（审查并修复 landing 页可访�
 
 ## 🌐 English Version
 
-[ 📥 Download Chinese PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 中文版 ](#)
+[ 🌐 Online Reader (VitePress) ](https://book.pmer.cn) | [ 📥 Download Chinese PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 中文版 ](#)
 
 # 📘 *Codex Practical Blue Book: From Beginner to Architect*
 

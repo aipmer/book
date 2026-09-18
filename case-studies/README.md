@@ -41,5 +41,5 @@ Codex 自主审查一张「问题 landing 页」并直接修复：补全 `alt`�
 - **方式 A（一键通过 Issue 提交）**：直接在 GitHub 打开 [Issue: 投稿实战案例](https://github.com/aipmer/codex-blue-book/issues/new?template=case_study_submission.yml)，按表单填写即可！
 - **方式 B（提交 Pull Request）**：参考 [case_study_template.md](./case_study_template.md)，在 `case-studies/` 下新建 `case_study_你的项目名.md` 并发起 PR。
 
-被合入的案例将在官网 [book.pmer.cn](https://aipmer.github.io/codex-blue-book/) 专栏、PDF 电子书附录以及公众号 **“实战产品说”** 进行联合推广。
+被合入的案例将在官网 [book.pmer.cn](https://book.pmer.cn) 专栏、PDF 电子书附录以及公众号 **“实战产品说”** 进行联合推广。
 
