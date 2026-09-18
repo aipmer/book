@@ -134,7 +134,7 @@ Append a guardrail into [AGENTS.md](../AGENTS.md): *"Strictly prohibit external 
 
 To experience how to steer reasoning chains and enforce anti-loop guardrails during browser extension development, this repository provides a ready-to-run sandbox:
 
-👉 **Source Sandbox Directory**: [examples/ch06-chrome-extension](https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension)
+👉 **Source Sandbox Directory**: [examples/ch06-chrome-extension](https://github.com/aipmer/codex-blue-book/tree/main/examples/ch06-chrome-extension)
 
 ### Core Highlights:
 1. **Pure Native Manifest V3**: Zero build bundling dependencies. Load unpacked in Chrome Developer Mode in under 1 minute;

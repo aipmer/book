@@ -2,7 +2,7 @@
 
 ![Codex 实战蓝皮书](./images/cover.jpg)
 
-[ 🌐 在线沉浸阅读站 (VitePress) ](https://aipmer.github.io/book/) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
+[ 🌐 在线沉浸阅读站 (VitePress) ](https://aipmer.github.io/codex-blue-book/) | [ 📥 下载中文版 PDF ](./codex_blue_book_zh.pdf) | [ 📥 Download English PDF ](./codex_blue_book_en.pdf) | [ 🌐 English Version ](#english-version)
 
 > 💡 **AI 原生时代的产品研发与多端编排实战指南 (v1.3.0 · 2026年9月最新版)**
 > 
@@ -22,7 +22,7 @@
 
 本项目为 **“一源多端”** 发布体系，内容同步发布于以下渠道：
 
-*   **开源源码库**：[GitHub Repository](https://github.com/aipmer/book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
+*   **开源源码库**：[GitHub Repository](https://github.com/aipmer/codex-blue-book) (本仓库) - 存放所有源文件、配置模板与实战工程代码。
 *   **个人站点**：[pmer.cn](https://pmer.cn) - 精美极客风在线文档站，支持暗黑模式、移动端优化与代码一键复制。
 *   **微信公众号**：**实战产品说** - 深度硬核干货剖析、开发避坑踩坑实录、一人公司商业变现逻辑。
 *   **高密 PDF**：简化双语合并版 PDF，适合朋友圈与开发者社群一键转发。

@@ -10,7 +10,7 @@ After shipping a web SaaS, many independent developers want to extend their reac
 
 I firmly believe that **"cloud compilation and packaging (EAS) is the only viable path for independent developers to build native apps."** Combined with Codex's automated diagnostic assistance, you can bypass local Xcode/Android Studio configuration entirely and ship production-ready native apps directly to app stores.
 
-> 📦 **Companion Source Code**: [examples/ch11-expo-mobile](https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
+> 📦 **Companion Source Code**: [examples/ch11-expo-mobile](https://github.com/aipmer/codex-blue-book/tree/main/examples/ch11-expo-mobile) — a fully runnable Expo SDK 57 project (Expo Router `src/app` routing + NativeWind + three-tier EAS build profiles) with its own CAP `AGENTS.md`. Verified with `npx expo lint` (zero errors) and `npx expo-doctor` (20/20 checks passed).
 
 ---
 

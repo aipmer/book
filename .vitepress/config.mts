@@ -35,15 +35,15 @@ export default defineConfig({
           { text: '首页', link: '/' },
           { text: '章节阅读', link: '/chapters/ch01_mindset' },
           { text: '规约生成器', link: '/generator' },
-          { text: '规约模版', link: 'https://github.com/aipmer/book/tree/main/templates' },
-          { text: '实战样例', link: 'https://github.com/aipmer/book/tree/main/examples' },
+          { text: '规约模版', link: 'https://github.com/aipmer/codex-blue-book/tree/main/templates' },
+          { text: '实战样例', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples' },
           { text: '飞书助理', link: 'https://github.com/aipmer/plugins-codex-feishu' },
           {
             text: '下载 PDF',
             items: [
               { text: '中文版 PDF (直链下载)', link: '/downloads/codex_blue_book_zh.pdf' },
               { text: '英文版 PDF (Direct Download)', link: '/downloads/codex_blue_book_en.pdf' },
-              { text: 'GitHub Release (v1.2.0)', link: 'https://github.com/aipmer/book/releases/tag/v1.2.0' }
+              { text: 'GitHub Release (v1.3.0)', link: 'https://github.com/aipmer/codex-blue-book/releases/tag/v1.3.0' }
             ]
           }
         ],
@@ -126,15 +126,15 @@ export default defineConfig({
           { text: 'Home', link: '/en/' },
           { text: 'Chapters', link: '/en/ch01_mindset' },
           { text: 'Protocol Generator', link: '/en/generator' },
-          { text: 'Templates', link: 'https://github.com/aipmer/book/tree/main/templates' },
-          { text: 'Examples', link: 'https://github.com/aipmer/book/tree/main/examples' },
+          { text: 'Templates', link: 'https://github.com/aipmer/codex-blue-book/tree/main/templates' },
+          { text: 'Examples', link: 'https://github.com/aipmer/codex-blue-book/tree/main/examples' },
           { text: 'Feishu Assistant', link: 'https://github.com/aipmer/plugins-codex-feishu' },
           {
             text: 'Download PDF',
             items: [
               { text: 'English Edition (Direct Download)', link: '/downloads/codex_blue_book_en.pdf' },
               { text: 'Chinese Edition (中文版直链)', link: '/downloads/codex_blue_book_zh.pdf' },
-              { text: 'GitHub Release (v1.2.0)', link: 'https://github.com/aipmer/book/releases/tag/v1.2.0' }
+              { text: 'GitHub Release (v1.3.0)', link: 'https://github.com/aipmer/codex-blue-book/releases/tag/v1.3.0' }
             ]
           }
         ],
@@ -231,7 +231,7 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/aipmer/book' }
+      { icon: 'github', link: 'https://github.com/aipmer/codex-blue-book' }
     ],
     footer: {
       message: 'Released under the MIT & Apache-2.0 Licenses.',

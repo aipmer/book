@@ -10,7 +10,7 @@
 
 我坚信 **“云端开发与打包（EAS）是独立开发者做原生 App 的唯一解”**。结合 Codex 的智能编译报错排查，你可以完全跳过本地 Xcode/Android Studio 的繁琐配置，直接打包出可以上架的原生 App。
 
-> 📦 **配套实战源码**：[examples/ch11-expo-mobile](https://github.com/aipmer/book/tree/main/examples/ch11-expo-mobile) —— 完整可运行的 Expo SDK 57 工程（Expo Router `src/app` 路由 + NativeWind + EAS 三档打包配置），自带 CAP 协议 `AGENTS.md`，已通过 `npx expo lint`（零错误）与 `npx expo-doctor`（20/20）验证。
+> 📦 **配套实战源码**：[examples/ch11-expo-mobile](https://github.com/aipmer/codex-blue-book/tree/main/examples/ch11-expo-mobile) —— 完整可运行的 Expo SDK 57 工程（Expo Router `src/app` 路由 + NativeWind + EAS 三档打包配置），自带 CAP 协议 `AGENTS.md`，已通过 `npx expo lint`（零错误）与 `npx expo-doctor`（20/20）验证。
 
 ---
 

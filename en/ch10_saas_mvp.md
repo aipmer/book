@@ -10,7 +10,7 @@ As an independent developer (Indie Hacker) or micro-startup founder, your core m
 
 In this chapter, in a fast-paced hacker style, we will teach you how to direct Codex to ship a SaaS MVP with a complete payment and subscription access control loop in under 2 hours using `Next.js 15 (App Router) + Supabase (PostgreSQL) + Stripe`.
 
-> 📦 **Companion Source Code**: [examples/ch10-saas-mvp](https://github.com/aipmer/book/tree/main/examples/ch10-saas-mvp) — a fully runnable subscription-based AI translator (TransFlow) with its own CAP `AGENTS.md`. Verified with `npm install && npm run build`.
+> 📦 **Companion Source Code**: [examples/ch10-saas-mvp](https://github.com/aipmer/codex-blue-book/tree/main/examples/ch10-saas-mvp) — a fully runnable subscription-based AI translator (TransFlow) with its own CAP `AGENTS.md`. Verified with `npm install && npm run build`.
 
 ---
 

@@ -23,7 +23,7 @@ hero:
       link: https://github.com/aipmer/codex-switch
     - theme: alt
       text: 实战源码沙盒
-      link: https://github.com/aipmer/book/tree/main/examples
+      link: https://github.com/aipmer/codex-blue-book/tree/main/examples
     - theme: alt
       text: 下载全书 PDF
       link: /downloads/codex_blue_book_zh.pdf

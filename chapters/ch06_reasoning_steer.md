@@ -134,7 +134,7 @@ git checkout -- src/lib/redis.ts
 
 为了让读者直观体验如何使用 Codex 思考链引导与 Anti-Loop 护栏进行浏览器插件开发，本项目配套提供了开箱即用的轻量开源样例：
 
-👉 **源码沙盒目录**：[examples/ch06-chrome-extension](https://github.com/aipmer/book/tree/main/examples/ch06-chrome-extension)
+👉 **源码沙盒目录**：[examples/ch06-chrome-extension](https://github.com/aipmer/codex-blue-book/tree/main/examples/ch06-chrome-extension)
 
 ### 核心亮点：
 1. **纯原生 Manifest V3**：零打包依赖，直接在 Chrome 浏览器中「加载已解压的扩展程序」即可 1 分钟开箱体验；
